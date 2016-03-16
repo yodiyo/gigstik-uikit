@@ -1,0 +1,142 @@
+
+/* general */
+@base-body-background: #0a060d;
+
+html {
+  font: normal 14px / 20px Montserrat-Regular;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  background: #0a060d;
+  color: #444444;
+}
+
+/* breakpoint widths */
+/*@breakpoint-xlarge: 1025px;
+@breakpoint-large: 981px;
+@breakpoint-medium: 641px;
+@breakpoint-small: 321px;
+*/
+
+/* desktop */ .gs-container {max-width:1024px; margin: 0 auto;}
+
+/* navigation */
+
+@navbar-background: #f7f7f7;
+@navbar-link-hover-color: #a00482;
+@navbar-nav-active-color: @navbar-link-hover-color;
+@navbar-nav-active-background: @navbar-background:;
+@overlay-colour: #d404aa;
+@overlay-panel-background: rgba(212,4,170,0.8);
+@overlay-panel-thumb: rgba(212,4,170,0.5);
+
+.uk-navbar{
+	/*padding: 28px 21.5px 28px 61px ;*/
+	width:1024px;
+	height:83.5px;
+	z-index: 500;
+	.uk-navbar-nav {
+		> li {
+				> a {
+					font-family: "OpenSans-Bold-webfont", sans-serif;
+					font-size:15px;
+					text-transform: uppercase;
+				}
+			}
+		/* scrollspy fix for actice/focus */
+		li:not(.uk-active) > a:focus {
+			background-color:inherit;
+			border-left-color: rgba(0,0,0,0);
+			border-right-color: rgba(0,0,0,0);
+		}
+	}
+}
+
+.uk-navbar-brand {
+	background:url('../images/logo_gigstik.png') no-repeat top left; 
+	text-indent:-99999px; 
+	width:101px; 
+	height:30px;
+	margin:28px 0 0 61px;
+}
+.links-apps {
+	margin:26px 60px; 
+	li {float: left; position:relative;}
+}
+.links-apps-apple {
+	background:url('../images/logo_app_store.png') no-repeat top left; 
+	text-indent:-99999px; 
+	width:107px; 
+	height:32px;
+	margin-left: 80px;
+	margin-right:22px;
+}
+
+.links-apps-google {
+	background:url('../images/logo_google_play.png') no-repeat top left; 
+	text-indent:-99999px; 
+	width:106px; 
+	height:31px;
+}
+
+.uk-navbar-nav {
+	margin:-5px 16.5px 0 0;
+}
+
+
+
+/* Masthead */
+
+#masthead {
+	/*width: 1024px; 
+	height: 549px; */
+	background: url('../images/banner.png') no-repeat top left; 
+	text-indent: -99999px;
+	.uk-cover-background;
+}
+
+/* section heading */
+
+section {
+	header {
+		background-image: url('../images/header-image.jpg');
+		height: 162px;
+		.uk-cover-background; 
+		h2 {
+			font-family: 'Oswald-Regular';
+			font-size:60px;
+			text-transform: uppercase;
+			color:#ffffff;
+			padding:60px 50px;
+			position:relative;
+			z-index:20;
+		}
+		.uk-overlay-hover:not(:hover):not(.uk-hover) .uk-overlay-panel:not(.uk-ignore), .uk-overlay-background {
+	    	opacity: 0.8;
+	    	background-color:#d404aa;
+		}
+	}
+	.bg-overlay {
+		background-color:@overlay-panel-background;
+		position:absolute;
+		width:1024px;
+		height:162px;
+		z-index:10;
+	}
+	.benefits {
+		.benefit .uk-overlay-icon:before {
+			content:'\f054';
+			font-size:32px;
+		}
+		.uk-overlay-background {background-color: @overlay-panel-thumb;}
+		.content {
+			h3 {
+				font-family: 'Oswald-Regular';
+				font-size:30px;
+			}
+			li {
+				font-family: 'OpenSans-Bold-webfont';
+				font-size: 14px;
+			}
+		}
+	}
+}

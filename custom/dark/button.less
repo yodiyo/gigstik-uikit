@@ -1,0 +1,40 @@
+@button-color: #f90;
+@button-hover-color: fade(@button-color, 75%);
+@button-active-color: @button-color;
+
+@button-background: #000;
+@button-hover-background: lighten(@button-background, 20%);
+@button-active-background: @button-hover-background;
+
+@button-primary-color: darken(@button-primary-background, 20%);
+@button-success-color: darken(@button-success-background, 20%);
+@button-danger-color: darken(@button-danger-background, 20%);
+
+@button-primary-hover-color: fade(@button-primary-color, 75%);
+@button-success-hover-color: fade(@button-success-color, 75%);
+@button-danger-hover-color: fade(@button-danger-color, 75%);
+
+@button-primary-active-color: lighten(@button-primary-color, 35%);
+@button-success-active-color: lighten(@button-success-color, 35%);
+@button-danger-active-color: lighten(@button-danger-color, 35%);
+
+.hook-button() {
+  border-radius: 5px 15px; 
+  box-shadow: 2px 2px;
+}
+
+.hook-button-misc() {
+  .uk-button:active:not(:disabled) { 
+    box-shadow: none; 
+  }
+  .uk-button-link:hover,
+  .uk-button-link:focus,
+  .uk-button-link:active,
+  .uk-button-link.uk-active {
+    text-decoration: none;
+  }
+  .uk-button-link:focus { 
+    outline: none; 
+    border: 1px solid @button-link-hover-color;
+  }
+}
