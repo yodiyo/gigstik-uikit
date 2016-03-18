@@ -5,7 +5,7 @@ if( isset($_POST) ){
     $formok = true;
     $errors = array();
      
-    //sumbission data
+    //submission data
     $ipaddress = $_SERVER['REMOTE_ADDR'];
     $date = date('d/m/Y');
     $time = date('H:i:s');
