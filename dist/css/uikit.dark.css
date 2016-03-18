@@ -8763,8 +8763,8 @@ html {
   padding: 0 0 0 40px;
 }
 #masthead .vid-container {
-  background: url('../images/phone_video.png') no-repeat top right;
-  background-size: 100%;
+  /*background:url('../images/phone_video.png') no-repeat top right;
+		background-size:100%;*/
   margin-top: 10px;
   height: 398px;
   position: relative;
@@ -8772,12 +8772,12 @@ html {
 #masthead .vid-container iframe {
   position: absolute;
   top: 66px;
-  left: 63px;
+  right: 34px;
+  width: 374px;
+  height: 213px;
 }
-@media (max-width: 1023px) {
-  #masthead .vid-container iframe {
-    left: 63px;
-  }
+#masthead img {
+  float: right;
 }
 #masthead .links-apps {
   margin: 32px 40px;
@@ -8819,9 +8819,12 @@ html {
   }
   #masthead .vid-container iframe {
     top: 42px;
-    left: 38px;
+    right: 22px;
     width: 240px;
     height: 136px;
+  }
+  #masthead img {
+    width: 301px;
   }
 }
 @media (min-width: 640px) {
@@ -8895,13 +8898,20 @@ section .benefits .benefit ul {
 }
 section .benefits .benefit ul li {
   margin-top: 0;
+  /* at 640px */
 }
 section .benefits .benefit ul li span {
   padding-left: 23px;
 }
-@media (min-width: 980px) {
+@media (min-width: 640px) {
   section .benefits .benefit ul li {
     float: left;
+  }
+}
+@media (width: 640px) {
+  section .benefits .benefit ul li {
+    float: none;
+    width: 100%;
   }
 }
 @media (min-width: 1024px) {

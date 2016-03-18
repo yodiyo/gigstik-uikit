@@ -163,20 +163,20 @@ html {
 	.uk-cover-background;
 	background: url('../images/banner_full.jpg') no-repeat 0 100%; 
 	.vid-container {
-		background:url('../images/phone_video.png') no-repeat top right;
-		background-size:100%;
+		/*background:url('../images/phone_video.png') no-repeat top right;
+		background-size:100%;*/
 		margin-top:10px;
 		height:398px;
 		position:relative;
 		iframe {
 			position:absolute;
 			top:66px;
-			left:63px;
-			@media (max-width: 1023px){
-				left:63px;
-			}
+			right:34px;
+			width:374px;
+			height:213px;
 		}
 	}
+	img {float:right;}
 	.links-apps {
 		margin:32px 40px;
 		li {
@@ -204,10 +204,13 @@ html {
 			height: 280px;
 			iframe {
 				top:42px;
-				left:38px;
+				right:22px;
 				width:240px;
 				height:136px;
 			}
+		}
+		img {
+			width:301px;
 		}
 	}
 	@media (min-width: @breakpoint-medium){
@@ -253,7 +256,6 @@ section {
 	}
 	.uk-grid+.uk-grid {margin-top:0;}
 	.benefits {
-
 		@media (min-width: @breakpoint-xlarge){
 			.benefit {width:617px;}
 			.phone-container {width:392px;}
@@ -270,8 +272,13 @@ section {
 				li {
 					margin-top:0;
 					span {padding-left:23px;}
-					@media (min-width:@breakpoint-large){
+					@media (min-width:@breakpoint-medium){
 						float:left;
+					}
+					/* at 640px */
+					@media (width:@breakpoint-medium ){
+						float:none;
+						width:100%;
 					}
 					@media (min-width:@breakpoint-xlarge){
 						float:none;

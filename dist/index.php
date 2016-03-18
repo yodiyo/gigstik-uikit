@@ -57,6 +57,7 @@
                 <div class="uk-width-medium-1-2 uk-width-small-1-1">
                     <div class="vid-container">
                         <iframe width="394" height="224" src="http://www.youtube.com/embed/wfLZdlOMG4c?modestbranding=1&autohide=1&showinfo=0" frameborder="0" allowfullscreen"></iframe> 
+                        <img src="images/phone_video.png" alt="Phone screen"/>
                     </div>
                 </div>
             </div>
@@ -80,7 +81,7 @@
             <div class="benefits uk-grid">
                 <div class="benefit uk-width-1-1">
                     <ul data-uk-switcher="{connect:'#phone-img', animation:'fade'}">
-                       <li class="uk-grid uk-width-xlarge-1-1 uk-width-large-1-3">
+                       <li class="uk-grid uk-width-xlarge-1-1 uk-width-medium-1-3">
                             <div class="thumb uk-width-xlarge-1-2">
                                 <figure class="uk-overlay uk-overlay-hover" >
                                     <img src="images/benefits_artist_thumb.jpg" alt="artist" >
@@ -96,7 +97,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="uk-grid uk-width-xlarge-1-1 uk-width-large-1-3">
+                        <li class="uk-grid uk-width-xlarge-1-1 uk-width-medium-1-3">
                             <div class="thumb uk-width-xlarge-1-2 ">
                                 <figure class="uk-overlay uk-overlay-hover" >
                                     <img src="images/benefits_venue_thumb.jpg" alt="venue">
@@ -112,7 +113,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="uk-grid uk-width-xlarge-1-1 uk-width-large-1-3">
+                        <li class="uk-grid uk-width-xlarge-1-1 uk-width-medium-1-3">
                             <div class="thumb uk-width-xlarge-1-2 ">
                                 <figure class="uk-overlay uk-overlay-hover" >
                                     <img src="images/benefits_lover_thumb.jpg" alt="artist">
