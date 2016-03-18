@@ -8632,6 +8632,7 @@ html {
 /* desktop */
 .gs-container {
   margin: 0 auto;
+  min-width: 320px;
 }
 @media (min-width: 1024px) {
   .gs-container {
