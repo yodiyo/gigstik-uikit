@@ -157,15 +157,15 @@
                 <div class="uk-width-large-1-3">
                     <div class="uk-panel uk-panel-box uk-text-center uk-panel-space">
                      	<div class='gs-icon-headphones'></div>
-                        <h3>Live chat</h3>
-                        <p>Get an inside look at what your favourite band gets up to on gig days with our inbuilt live chat.</p>
+                        <h3>Exclusive Video</h3>
+                        <p>Access exclusive video content from before, during and after each gig.</p>
                     </div>
                 </div>
                 <div class="uk-width-large-1-3">
                     <div class="uk-panel uk-panel-box uk-text-center uk-panel-space">
                      	<div class='gs-icon-headphones'></div>
-                        <h3>Live chat</h3>
-                        <p>Get an inside look at what your favourite band gets up to on gig days with our inbuilt live chat.</p>
+                        <h3>Full Back Cataologe</h3>
+                        <p>Enjoy all of your old favourites with our full back catalogue for each artist.</p>
                     </div>
                 </div>
             </div>
@@ -173,15 +173,16 @@
                 <div class="uk-width-large-1-3 uk-push-1-6">
                     <div class="uk-panel uk-panel-box uk-text-center uk-panel-space">
                      	<div class='gs-icon-headphones'></div>
-                        <h3>Live chat</h3>
-                        <p>Get an inside look at what your favourite band gets up to on gig days with our inbuilt live chat.</p>
+                        <h3>Custom Merchandise</h3>
+                        <p>Design and order custom merchandise directly from your favourite artist.</p>
                     </div>
                 </div>
                 <div class="uk-width-large-1-3 uk-push-1-6">
                     <div class="uk-panel uk-panel-box uk-text-center uk-panel-space">
                      	<div class='gs-icon-headphones'></div>
-                        <h3>Live chat</h3>
-                        <p>Get an inside look at what your favourite band gets up to on gig days with our inbuilt live chat.</p>
+                        <h3>VIP Lotteries and Prizes</h3>
+                        <p>Get exclusive entry into lotteries to win VIP meet and greets, hang out back stage
+and much more!</p>
                     </div>
                 </div>
             </div>

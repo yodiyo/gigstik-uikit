@@ -238,7 +238,7 @@ gulp.task('dist-core-header', function(done) {
         return done();
     }
 
-    return gulp.src(['./dist/**/*.css', './dist/**/*.js']).pipe(header("/*! <%= pkg.title %> <%= pkg.version %> | <%= pkg.homepage %> | (c) 2014 YOOtheme | MIT License */\n", { 'pkg' : pkg } )).pipe(gulp.dest('./dist/'));
+    return gulp.src(['./dist/**/*.css', './dist/**/*.js']).pipe(header("", { 'pkg' : pkg } )).pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('dist-bower-file', function(done) {
