@@ -1,358 +1,61 @@
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ========================================================================
    Component: Sortable
  ========================================================================== */
-.uk-sortable {
+.yb-sortable {
   position: relative;
 }
 /*
  * Deactivate browser touch actions in IE11
  */
-.uk-sortable > * {
+.yb-sortable > * {
   touch-action: none;
 }
 /*
  * Disables the default callout shown when you touch and hold a touch target
  * Currently only works in Webkit
  */
-.uk-sortable a,
-.uk-sortable img {
+.yb-sortable a,
+.yb-sortable img {
   -webkit-touch-callout: none;
 }
 /*
  * Remove margin from the last-child
  */
-.uk-sortable > :last-child {
+.yb-sortable > :last-child {
   margin-bottom: 0;
 }
-/* Sub-modifier `uk-sortable-dragged`
+/* Sub-modifier `yb-sortable-dragged`
  ========================================================================== */
-.uk-sortable-dragged {
+.yb-sortable-dragged {
   position: absolute;
   z-index: 1050;
   pointer-events: none;
 }
-/* Sub-modifier `uk-sortable-placeholder`
+/* Sub-modifier `yb-sortable-placeholder`
  ========================================================================== */
-.uk-sortable-placeholder {
+.yb-sortable-placeholder {
   opacity: 0;
 }
 /* Empty List
  ========================================================================== */
-.uk-sortable-empty {
+.yb-sortable-empty {
   min-height: 30px;
 }
-/* Sub-object `uk-sortable-handle`
+/* Sub-object `yb-sortable-handle`
  ========================================================================== */
 /*
  * Deactivate browser touch actions in IE11
  */
-.uk-sortable-handle {
+.yb-sortable-handle {
   touch-action: none;
 }
 /* Hover */
-.uk-sortable-handle:hover {
+.yb-sortable-handle:hover {
   cursor: move;
 }
-/* Sub-object `uk-sortable-moving`
+/* Sub-object `yb-sortable-moving`
  ========================================================================== */
-.uk-sortable-moving,
-.uk-sortable-moving * {
+.yb-sortable-moving,
+.yb-sortable-moving * {
   cursor: move;
 }

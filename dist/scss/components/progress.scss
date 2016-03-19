@@ -1,22 +1,22 @@
 // Name:            Progress
 // Description:     Defines styles for progress bars
 //
-// Component:       `uk-progress`
+// Component:       `yb-progress`
 //
-// Sub-objects:     `uk-progress-bar`
+// Sub-objects:     `yb-progress-bar`
 //
-// Modifiers:       `uk-progress-mini`
-//                  `uk-progress-small`
-//                  `uk-progress-success`
-//                  `uk-progress-warning`
-//                  `uk-progress-danger`
-//                  `uk-progress-striped`
+// Modifiers:       `yb-progress-mini`
+//                  `yb-progress-small`
+//                  `yb-progress-success`
+//                  `yb-progress-warning`
+//                  `yb-progress-danger`
+//                  `yb-progress-striped`
 //
 // Markup:
 //
-// <!-- uk-progress -->
-// <div class="uk-progress">
-//     <div class="uk-progress-bar" style="width: 40%;"></div>
+// <!-- yb-progress -->
+// <div class="yb-progress">
+//     <div class="yb-progress-bar" style="width: 40%;"></div>
 // </div>
 //
 // ========================================================================
@@ -50,7 +50,7 @@ $progress-bar-danger-background:                 #da314b !default;
  * 2. Vertical alignment if text is used
  */
 
-.uk-progress {
+.yb-progress {
     box-sizing: border-box;
     height: $progress-height;
     margin-bottom: $progress-margin-vertical;
@@ -66,10 +66,10 @@ $progress-bar-danger-background:                 #da314b !default;
  * Add margin if adjacent element
  */
 
-* + .uk-progress { margin-top: $progress-margin-vertical; }
+* + .yb-progress { margin-top: $progress-margin-vertical; }
 
 
-/* Sub-object: `uk-progress-bar`
+/* Sub-object: `yb-progress-bar`
  ========================================================================== */
 
 /*
@@ -77,7 +77,7 @@ $progress-bar-danger-background:                 #da314b !default;
  * 2. Needed for text
  */
 
-.uk-progress-bar {
+.yb-progress-bar {
     width: 0;
     height: 100%;
     background: $progress-bar-background;
@@ -97,14 +97,14 @@ $progress-bar-danger-background:                 #da314b !default;
  ========================================================================== */
 
 /* Mini */
-.uk-progress-mini {
+.yb-progress-mini {
     height: $progress-mini-height;
     @include hook-progress-mini();
 }
 
 
 /* Small */
-.uk-progress-small {
+.yb-progress-small {
     height: $progress-small-height;
     @include hook-progress-small();
 }
@@ -113,26 +113,26 @@ $progress-bar-danger-background:                 #da314b !default;
 /* Color modifiers
  ========================================================================== */
 
-.uk-progress-success .uk-progress-bar {
+.yb-progress-success .yb-progress-bar {
     background-color: $progress-bar-success-background;
     @include hook-progress-bar-success();
 }
 
-.uk-progress-warning .uk-progress-bar {
+.yb-progress-warning .yb-progress-bar {
     background-color: $progress-bar-warning-background;
     @include hook-progress-bar-warning();
 }
 
-.uk-progress-danger .uk-progress-bar {
+.yb-progress-danger .yb-progress-bar {
     background-color: $progress-bar-danger-background;
     @include hook-progress-bar-danger();
 }
 
 
-/* Modifier: `uk-progress-striped`
+/* Modifier: `yb-progress-striped`
  ========================================================================== */
 
-.uk-progress-striped .uk-progress-bar {
+.yb-progress-striped .yb-progress-bar {
     background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-size: 30px 30px;
@@ -142,17 +142,17 @@ $progress-bar-danger-background:                 #da314b !default;
  * Animation
  */
 
-.uk-progress-striped.uk-active .uk-progress-bar {
-    -webkit-animation: uk-progress-bar-stripes 2s linear infinite;
-    animation: uk-progress-bar-stripes 2s linear infinite;
+.yb-progress-striped.yb-active .yb-progress-bar {
+    -webkit-animation: yb-progress-bar-stripes 2s linear infinite;
+    animation: yb-progress-bar-stripes 2s linear infinite;
 }
 
-@-webkit-keyframes uk-progress-bar-stripes {
+@-webkit-keyframes yb-progress-bar-stripes {
     0% { background-position: 0 0;}
     100% { background-position: 30px 0; }
 }
 
-@keyframes uk-progress-bar-stripes {
+@keyframes yb-progress-bar-stripes {
     0% { background-position: 0 0;}
     100% { background-position: 30px 0; }
 }

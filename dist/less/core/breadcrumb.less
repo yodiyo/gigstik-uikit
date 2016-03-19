@@ -1,17 +1,17 @@
 // Name:            Breadcrumb
 // Description:     Defines styles for a breadcrumb navigation
 //
-// Component:       `uk-breadcrumb`
+// Component:       `yb-breadcrumb`
 //
-// States:          `uk-active`
+// States:          `yb-active`
 //
 // Markup:
 //
-// <!-- uk-breadcrumb -->
-// <ul class="uk-breadcrumb">
+// <!-- yb-breadcrumb -->
+// <ul class="yb-breadcrumb">
 //     <li><a href=""></a></li>
 //     <li><span></span></li>
-//     <li class="uk-active"><span></span></li>
+//     <li class="yb-active"><span></span></li>
 // </ul>
 //
 // ========================================================================
@@ -36,7 +36,7 @@
  * 2. Remove whitespace between child elements when using `inline-block`
  */
 
-.uk-breadcrumb {
+.yb-breadcrumb {
     /* 1 */
     padding: 0;
     list-style: none;
@@ -53,16 +53,16 @@
  * Reset whitespace hack
  */
 
-.uk-breadcrumb > li {
+.yb-breadcrumb > li {
     font-size: @breadcrumb-font-size;
     vertical-align: top;
 }
 
-.uk-breadcrumb > li,
-.uk-breadcrumb > li > a,
-.uk-breadcrumb > li > span { display: inline-block; }
+.yb-breadcrumb > li,
+.yb-breadcrumb > li > a,
+.yb-breadcrumb > li > span { display: inline-block; }
 
-.uk-breadcrumb > li:nth-child(n+2):before {
+.yb-breadcrumb > li:nth-child(n+2):before {
     content: @breadcrumb-divider;
     display: inline-block;
     margin: 0 @breadcrumb-divider-margin;
@@ -73,7 +73,7 @@
  * Disabled
  */
 
-.uk-breadcrumb > li:not(.uk-active) > span { color: @breadcrumb-disabled-color; }
+.yb-breadcrumb > li:not(.yb-active) > span { color: @breadcrumb-disabled-color; }
 
 
 // Hooks

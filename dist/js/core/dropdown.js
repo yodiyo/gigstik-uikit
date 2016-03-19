@@ -57,7 +57,7 @@
            'justify'         : false,
            'boundary'        : UI.$win,
            'delay'           : 0,
-           'dropdownSelector': '.uk-dropdown,.uk-dropdown-blank',
+           'dropdownSelector': '.yb-dropdown,.yb-dropdown-blank',
            'hoverDelayIdle'  : 250,
            'preventflip'     : false
         },
@@ -69,13 +69,13 @@
             var triggerevent = UI.support.touch ? "click" : "mouseenter";
 
             // init code
-            UI.$html.on(triggerevent+".dropdown.uikit", "[data-uk-dropdown]", function(e) {
+            UI.$html.on(triggerevent+".dropdown.uikit", "[data-yb-dropdown]", function(e) {
 
                 var ele = UI.$(this);
 
                 if (!ele.data("dropdown")) {
 
-                    var dropdown = UI.dropdown(ele, UI.Utils.options(ele.attr("data-uk-dropdown")));
+                    var dropdown = UI.dropdown(ele, UI.Utils.options(ele.attr("data-yb-dropdown")));
 
                     if (triggerevent=="click" || (triggerevent=="mouseenter" && dropdown.options.mode=="hover")) {
                         dropdown.element.trigger(triggerevent);
@@ -97,7 +97,7 @@
                 return UI.$.inArray(UI.$(this).css('position'), ['relative', 'fixed', 'absolute']) !== -1;
             }).slice(0,1);
 
-            this.centered  = this.dropdown.hasClass('uk-dropdown-center');
+            this.centered  = this.dropdown.hasClass('yb-dropdown-center');
             this.justified = this.options.justify ? UI.$(this.options.justify) : false;
 
             this.boundary  = UI.$(this.options.boundary);
@@ -107,20 +107,20 @@
             }
 
             // legacy DEPRECATED!
-            if (this.dropdown.hasClass('uk-dropdown-up')) {
+            if (this.dropdown.hasClass('yb-dropdown-up')) {
                 this.options.pos = 'top-left';
             }
-            if (this.dropdown.hasClass('uk-dropdown-flip')) {
+            if (this.dropdown.hasClass('yb-dropdown-flip')) {
                 this.options.pos = this.options.pos.replace('left','right');
             }
-            if (this.dropdown.hasClass('uk-dropdown-center')) {
+            if (this.dropdown.hasClass('yb-dropdown-center')) {
                 this.options.pos = this.options.pos.replace(/(left|right)/,'center');
             }
             //-- end legacy
 
             // Init ARIA
             this.element.attr('aria-haspopup', 'true');
-            this.element.attr('aria-expanded', this.element.hasClass("uk-open"));
+            this.element.attr('aria-expanded', this.element.hasClass("yb-open"));
 
             if (this.options.mode == "click" || UI.support.touch) {
 
@@ -137,13 +137,13 @@
                         $target.blur();
                     }
 
-                    if (!$this.element.hasClass('uk-open')) {
+                    if (!$this.element.hasClass('yb-open')) {
 
                         $this.show();
 
                     } else {
 
-                        if (!$this.dropdown.find(e.target).length || $target.is(".uk-dropdown-close") || $target.parents(".uk-dropdown-close").length) {
+                        if (!$this.dropdown.find(e.target).length || $target.is(".yb-dropdown-close") || $target.parents(".yb-dropdown-close").length) {
                             $this.hide();
                         }
                     }
@@ -200,7 +200,7 @@
                     }
 
                     if (active && active == $this) {
-                        if (!$this.dropdown.find(e.target).length || $target.is(".uk-dropdown-close") || $target.parents(".uk-dropdown-close").length) {
+                        if (!$this.dropdown.find(e.target).length || $target.is(".yb-dropdown-close") || $target.parents(".yb-dropdown-close").length) {
                             $this.hide();
                         }
                         return;
@@ -230,7 +230,7 @@
             this.trigger('beforeshow.uk.dropdown', [this]);
 
             this.checkDimensions();
-            this.element.addClass('uk-open');
+            this.element.addClass('yb-open');
 
             // Update ARIA
             this.element.attr('aria-expanded', 'true');
@@ -247,7 +247,7 @@
 
             this.trigger('beforehide.uk.dropdown', [this, force]);
 
-            this.element.removeClass('uk-open');
+            this.element.removeClass('yb-open');
 
             if (this.remainIdle) {
                 clearTimeout(this.remainIdle);
@@ -292,7 +292,7 @@
             if (!this.dropdown.length) return;
 
             // reset
-            this.dropdown.removeClass('uk-dropdown-top uk-dropdown-bottom uk-dropdown-left uk-dropdown-right uk-dropdown-stack').css({
+            this.dropdown.removeClass('yb-dropdown-top yb-dropdown-bottom yb-dropdown-left yb-dropdown-right yb-dropdown-stack').css({
                 'top-left':'',
                 'left':'',
                 'margin-left' :'',
@@ -370,11 +370,11 @@
             }
 
             if (width > boundarywidth) {
-                dropdown.addClass("uk-dropdown-stack");
+                dropdown.addClass("yb-dropdown-stack");
                 this.trigger('stack.uk.dropdown', [this]);
             }
 
-            dropdown.css(css).css("display", "").addClass('uk-dropdown-'+pp[0]);
+            dropdown.css(css).css("display", "").addClass('yb-dropdown-'+pp[0]);
         },
 
         checkBoundary: function(left, top, width, height, boundarywidth) {
@@ -407,11 +407,11 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-dropdown-overlay]", context).each(function() {
+                UI.$("[data-yb-dropdown-overlay]", context).each(function() {
                     var ele = UI.$(this);
 
                     if (!ele.data("dropdownOverlay")) {
-                        UI.dropdownOverlay(ele, UI.Utils.options(ele.attr("data-uk-dropdown-overlay")));
+                        UI.dropdownOverlay(ele, UI.Utils.options(ele.attr("data-yb-dropdown-overlay")));
                     }
                 });
             });
@@ -422,10 +422,10 @@
             var $this = this;
 
             this.justified = this.options.justify ? UI.$(this.options.justify) : false;
-            this.overlay   = this.element.find('uk-dropdown-overlay');
+            this.overlay   = this.element.find('yb-dropdown-overlay');
 
             if (!this.overlay.length) {
-                this.overlay = UI.$('<div class="uk-dropdown-overlay"></div>').appendTo(this.element);
+                this.overlay = UI.$('<div class="yb-dropdown-overlay"></div>').appendTo(this.element);
             }
 
             this.overlay.addClass(this.options.cls);
@@ -444,12 +444,12 @@
 
                     var h = $this.dropdown.dropdown.outerHeight(true);
 
-                    $this.dropdown.element.removeClass('uk-open');
+                    $this.dropdown.element.removeClass('yb-open');
 
                     $this.overlay.stop().css('display', 'block').animate({height: h}, $this.options.duration, function() {
 
                        $this.dropdown.dropdown.css('visibility', '');
-                       $this.dropdown.element.addClass('uk-open');
+                       $this.dropdown.element.addClass('yb-open');
 
                        UI.Utils.checkDisplay($this.dropdown.dropdown, true);
                     });

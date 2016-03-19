@@ -25,16 +25,16 @@
             param: 'search',
             method: 'post',
             delay: 300,
-            loadingClass: 'uk-loading',
+            loadingClass: 'yb-loading',
             flipDropdown: false,
-            skipClass: 'uk-skip',
-            hoverClass: 'uk-active',
+            skipClass: 'yb-skip',
+            hoverClass: 'yb-active',
             source: null,
             renderer: null,
 
             // template
 
-            template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">{{~items}}<li data-value="{{$item.value}}"><a>{{$item.value}}</a></li>{{/items}}</ul>'
+            template: '<ul class="yb-nav yb-nav-autocomplete yb-autocomplete-results">{{~items}}<li data-value="{{$item.value}}"><a>{{$item.value}}</a></li>{{/items}}</ul>'
         },
 
         visible  : false,
@@ -44,12 +44,12 @@
         boot: function() {
 
             // init code
-            UI.$html.on("focus.autocomplete.uikit", "[data-uk-autocomplete]", function(e) {
+            UI.$html.on("focus.autocomplete.uikit", "[data-yb-autocomplete]", function(e) {
 
                 var ele = UI.$(this);
 
                 if (!ele.data("autocomplete")) {
-                    UI.autocomplete(ele, UI.Utils.options(ele.attr("data-uk-autocomplete")));
+                    UI.autocomplete(ele, UI.Utils.options(ele.attr("data-yb-autocomplete")));
                 }
             });
 
@@ -71,17 +71,17 @@
                 }, this.options.delay);
 
 
-            this.dropdown = this.find('.uk-dropdown');
+            this.dropdown = this.find('.yb-dropdown');
             this.template = this.find('script[type="text/autocomplete"]').html();
             this.template = UI.Utils.template(this.template || this.options.template);
             this.input    = this.find("input:first").attr("autocomplete", "off");
 
             if (!this.dropdown.length) {
-               this.dropdown = UI.$('<div class="uk-dropdown"></div>').appendTo(this.element);
+               this.dropdown = UI.$('<div class="yb-dropdown"></div>').appendTo(this.element);
             }
 
             if (this.options.flipDropdown) {
-                this.dropdown.addClass('uk-dropdown-flip');
+                this.dropdown.addClass('yb-dropdown-flip');
             }
 
             this.dropdown.attr('aria-expanded', 'false');
@@ -121,11 +121,11 @@
                 "keyup": trigger
             });
 
-            this.dropdown.on("click", ".uk-autocomplete-results > *", function(){
+            this.dropdown.on("click", ".yb-autocomplete-results > *", function(){
                 $this.select();
             });
 
-            this.dropdown.on("mouseover", ".uk-autocomplete-results > *", function(){
+            this.dropdown.on("mouseover", ".yb-autocomplete-results > *", function(){
                 $this.pick(UI.$(this));
             });
 
@@ -150,7 +150,7 @@
         pick: function(item, scrollinview) {
 
             var $this    = this,
-                items    = UI.$(this.dropdown.find('.uk-autocomplete-results').children(':not(.'+this.options.skipClass+')')),
+                items    = UI.$(this.dropdown.find('.yb-autocomplete-results').children(':not(.'+this.options.skipClass+')')),
                 selected = false;
 
             if (typeof item !== "string" && !item.hasClass(this.options.skipClass)) {
@@ -210,7 +210,7 @@
         show: function() {
             if (this.visible) return;
             this.visible = true;
-            this.element.addClass("uk-open");
+            this.element.addClass("yb-open");
 
             if (active && active!==this) {
                 active.hide();
@@ -227,7 +227,7 @@
         hide: function() {
             if (!this.visible) return;
             this.visible = false;
-            this.element.removeClass("uk-open");
+            this.element.removeClass("yb-open");
 
             if (active === this) {
                 active = false;

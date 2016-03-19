@@ -1,9 +1,9 @@
 // Name:            Base
 // Description:     Sets default values for HTML elements
 //
-// Component:       `uk-h1`, `uk-h2`, `uk-h3`, `uk-h4`, `uk-h5`, `uk-h6`
-//                  `uk-link`
-//                  `uk-img-preserve`
+// Component:       `yb-h1`, `yb-h2`, `yb-h3`, `yb-h4`, `yb-h5`, `yb-h6`
+//                  `yb-link`
+//                  `yb-img-preserve`
 //
 // ========================================================================
 
@@ -127,7 +127,7 @@ a:hover { outline: 0; }
  */
 
 a,
-.uk-link {
+.yb-link {
     color: $base-link-color;
     text-decoration: $base-link-text-decoration;
     cursor: pointer;
@@ -135,7 +135,7 @@ a,
 }
 
 a:hover,
-.uk-link:hover {
+.yb-link:hover {
     color: $base-link-hover-color;
     text-decoration: $base-link-hover-text-decoration;
     @include hook-base-link-hover();
@@ -264,8 +264,8 @@ img {
  * Preserve original image dimensions
  */
 
-.uk-img-preserve,
-.uk-img-preserve img { max-width: none; }
+.yb-img-preserve,
+.yb-img-preserve img { max-width: none; }
 
 /*
  * Correct overflow not hidden in IE 9/10/11.
@@ -336,37 +336,37 @@ h1, h2, h3, h4, h5, h6 {
  * Sizes
  */
 
-h1, .uk-h1 {
+h1, .yb-h1 {
     font-size: $base-h1-font-size;
     line-height: $base-h1-line-height;
     @include hook-base-h1();
 }
 
-h2, .uk-h2 {
+h2, .yb-h2 {
     font-size: $base-h2-font-size;
     line-height: $base-h2-line-height;
     @include hook-base-h2();
 }
 
-h3, .uk-h3 {
+h3, .yb-h3 {
     font-size: $base-h3-font-size;
     line-height: $base-h3-line-height;
     @include hook-base-h3();
 }
 
-h4, .uk-h4 {
+h4, .yb-h4 {
     font-size: $base-h4-font-size;
     line-height: $base-h4-line-height;
     @include hook-base-h4();
 }
 
-h5, .uk-h5 {
+h5, .yb-h5 {
     font-size: $base-h5-font-size;
     line-height: $base-h5-line-height;
     @include hook-base-h5();
 }
 
-h6, .uk-h6 {
+h6, .yb-h6 {
     font-size: $base-h6-font-size;
     line-height: $base-h6-line-height;
     @include hook-base-h6();

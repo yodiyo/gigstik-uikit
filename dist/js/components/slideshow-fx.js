@@ -59,7 +59,7 @@
                     clipfrom = ('rect('+ghostHeight+'px, '+(width*(i+1))+'px, '+ghostHeight+'px, '+(sliceWidth*i)+'px)');
                 }
 
-                bar = UI.$('<div class="uk-cover-background"></div>').css({
+                bar = UI.$('<div class="yb-cover-background"></div>').css({
                     'position'           : 'absolute',
                     'top'                : 0,
                     'left'               : 0,
@@ -131,7 +131,7 @@
 
             for (var i = 0; i < this.options.slices; i++) {
 
-                bar = UI.$('<div class="uk-cover-background"></div>').css({
+                bar = UI.$('<div class="yb-cover-background"></div>').css({
                     'position'           : 'absolute',
                     'top'                : 0,
                     'left'               : 0,
@@ -200,7 +200,7 @@
                         (boxWidth  * cols)       +'px'  // left
                     ];
 
-                    box = UI.$('<div class="uk-cover-background"></div>').css({
+                    box = UI.$('<div class="yb-cover-background"></div>').css({
                         'position'          : 'absolute',
                         'top'               : 0,
                         'left'              : 0,
@@ -274,7 +274,7 @@
                         (boxWidth  * cols)       +'px'  // left
                     ];
 
-                    box = UI.$('<div class="uk-cover-background"></div>').css({
+                    box = UI.$('<div class="yb-cover-background"></div>').css({
                         'position'          : 'absolute',
                         'top'               : 0,
                         'left'              : 0,

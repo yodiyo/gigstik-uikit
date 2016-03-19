@@ -22,11 +22,11 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-switcher]", context).each(function() {
+                UI.$("[data-yb-switcher]", context).each(function() {
                     var switcher = UI.$(this);
 
                     if (!switcher.data("switcher")) {
-                        var obj = UI.switcher(switcher, UI.Utils.options(switcher.attr("data-uk-switcher")));
+                        var obj = UI.switcher(switcher, UI.Utils.options(switcher.attr("data-yb-switcher")));
                     }
                 });
             });
@@ -45,7 +45,7 @@
 
                 this.connect = UI.$(this.options.connect);
 
-                this.connect.find(".uk-active").removeClass(".uk-active");
+                this.connect.find(".yb-active").removeClass(".yb-active");
 
                 // delegate switch commands within container content
                 if (this.connect.length) {
@@ -53,11 +53,11 @@
                     // Init ARIA for connect
                     this.connect.children().attr('aria-hidden', 'true');
 
-                    this.connect.on("click", '[data-uk-switcher-item]', function(e) {
+                    this.connect.on("click", '[data-yb-switcher-item]', function(e) {
 
                         e.preventDefault();
 
-                        var item = UI.$(this).attr('data-uk-switcher-item');
+                        var item = UI.$(this).attr('data-yb-switcher-item');
 
                         if ($this.index == item) return;
 
@@ -83,7 +83,7 @@
                 }
 
                 var toggles = this.find(this.options.toggle),
-                    active  = toggles.filter(".uk-active");
+                    active  = toggles.filter(".yb-active");
 
                 if (active.length) {
                     this.show(active, false);
@@ -147,14 +147,14 @@
                 animation = Animations.none;
             }
 
-            if (active.hasClass("uk-disabled")) return;
+            if (active.hasClass("yb-disabled")) return;
 
             // Update ARIA for Toggles
             toggles.attr('aria-expanded', 'false');
             active.attr('aria-expanded', 'true');
 
-            toggles.filter(".uk-active").removeClass("uk-active");
-            active.addClass("uk-active");
+            toggles.filter(".yb-active").removeClass("yb-active");
+            active.addClass("yb-active");
 
             if (this.options.connect && this.connect.length) {
 
@@ -168,15 +168,15 @@
 
                     var container = UI.$(this),
                         children  = UI.$(container.children()),
-                        current   = UI.$(children.filter('.uk-active')),
+                        current   = UI.$(children.filter('.yb-active')),
                         next      = UI.$(children.eq($this.index));
 
                         $this.animating = true;
 
                         animation.apply($this, [current, next]).then(function(){
 
-                            current.removeClass("uk-active");
-                            next.addClass("uk-active");
+                            current.removeClass("yb-active");
+                            next.addClass("yb-active");
 
                             // Update ARIA for connect
                             current.attr('aria-hidden', 'true');
@@ -203,20 +203,20 @@
         },
 
         'fade': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-fade', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-fade', current, next]);
         },
 
         'slide-bottom': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-bottom', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-bottom', current, next]);
         },
 
         'slide-top': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-top', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-top', current, next]);
         },
 
         'slide-vertical': function(current, next, dir) {
 
-            var anim = ['uk-animation-slide-top', 'uk-animation-slide-bottom'];
+            var anim = ['yb-animation-slide-top', 'yb-animation-slide-bottom'];
 
             if (current && current.index() > next.index()) {
                 anim.reverse();
@@ -226,16 +226,16 @@
         },
 
         'slide-left': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-left', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-left', current, next]);
         },
 
         'slide-right': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-right', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-right', current, next]);
         },
 
         'slide-horizontal': function(current, next, dir) {
 
-            var anim = ['uk-animation-slide-right', 'uk-animation-slide-left'];
+            var anim = ['yb-animation-slide-right', 'yb-animation-slide-left'];
 
             if (current && current.index() > next.index()) {
                 anim.reverse();
@@ -245,7 +245,7 @@
         },
 
         'scale': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-scale-up', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-scale-up', current, next]);
         }
     };
 
@@ -272,7 +272,7 @@
 
         release = function() {
 
-            if (current) current.hide().removeClass('uk-active '+clsOut+' uk-animation-reverse');
+            if (current) current.hide().removeClass('yb-active '+clsOut+' yb-animation-reverse');
 
             next.addClass(clsIn).one(UI.support.animation.end, function() {
 
@@ -293,12 +293,12 @@
 
             current.css('animation-duration', this.options.duration+'ms');
 
-            current.css('display', 'none').addClass(clsOut+' uk-animation-reverse').one(UI.support.animation.end, function() {
+            current.css('display', 'none').addClass(clsOut+' yb-animation-reverse').one(UI.support.animation.end, function() {
                 release();
             }.bind(this)).css('display', '');
 
         } else {
-            next.addClass('uk-active');
+            next.addClass('yb-active');
             release();
         }
 

@@ -1,34 +1,34 @@
 // Name:            Button
 // Description:     Defines styles for buttons
 //
-// Component:       `uk-button`
+// Component:       `yb-button`
 //
-// Sub-objects:     `uk-button-group`
-//                  `uk-button-dropdown`
+// Sub-objects:     `yb-button-group`
+//                  `yb-button-dropdown`
 //
-// Modifiers:       `uk-button-primary`
-//                  `uk-button-success`
-//                  `uk-button-danger`
-//                  `uk-button-link`
-//                  `uk-button-mini`
-//                  `uk-button-small`
-//                  `uk-button-large`
+// Modifiers:       `yb-button-primary`
+//                  `yb-button-success`
+//                  `yb-button-danger`
+//                  `yb-button-link`
+//                  `yb-button-mini`
+//                  `yb-button-small`
+//                  `yb-button-large`
 //
-// States:          `uk-active`
+// States:          `yb-active`
 //
 // Markup:
 //
-// <!-- uk-button-group -->
-// <div class="uk-button-group">
-//     <button class="uk-button"></button>
-//     <button class="uk-button"></button>
+// <!-- yb-button-group -->
+// <div class="yb-button-group">
+//     <button class="yb-button"></button>
+//     <button class="yb-button"></button>
 // </div>
 //
-// <!-- uk-button-dropdown -->
-// <div class="uk-button-dropdown" data-uk-dropdown>
-//     <button class="uk-button"></button>
-//     <div class="uk-dropdown uk-dropdown-small">
-//         <ul class="uk-nav uk-nav-dropdown">
+// <!-- yb-button-dropdown -->
+// <div class="yb-button-dropdown" data-yb-dropdown>
+//     <button class="yb-button"></button>
+//     <div class="yb-dropdown yb-dropdown-small">
+//         <ul class="yb-nav yb-nav-dropdown">
 //             <li><a href=""></a></li>
 //         </ul>
 //     </div>
@@ -105,7 +105,7 @@ $button-link-disabled-color:                     #999 !default;
  * Removes inner padding and border in Firefox 4+.
  */
 
-.uk-button::-moz-focus-inner {
+.yb-button::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
@@ -124,7 +124,7 @@ $button-link-disabled-color:                     #999 !default;
  * 11. Required for `a`.
  */
 
-.uk-button {
+.yb-button {
     /* 1 */
     -webkit-appearance: none;
     /* 2 */
@@ -156,7 +156,7 @@ $button-link-disabled-color:                     #999 !default;
     @include hook-button();
 }
 
-.uk-button:not(:disabled) { cursor: pointer; }
+.yb-button:not(:disabled) { cursor: pointer; }
 
 /*
  * Hover
@@ -165,8 +165,8 @@ $button-link-disabled-color:                     #999 !default;
  * 3. Required for `a` elements
  */
 
-.uk-button:hover,
-.uk-button:focus { // 1
+.yb-button:hover,
+.yb-button:focus { // 1
     background-color: $button-hover-background;
     color: $button-hover-color;
     /* 2 */
@@ -177,8 +177,8 @@ $button-link-disabled-color:                     #999 !default;
 }
 
 /* Active */
-.uk-button:active,
-.uk-button.uk-active {
+.yb-button:active,
+.yb-button.yb-active {
     background-color: $button-active-background;
     color: $button-active-color;
     @include hook-button-active();
@@ -189,78 +189,78 @@ $button-link-disabled-color:                     #999 !default;
  ========================================================================== */
 
 /*
- * Modifier: `uk-button-primary`
+ * Modifier: `yb-button-primary`
  */
 
-.uk-button-primary {
+.yb-button-primary {
     background-color: $button-primary-background;
     color: $button-primary-color;
     @include hook-button-primary();
 }
 
 /* Hover */
-.uk-button-primary:hover,
-.uk-button-primary:focus {
+.yb-button-primary:hover,
+.yb-button-primary:focus {
     background-color: $button-primary-hover-background;
     color: $button-primary-hover-color;
     @include hook-button-primary-hover();
 }
 
 /* Active */
-.uk-button-primary:active,
-.uk-button-primary.uk-active {
+.yb-button-primary:active,
+.yb-button-primary.yb-active {
     background-color: $button-primary-active-background;
     color: $button-primary-active-color;
     @include hook-button-primary-active();
 }
 
 /*
- * Modifier: `uk-button-success`
+ * Modifier: `yb-button-success`
  */
 
-.uk-button-success {
+.yb-button-success {
     background-color: $button-success-background;
     color: $button-success-color;
     @include hook-button-success();
 }
 
 /* Hover */
-.uk-button-success:hover,
-.uk-button-success:focus {
+.yb-button-success:hover,
+.yb-button-success:focus {
     background-color: $button-success-hover-background;
     color: $button-success-hover-color;
     @include hook-button-success-hover();
 }
 
 /* Active */
-.uk-button-success:active,
-.uk-button-success.uk-active {
+.yb-button-success:active,
+.yb-button-success.yb-active {
     background-color: $button-success-active-background;
     color: $button-success-active-color;
     @include hook-button-success-active();
 }
 
 /*
- * Modifier: `uk-button-danger`
+ * Modifier: `yb-button-danger`
  */
 
-.uk-button-danger {
+.yb-button-danger {
     background-color: $button-danger-background;
     color: $button-danger-color;
     @include hook-button-danger();
 }
 
 /* Hover */
-.uk-button-danger:hover,
-.uk-button-danger:focus {
+.yb-button-danger:hover,
+.yb-button-danger:focus {
     background-color: $button-danger-hover-background;
     color: $button-danger-hover-color;
     @include hook-button-danger-hover();
 }
 
 /* Active */
-.uk-button-danger:active,
-.uk-button-danger.uk-active {
+.yb-button-danger:active,
+.yb-button-danger.yb-active {
     background-color: $button-danger-active-background;
     color: $button-danger-active-color;
     @include hook-button-danger-active();
@@ -272,63 +272,63 @@ $button-link-disabled-color:                     #999 !default;
  ========================================================================== */
 
 /* Equal for all button types */
-.uk-button:disabled {
+.yb-button:disabled {
     background-color: $button-disabled-background;
     color: $button-disabled-color;
     @include hook-button-disable();
 }
 
 
-/* Modifier: `uk-button-link`
+/* Modifier: `yb-button-link`
  ========================================================================== */
 
  /* Reset */
-.uk-button-link,
-.uk-button-link:hover,
-.uk-button-link:focus,
-.uk-button-link:active,
-.uk-button-link.uk-active,
-.uk-button-link:disabled {
+.yb-button-link,
+.yb-button-link:hover,
+.yb-button-link:focus,
+.yb-button-link:active,
+.yb-button-link.yb-active,
+.yb-button-link:disabled {
     border-color: transparent;
     background: none;
     @include hook-button-link();
 }
 
 /* Color */
-.uk-button-link { color: $button-link-color; }
+.yb-button-link { color: $button-link-color; }
 
-.uk-button-link:hover,
-.uk-button-link:focus,
-.uk-button-link:active,
-.uk-button-link.uk-active {
+.yb-button-link:hover,
+.yb-button-link:focus,
+.yb-button-link:active,
+.yb-button-link.yb-active {
     color: $button-link-hover-color;
     text-decoration: $button-link-hover-text-decoration;
 }
 
-.uk-button-link:disabled { color: $button-link-disabled-color; }
+.yb-button-link:disabled { color: $button-link-disabled-color; }
 
 /* Focus */
-.uk-button-link:focus { outline: 1px dotted; }
+.yb-button-link:focus { outline: 1px dotted; }
 
 
 /* Size modifiers
  ========================================================================== */
 
-.uk-button-mini {
+.yb-button-mini {
     min-height: $button-mini-height;
     padding: 0 $button-mini-padding-horizontal;
     line-height: $button-mini-line-height;
     font-size: $button-mini-font-size;
 }
 
-.uk-button-small {
+.yb-button-small {
     min-height: $button-small-height;
     padding: 0 $button-small-padding-horizontal;
     line-height: $button-small-line-height;
     font-size: $button-small-font-size;
 }
 
-.uk-button-large {
+.yb-button-large {
     min-height: $button-large-height;
     padding: 0 $button-large-padding-horizontal;
     line-height: $button-large-line-height;
@@ -337,7 +337,7 @@ $button-link-disabled-color:                     #999 !default;
 }
 
 
-/* Sub-object `uk-button-group`
+/* Sub-object `yb-button-group`
  ========================================================================== */
 
 /*
@@ -348,7 +348,7 @@ $button-link-disabled-color:                     #999 !default;
  * 5. Remove whitespace between child elements when using `inline-block`
  */
 
-.uk-button-group {
+.yb-button-group {
     /* 1 */
     display: inline-block;
     vertical-align: middle;
@@ -360,13 +360,13 @@ $button-link-disabled-color:                     #999 !default;
     white-space: nowrap;
 }
 
-.uk-button-group > * { display: inline-block; }
+.yb-button-group > * { display: inline-block; }
 
 /* 5 */
-.uk-button-group .uk-button { vertical-align: top; }
+.yb-button-group .yb-button { vertical-align: top; }
 
 
-/* Sub-object: `uk-button-dropdown`
+/* Sub-object: `yb-button-dropdown`
  ========================================================================== */
 
 /*
@@ -374,7 +374,7 @@ $button-link-disabled-color:                     #999 !default;
  * 2. Create position context for dropdowns
  */
 
-.uk-button-dropdown {
+.yb-button-dropdown {
     /* 1 */
     display: inline-block;
     vertical-align: middle;

@@ -1,9 +1,9 @@
 // Name:            Close
 // Description:     Defines styles for a close button
 //
-// Component:       `uk-close`
+// Component:       `yb-close`
 //
-// Modifiers:       `uk-close-alt`
+// Modifiers:       `yb-close-alt`
 //
 // Uses:            Icon: FontAwesome
 //
@@ -30,7 +30,7 @@ $close-alt-background:                           #eee !default;
  * Removes inner padding and border in Firefox 4+.
  */
 
-.uk-close::-moz-focus-inner {
+.yb-close::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
@@ -46,7 +46,7 @@ $close-alt-background:                           #eee !default;
  * 8. Style
  */
 
-.uk-close {
+.yb-close {
     /* 1 */
     -webkit-appearance: none;
     /* 2 */
@@ -75,7 +75,7 @@ $close-alt-background:                           #eee !default;
 }
 
 /* Icon */
-.uk-close:after {
+.yb-close:after {
     display: block;
     content: "\f00d";
     font-family: FontAwesome;
@@ -88,8 +88,8 @@ $close-alt-background:                           #eee !default;
  * 3. Required for `a` elements
  */
 
-.uk-close:hover,
-.uk-close:focus { // 1
+.yb-close:hover,
+.yb-close:focus { // 1
     opacity: 0.5;
     /* 2 */
     outline: none;
@@ -103,7 +103,7 @@ $close-alt-background:                           #eee !default;
 /* Modifier
  ========================================================================== */
 
-.uk-close-alt {
+.yb-close-alt {
     padding: $close-alt-padding;
     border-radius: 50%;
     background: $close-alt-background;
@@ -112,14 +112,14 @@ $close-alt-background:                           #eee !default;
 }
 
 /* Hover */
-.uk-close-alt:hover,
-.uk-close-alt:focus { opacity: 1; }
+.yb-close-alt:hover,
+.yb-close-alt:focus { opacity: 1; }
 
 /* Icon */
-.uk-close-alt:after { opacity: 0.5; }
+.yb-close-alt:after { opacity: 0.5; }
 
-.uk-close-alt:hover:after,
-.uk-close-alt:focus:after { opacity: 0.8; }
+.yb-close-alt:hover:after,
+.yb-close-alt:focus:after { opacity: 0.8; }
 
 
 // Hooks

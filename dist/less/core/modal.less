@@ -1,30 +1,30 @@
 // Name:            Modal
 // Description:     Defines styles for modal dialogs
 //
-// Component:       `uk-modal`
+// Component:       `yb-modal`
 //
-// Sub-objects:     `uk-modal-dialog`
-//                  `uk-modal-close`
-//                  `uk-modal-header`
-//                  `uk-modal-footer`
-//                  `uk-modal-caption`
-//                  `uk-modal-spinner`
+// Sub-objects:     `yb-modal-dialog`
+//                  `yb-modal-close`
+//                  `yb-modal-header`
+//                  `yb-modal-footer`
+//                  `yb-modal-caption`
+//                  `yb-modal-spinner`
 //
-// Modifiers:       `uk-modal-dialog-lightbox`
-//                  `uk-modal-dialog-blank`
-//                  `uk-modal-dialog-large`
+// Modifiers:       `yb-modal-dialog-lightbox`
+//                  `yb-modal-dialog-blank`
+//                  `yb-modal-dialog-large`
 //
-// States:          `uk-open`
+// States:          `yb-open`
 //
-// Uses:            Close: `uk-close`
+// Uses:            Close: `yb-close`
 //
 // Markup:
 //
-// <!-- uk-modal -->
-// <a href="#modal" data-uk-modal=""></a>
-// <div id="modal" class="uk-modal">
-//     <div class="uk-modal-dialog">
-//         <a href="" class="uk-modal-close uk-close"></a>
+// <!-- yb-modal -->
+// <a href="#modal" data-yb-modal=""></a>
+// <div id="modal" class="yb-modal">
+//     <div class="yb-modal-dialog">
+//         <a href="" class="yb-modal-close yb-close"></a>
 //         <p></p>
 //     </div>
 // </div>
@@ -69,7 +69,7 @@
  * 7. force hardware acceleration to prevent browser rendering hiccups
  */
 
-.uk-modal {
+.yb-modal {
     /* 1 */
     display: none;
     /* 2 */
@@ -100,17 +100,17 @@
  * Open state
  */
 
-.uk-modal.uk-open { opacity: 1; }
+.yb-modal.yb-open { opacity: 1; }
 
 /*
  * Prevents duplicated scrollbar caused by 4.
  */
 
-.uk-modal-page,
-.uk-modal-page body { overflow: hidden; }
+.yb-modal-page,
+.yb-modal-page body { overflow: hidden; }
 
 
-/* Sub-object: `uk-modal-dialog`
+/* Sub-object: `yb-modal-dialog`
  ========================================================================== */
 
 /*
@@ -120,7 +120,7 @@
  * 4. Slide-in transition
  */
 
-.uk-modal-dialog {
+.yb-modal-dialog {
     /* 1 */
     position: relative;
     /* 2 */
@@ -148,7 +148,7 @@
      * Fit in small screen
      */
 
-    .uk-modal-dialog {
+    .yb-modal-dialog {
         width: auto;
         margin: 10px auto;
     }
@@ -159,7 +159,7 @@
  * Open state
  */
 
-.uk-open .uk-modal-dialog {
+.yb-open .yb-modal-dialog {
     /* 4 */
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -170,13 +170,13 @@
  * Remove margin from the last-child
  */
 
-.uk-modal-dialog > :not([class*='uk-modal-']):last-child { margin-bottom: 0; }
+.yb-modal-dialog > :not([class*='yb-modal-']):last-child { margin-bottom: 0; }
 
 
 /* Close in modal
  ========================================================================== */
 
-.uk-modal-dialog > .uk-close:first-child {
+.yb-modal-dialog > .yb-close:first-child {
     margin: -10px -10px 0 0;
     float: right;
 }
@@ -185,13 +185,13 @@
  * Remove margin from adjacent element
  */
 
- .uk-modal-dialog > .uk-close:first-child + :not([class*='uk-modal-']) { margin-top: 0; }
+ .yb-modal-dialog > .yb-close:first-child + :not([class*='yb-modal-']) { margin-top: 0; }
 
 
-/* Modifier: `uk-modal-dialog-lightbox`
+/* Modifier: `yb-modal-dialog-lightbox`
  ========================================================================== */
 
-.uk-modal-dialog-lightbox {
+.yb-modal-dialog-lightbox {
     margin: 15px auto;
     padding: 0;
     max-width: 95%;
@@ -203,7 +203,7 @@
  * Close button
  */
 
-.uk-modal-dialog-lightbox > .uk-close:first-child {
+.yb-modal-dialog-lightbox > .yb-close:first-child {
     position: absolute;
     top: -12px;
     right: -12px;
@@ -214,17 +214,17 @@
 /* Phone landscape and smaller */
 @media (max-width: @breakpoint-small-max) {
 
-    .uk-modal-dialog-lightbox > .uk-close:first-child {
+    .yb-modal-dialog-lightbox > .yb-close:first-child {
         top: -7px;
         right: -7px;
     }
 
 }
 
-/* Modifier: `uk-modal-dialog-blank`
+/* Modifier: `yb-modal-dialog-blank`
  ========================================================================== */
 
-.uk-modal-dialog-blank {
+.yb-modal-dialog-blank {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -237,7 +237,7 @@
 * Close button
 */
 
-.uk-modal-dialog-blank > .uk-close:first-child {
+.yb-modal-dialog-blank > .yb-close:first-child {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -247,33 +247,33 @@
 }
 
 
-/* Modifier: `uk-modal-dialog-large`
+/* Modifier: `yb-modal-dialog-large`
  ========================================================================== */
 
 /* Tablet and bigger */
 @media (min-width: @breakpoint-medium) {
 
-    .uk-modal-dialog-large { width: @modal-dialog-large-width; }
+    .yb-modal-dialog-large { width: @modal-dialog-large-width; }
 
 }
 
 /* Large screen and bigger */
 @media (min-width: @breakpoint-xlarge) {
 
-    .uk-modal-dialog-large { width: @modal-dialog-large-width-large; }
+    .yb-modal-dialog-large { width: @modal-dialog-large-width-large; }
 
 }
 
 
-/* Sub-Object: `uk-modal-header` and `uk-modal-footer`
+/* Sub-Object: `yb-modal-header` and `yb-modal-footer`
  ========================================================================== */
 
-.uk-modal-header {
+.yb-modal-header {
     margin-bottom: @modal-header-margin-bottom;
     .hook-modal-header;
 }
 
-.uk-modal-footer {
+.yb-modal-footer {
     margin-top: @modal-footer-margin-top;
     .hook-modal-footer;
 }
@@ -282,14 +282,14 @@
  * Remove margin from the last-child
  */
 
-.uk-modal-header  > :last-child,
-.uk-modal-footer  > :last-child { margin-bottom: 0; }
+.yb-modal-header  > :last-child,
+.yb-modal-footer  > :last-child { margin-bottom: 0; }
 
 
-/* Sub-Object: `uk-modal-caption`
+/* Sub-Object: `yb-modal-caption`
  ========================================================================== */
 
-.uk-modal-caption {
+.yb-modal-caption {
     position: absolute;
     left: 0;
     right: 0;
@@ -304,10 +304,10 @@
 }
 
 
-/* Sub-Object: `uk-modal-spinner`
+/* Sub-Object: `yb-modal-spinner`
  ========================================================================== */
 
-.uk-modal-spinner {
+.yb-modal-spinner {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -318,11 +318,11 @@
     .hook-modal-spinner;
 }
 
-.uk-modal-spinner:after {
+.yb-modal-spinner:after {
     content: "\f110";
     font-family: FontAwesome;
-    -webkit-animation: uk-rotate 2s infinite linear;
-    animation: uk-rotate 2s infinite linear;
+    -webkit-animation: yb-rotate 2s infinite linear;
+    animation: yb-rotate 2s infinite linear;
 }
 
 

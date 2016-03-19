@@ -21,8 +21,8 @@
             msgResultsHeader   : 'Search Results',
             msgMoreResults     : 'More Results',
             msgNoResults       : 'No results found',
-            template           : '<ul class="uk-nav uk-nav-search uk-autocomplete-results">\
-                                      {{#msgResultsHeader}}<li class="uk-nav-header uk-skip">{{msgResultsHeader}}</li>{{/msgResultsHeader}}\
+            template           : '<ul class="yb-nav yb-nav-search yb-autocomplete-results">\
+                                      {{#msgResultsHeader}}<li class="yb-nav-header yb-skip">{{msgResultsHeader}}</li>{{/msgResultsHeader}}\
                                       {{#items && items.length}}\
                                           {{~items}}\
                                           <li data-url="{{!$item.url}}">\
@@ -33,12 +33,12 @@
                                           </li>\
                                           {{/items}}\
                                           {{#msgMoreResults}}\
-                                              <li class="uk-nav-divider uk-skip"></li>\
-                                              <li class="uk-search-moreresults" data-moreresults="true"><a href="#" onclick="jQuery(this).closest(\'form\').submit();">{{msgMoreResults}}</a></li>\
+                                              <li class="yb-nav-divider yb-skip"></li>\
+                                              <li class="yb-search-moreresults" data-moreresults="true"><a href="#" onclick="jQuery(this).closest(\'form\').submit();">{{msgMoreResults}}</a></li>\
                                           {{/msgMoreResults}}\
                                       {{/end}}\
                                       {{^items.length}}\
-                                        {{#msgNoResults}}<li class="uk-skip"><a>{{msgNoResults}}</a></li>{{/msgNoResults}}\
+                                        {{#msgNoResults}}<li class="yb-skip"><a>{{msgNoResults}}</a></li>{{/msgNoResults}}\
                                       {{/end}}\
                                   </ul>',
 
@@ -54,11 +54,11 @@
         boot: function() {
 
             // init code
-            UI.$html.on("focus.search.uikit", "[data-uk-search]", function(e) {
+            UI.$html.on("focus.search.uikit", "[data-yb-search]", function(e) {
                 var ele =UI.$(this);
 
                 if (!ele.data("search")) {
-                    UI.search(ele, UI.Utils.options(ele.attr("data-uk-search")));
+                    UI.search(ele, UI.Utils.options(ele.attr("data-yb-search")));
                 }
             });
         },
@@ -68,13 +68,13 @@
 
             this.autocomplete = UI.autocomplete(this.element, this.options);
 
-            this.autocomplete.dropdown.addClass('uk-dropdown-search');
+            this.autocomplete.dropdown.addClass('yb-dropdown-search');
 
             this.autocomplete.input.on("keyup", function(){
-                $this.element[$this.autocomplete.input.val() ? "addClass":"removeClass"]("uk-active");
+                $this.element[$this.autocomplete.input.val() ? "addClass":"removeClass"]("yb-active");
             }).closest("form").on("reset", function(){
                 $this.value="";
-                $this.element.removeClass("uk-active");
+                $this.element.removeClass("yb-active");
             });
 
             this.on('selectitem.uk.autocomplete', function(e, data) {

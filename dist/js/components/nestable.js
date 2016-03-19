@@ -34,17 +34,17 @@
     UI.component('nestable', {
 
         defaults: {
-            listBaseClass   : 'uk-nestable',
-            listClass       : 'uk-nestable-list',
-            listItemClass   : 'uk-nestable-item',
-            dragClass       : 'uk-nestable-dragged',
-            movingClass     : 'uk-nestable-moving',
-            noChildrenClass : 'uk-nestable-nochildren',
-            emptyClass      : 'uk-nestable-empty',
+            listBaseClass   : 'yb-nestable',
+            listClass       : 'yb-nestable-list',
+            listItemClass   : 'yb-nestable-item',
+            dragClass       : 'yb-nestable-dragged',
+            movingClass     : 'yb-nestable-moving',
+            noChildrenClass : 'yb-nestable-nochildren',
+            emptyClass      : 'yb-nestable-empty',
             handleClass     : '',
-            collapsedClass  : 'uk-collapsed',
-            placeholderClass: 'uk-nestable-placeholder',
-            noDragClass     : 'uk-nestable-nodrag',
+            collapsedClass  : 'yb-collapsed',
+            placeholderClass: 'yb-nestable-placeholder',
+            noDragClass     : 'yb-nestable-nodrag',
             group           : false,
             maxDepth        : 10,
             threshold       : 20,
@@ -71,12 +71,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-nestable]", context).each(function(){
+                UI.$("[data-yb-nestable]", context).each(function(){
 
                     var ele = UI.$(this);
 
                     if (!ele.data("nestable")) {
-                        UI.nestable(ele, UI.Utils.options(ele.attr("data-uk-nestable")));
+                        UI.nestable(ele, UI.Utils.options(ele.attr("data-yb-nestable")));
                     }
                 });
             });
@@ -353,12 +353,12 @@
         setParent: function(li) {
 
             if (li.children(this.options._listClass).length) {
-                li.addClass("uk-parent");
+                li.addClass("yb-parent");
             }
         },
 
         unsetParent: function(li) {
-            li.removeClass('uk-parent '+this.options.collapsedClass);
+            li.removeClass('yb-parent '+this.options.collapsedClass);
             li.children(this.options._listClass).remove();
         },
 

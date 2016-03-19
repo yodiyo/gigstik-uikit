@@ -3,7 +3,7 @@ CUSTOM JS
 ======*/
 
 /* wait for element to come into view */
-$('[data-uk-scrollspy]').on('inview.uk.scrollspy', function(){
+$('[data-yb-scrollspy]').on('inview.uk.scrollspy', function(){
     
     /* get attribute on progress radial */
      progress= function() {
@@ -14,4 +14,4 @@ $('[data-uk-scrollspy]').on('inview.uk.scrollspy', function(){
 });
 
 /* hide first  phone image on page load */
-$('#phone-img li:first-child').removeClass('uk-active');
+$('#phone-img li:first-child').removeClass('yb-active');

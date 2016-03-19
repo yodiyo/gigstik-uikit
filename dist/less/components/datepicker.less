@@ -1,14 +1,14 @@
 // Name:            Datepicker
 // Description:     Defines styles for a datepicker
 //
-// Component:       `uk-datepicker`
+// Component:       `yb-datepicker`
 //
-// Modifiers:       `uk-datepicker-nav`
-//                  `uk-datepicker-previous`
-//                  `uk-datepicker-next`
-//                  `uk-datepicker-heading`
-//                  `uk-datepicker-table`
-//                  `uk-datepicker-table-muted`
+// Modifiers:       `yb-datepicker-nav`
+//                  `yb-datepicker-previous`
+//                  `yb-datepicker-next`
+//                  `yb-datepicker-heading`
+//                  `yb-datepicker-table`
+//                  `yb-datepicker-table-muted`
 //
 // ========================================================================
 
@@ -17,7 +17,7 @@
 // ========================================================================
 
 @datepicker-z-index:                            1050;
-@datepicker-animation:                          uk-fade;
+@datepicker-animation:                          yb-fade;
 
 @datepicker-nav-height:                         20px;
 @datepicker-nav-margin-bottom:                  15px;
@@ -52,7 +52,7 @@
  * 4. Needed for scale animation
  */
 
-.uk-datepicker {
+.yb-datepicker {
     /* 1 */
     z-index: @datepicker-z-index;
     /* 2 */
@@ -66,10 +66,10 @@
 }
 
 
-/* Sub-object: `uk-datepicker-nav`
+/* Sub-object: `yb-datepicker-nav`
 ========================================================================== */
 
-.uk-datepicker-nav {
+.yb-datepicker-nav {
     margin-bottom: @datepicker-nav-margin-bottom;
     text-align: center;
     line-height: @datepicker-nav-height;
@@ -80,61 +80,61 @@
  * Micro clearfix
  */
 
-.uk-datepicker-nav:before,
-.uk-datepicker-nav:after {
+.yb-datepicker-nav:before,
+.yb-datepicker-nav:after {
     content: "";
     display: table;
 }
 
-.uk-datepicker-nav:after { clear: both; }
+.yb-datepicker-nav:after { clear: both; }
 
 /*
  * Previous and next navigation
  */
 
-.uk-datepicker-nav a {
+.yb-datepicker-nav a {
     color: @datepicker-nav-color;
     text-decoration: none;
     .hook-datepicker-nav-item;
 }
 
-.uk-datepicker-nav a:hover { color: @datepicker-nav-hover-color; }
+.yb-datepicker-nav a:hover { color: @datepicker-nav-hover-color; }
 
-.uk-datepicker-previous { float: left; }
-.uk-datepicker-next { float: right; }
+.yb-datepicker-previous { float: left; }
+.yb-datepicker-next { float: right; }
 
-.uk-datepicker-previous:after,
-.uk-datepicker-next:after {
+.yb-datepicker-previous:after,
+.yb-datepicker-next:after {
     width: @datepicker-nav-height;
     font-family: FontAwesome;
 }
 
-.uk-datepicker-previous:after { content: @datepicker-previous-icon; }
-.uk-datepicker-next:after { content: @datepicker-next-icon; }
+.yb-datepicker-previous:after { content: @datepicker-previous-icon; }
+.yb-datepicker-next:after { content: @datepicker-next-icon; }
 
 
-/* Sub-object: `uk-datepicker-heading`
+/* Sub-object: `yb-datepicker-heading`
 ========================================================================== */
 
-.uk-datepicker-heading {}
+.yb-datepicker-heading {}
 
 
-/* Sub-object: `uk-datepicker-table`
+/* Sub-object: `yb-datepicker-table`
 ========================================================================== */
 
 /* Block element behavior */
-.uk-datepicker-table { width: 100%; }
+.yb-datepicker-table { width: 100%; }
 
-.uk-datepicker-table th,
-.uk-datepicker-table td { padding: 2px; }
+.yb-datepicker-table th,
+.yb-datepicker-table td { padding: 2px; }
 
-.uk-datepicker-table th { font-size: 12px; }
+.yb-datepicker-table th { font-size: 12px; }
 
 /*
  * Item
  */
 
-.uk-datepicker-table a {
+.yb-datepicker-table a {
     display: block;
     width: @datepicker-table-width;
     line-height: @datepicker-table-height;
@@ -145,10 +145,10 @@
 }
 
 /*
- * Sub-object: `uk-datepicker-table-muted`
+ * Sub-object: `yb-datepicker-table-muted`
  */
 
-a.uk-datepicker-table-muted { color: @datepicker-table-muted-color; }
+a.yb-datepicker-table-muted { color: @datepicker-table-muted-color; }
 
 /*
  * Hover
@@ -156,8 +156,8 @@ a.uk-datepicker-table-muted { color: @datepicker-table-muted-color; }
  * 2. Remove default focus style
  */
 
-.uk-datepicker-table a:hover,
-.uk-datepicker-table a:focus { // 1
+.yb-datepicker-table a:hover,
+.yb-datepicker-table a:focus { // 1
     background-color: @datepicker-table-hover-background;
     color: @datepicker-table-hover-color;
     /* 2 */
@@ -166,7 +166,7 @@ a.uk-datepicker-table-muted { color: @datepicker-table-muted-color; }
 }
 
 /* OnClick */
-.uk-datepicker-table a:active {
+.yb-datepicker-table a:active {
     background-color: @datepicker-table-onclick-background;
     color: @datepicker-table-onclick-color;
     .hook-datepicker-table-item-onclick;
@@ -176,7 +176,7 @@ a.uk-datepicker-table-muted { color: @datepicker-table-muted-color; }
  * Active
  */
 
-.uk-datepicker-table a.uk-active {
+.yb-datepicker-table a.yb-active {
     background: @datepicker-table-active-background;
     color: @datepicker-table-active-color;
     .hook-datepicker-table-item-active;

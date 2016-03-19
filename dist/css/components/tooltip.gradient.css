@@ -1,300 +1,3 @@
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ========================================================================
    Component: Tooltip
  ========================================================================== */
@@ -304,7 +7,7 @@
  * 3. Set dimensions
  * 4. Set style
  */
-.uk-tooltip {
+.yb-tooltip {
   /* 1 */
   display: none;
   /* 2 */
@@ -327,7 +30,7 @@
 /*
  * 1. Dashed is less antialised than solid
  */
-.uk-tooltip:after {
+.yb-tooltip:after {
   content: "";
   display: block;
   position: absolute;
@@ -341,9 +44,9 @@
 /*
  * Top
  */
-.uk-tooltip-top:after,
-.uk-tooltip-top-left:after,
-.uk-tooltip-top-right:after {
+.yb-tooltip-top:after,
+.yb-tooltip-top-left:after,
+.yb-tooltip-top-right:after {
   bottom: -5px;
   border-top-style: solid;
   border-bottom: none;
@@ -354,9 +57,9 @@
 /*
  * Bottom
  */
-.uk-tooltip-bottom:after,
-.uk-tooltip-bottom-left:after,
-.uk-tooltip-bottom-right:after {
+.yb-tooltip-bottom:after,
+.yb-tooltip-bottom-left:after,
+.yb-tooltip-bottom-right:after {
   top: -5px;
   border-bottom-style: solid;
   border-top: none;
@@ -367,29 +70,29 @@
 /*
  * Top/Bottom center
  */
-.uk-tooltip-top:after,
-.uk-tooltip-bottom:after {
+.yb-tooltip-top:after,
+.yb-tooltip-bottom:after {
   left: 50%;
   margin-left: -5px;
 }
 /*
  * Top/Bottom left
  */
-.uk-tooltip-top-left:after,
-.uk-tooltip-bottom-left:after {
+.yb-tooltip-top-left:after,
+.yb-tooltip-bottom-left:after {
   left: 10px;
 }
 /*
  * Top/Bottom right
  */
-.uk-tooltip-top-right:after,
-.uk-tooltip-bottom-right:after {
+.yb-tooltip-top-right:after,
+.yb-tooltip-bottom-right:after {
   right: 10px;
 }
 /*
  * Left
  */
-.uk-tooltip-left:after {
+.yb-tooltip-left:after {
   right: -5px;
   top: 50%;
   margin-top: -5px;
@@ -402,7 +105,7 @@
 /*
  * Right
  */
-.uk-tooltip-right:after {
+.yb-tooltip-right:after {
   left: -5px;
   top: 50%;
   margin-top: -5px;

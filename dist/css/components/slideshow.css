@@ -1,300 +1,3 @@
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ========================================================================
    Component: Slideshow
  ========================================================================== */
@@ -306,7 +9,7 @@
  * 5. Clip child elements
  * 6. Deactivate browser history navigation in IE11
  */
-.uk-slideshow {
+.yb-slideshow {
   /* 1 */
   position: relative;
   /* 2 */
@@ -328,7 +31,7 @@
  * 2. Expand to parent container width
  * 3. Hide by default
  */
-.uk-slideshow > li {
+.yb-slideshow > li {
   /* 1 */
   position: absolute;
   top: 0;
@@ -343,7 +46,7 @@
  * 1. Stack at first
  * 2. Show slide
  */
-.uk-slideshow > .uk-active {
+.yb-slideshow > .yb-active {
   /* 1 */
   z-index: 10;
   /* 2 */
@@ -352,19 +55,19 @@
 /*
  * Hide default images which is only relevant to keep existing proportions
  */
-.uk-slideshow > li > img {
+.yb-slideshow > li > img {
   visibility: hidden;
 }
 /*
  * Pointer for controls
  */
-[data-uk-slideshow-slide] {
+[data-yb-slideshow-slide] {
   cursor: pointer;
 }
-/* Modifier: `uk-slideshow-fullscreen`
+/* Modifier: `yb-slideshow-fullscreen`
  ========================================================================== */
-.uk-slideshow-fullscreen,
-.uk-slideshow-fullscreen > li {
+.yb-slideshow-fullscreen,
+.yb-slideshow-fullscreen > li {
   height: 100vh;
 }
 /* Animations
@@ -372,61 +75,61 @@
 /*
  * Fade
  */
-.uk-slideshow-fade-in {
-  -webkit-animation: uk-fade 0.5s linear;
-  animation: uk-fade 0.5s linear;
+.yb-slideshow-fade-in {
+  -webkit-animation: yb-fade 0.5s linear;
+  animation: yb-fade 0.5s linear;
 }
-.uk-slideshow-fade-out {
-  -webkit-animation: uk-fade 0.5s linear reverse;
-  animation: uk-fade 0.5s linear reverse;
+.yb-slideshow-fade-out {
+  -webkit-animation: yb-fade 0.5s linear reverse;
+  animation: yb-fade 0.5s linear reverse;
 }
 /*
  * Scroll
  */
-.uk-slideshow-scroll-forward-in {
-  -webkit-animation: uk-slide-right 0.5s ease-in-out;
-  animation: uk-slide-right 0.5s ease-in-out;
+.yb-slideshow-scroll-forward-in {
+  -webkit-animation: yb-slide-right 0.5s ease-in-out;
+  animation: yb-slide-right 0.5s ease-in-out;
 }
-.uk-slideshow-scroll-forward-out {
-  -webkit-animation: uk-slide-left 0.5s ease-in-out reverse;
-  animation: uk-slide-left 0.5s ease-in-out reverse;
+.yb-slideshow-scroll-forward-out {
+  -webkit-animation: yb-slide-left 0.5s ease-in-out reverse;
+  animation: yb-slide-left 0.5s ease-in-out reverse;
 }
-.uk-slideshow-scroll-backward-in {
-  -webkit-animation: uk-slide-left 0.5s ease-in-out;
-  animation: uk-slide-left 0.5s ease-in-out;
+.yb-slideshow-scroll-backward-in {
+  -webkit-animation: yb-slide-left 0.5s ease-in-out;
+  animation: yb-slide-left 0.5s ease-in-out;
 }
-.uk-slideshow-scroll-backward-out {
-  -webkit-animation: uk-slide-right 0.5s ease-in-out reverse;
-  animation: uk-slide-right 0.5s ease-in-out reverse;
+.yb-slideshow-scroll-backward-out {
+  -webkit-animation: yb-slide-right 0.5s ease-in-out reverse;
+  animation: yb-slide-right 0.5s ease-in-out reverse;
 }
 /*
  * Scale
  */
-.uk-slideshow-scale-out {
-  -webkit-animation: uk-fade-scale-15 0.5s ease-in-out reverse;
-  animation: uk-fade-scale-15 0.5s ease-in-out reverse;
+.yb-slideshow-scale-out {
+  -webkit-animation: yb-fade-scale-15 0.5s ease-in-out reverse;
+  animation: yb-fade-scale-15 0.5s ease-in-out reverse;
 }
 /*
  * Swipe
  */
-.uk-slideshow-swipe-forward-in {
-  -webkit-animation: uk-slide-left-33 0.5s ease-in-out;
-  animation: uk-slide-left-33 0.5s ease-in-out;
+.yb-slideshow-swipe-forward-in {
+  -webkit-animation: yb-slide-left-33 0.5s ease-in-out;
+  animation: yb-slide-left-33 0.5s ease-in-out;
 }
-.uk-slideshow-swipe-forward-out {
-  -webkit-animation: uk-slide-left 0.5s ease-in-out reverse;
-  animation: uk-slide-left 0.5s ease-in-out reverse;
+.yb-slideshow-swipe-forward-out {
+  -webkit-animation: yb-slide-left 0.5s ease-in-out reverse;
+  animation: yb-slide-left 0.5s ease-in-out reverse;
 }
-.uk-slideshow-swipe-backward-in {
-  -webkit-animation: uk-slide-right-33 0.5s ease-in-out;
-  animation: uk-slide-right-33 0.5s ease-in-out;
+.yb-slideshow-swipe-backward-in {
+  -webkit-animation: yb-slide-right-33 0.5s ease-in-out;
+  animation: yb-slide-right-33 0.5s ease-in-out;
 }
-.uk-slideshow-swipe-backward-out {
-  -webkit-animation: uk-slide-right 0.5s ease-in-out reverse;
-  animation: uk-slide-right 0.5s ease-in-out reverse;
+.yb-slideshow-swipe-backward-out {
+  -webkit-animation: yb-slide-right 0.5s ease-in-out reverse;
+  animation: yb-slide-right 0.5s ease-in-out reverse;
 }
-.uk-slideshow-swipe-forward-in:before,
-.uk-slideshow-swipe-backward-in:before {
+.yb-slideshow-swipe-forward-in:before,
+.yb-slideshow-swipe-backward-in:before {
   content: '';
   position: absolute;
   top: 0;
@@ -435,6 +138,6 @@
   right: 0;
   z-index: 1;
   background: rgba(0, 0, 0, 0.6);
-  -webkit-animation: uk-fade 0.5s ease-in-out reverse;
-  animation: uk-fade 0.5s ease-in-out reverse;
+  -webkit-animation: yb-fade 0.5s ease-in-out reverse;
+  animation: yb-fade 0.5s ease-in-out reverse;
 }

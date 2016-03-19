@@ -1,14 +1,14 @@
 // Name:            Form select
 // Description:     Extends form component
 //
-// Component:       `uk-form`
+// Component:       `yb-form`
 //
-// Sub-objects:     `uk-form-select`
+// Sub-objects:     `yb-form-select`
 //
 // Markup:
 //
-// <!-- uk-form-select -->
-// <div class="uk-form-select" data-uk-form-select>
+// <!-- yb-form-select -->
+// <div class="yb-form-select" data-yb-form-select>
 //     <span></span>
 //     <select>
 //         <option value=""></option>
@@ -28,7 +28,7 @@
  * 3. Clip content
  */
 
-.uk-form-select {
+.yb-form-select {
     /* 1 */
     display: inline-block;
     vertical-align: middle;
@@ -43,7 +43,7 @@
  * 1. Required for Webkit to make `height` work
  */
 
-.uk-form-select select {
+.yb-form-select select {
     position: absolute;
     top: 0;
     z-index: 1;

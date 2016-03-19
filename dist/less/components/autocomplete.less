@@ -1,11 +1,11 @@
 // Name:            Autocomplete
 // Description:     Provides suggestions while you type into an input field
 //
-// Component:       `uk-autocomplete`
+// Component:       `yb-autocomplete`
 //
-// Modifier:	    (Nav) `uk-nav-autocomplete`
+// Modifier:	    (Nav) `yb-nav-autocomplete`
 //
-// States:          `uk-active`
+// States:          `yb-active`
 //
 // ========================================================================
 
@@ -33,7 +33,7 @@
  * 4. Remove the gap between the container and its child element
  */
 
-.uk-autocomplete {
+.yb-autocomplete {
     /* 1 */
     display: inline-block;
     /* 2 */
@@ -45,14 +45,14 @@
 }
 
 
-/* Nav modifier `uk-nav-autocomplete`
+/* Nav modifier `yb-nav-autocomplete`
  ========================================================================== */
 
 /*
  * Items
  */
 
-.uk-nav-autocomplete > li > a {
+.yb-nav-autocomplete > li > a {
     color: @nav-autocomplete-color;
     .hook-nav-autocomplete;
 }
@@ -62,7 +62,7 @@
  * 1. Remove default focus style
  */
 
-.uk-nav-autocomplete > li.uk-active > a {
+.yb-nav-autocomplete > li.yb-active > a {
     background: @nav-autocomplete-active-background;
     color: @nav-autocomplete-active-color;
     /* 1 */
@@ -71,19 +71,19 @@
 }
 
 /*
- * Sub-object: `uk-nav-header`
+ * Sub-object: `yb-nav-header`
  */
 
-.uk-nav-autocomplete .uk-nav-header {
+.yb-nav-autocomplete .yb-nav-header {
     color: @nav-autocomplete-header-color;
     .hook-nav-autocomplete-header;
 }
 
 /*
- * Sub-object: `uk-nav-divider`
+ * Sub-object: `yb-nav-divider`
  */
 
-.uk-nav-autocomplete .uk-nav-divider {
+.yb-nav-autocomplete .yb-nav-divider {
     border-top: @nav-autocomplete-divider-border-width solid @nav-autocomplete-divider-border;
     .hook-nav-autocomplete-divider;
 }

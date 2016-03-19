@@ -1,300 +1,3 @@
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ========================================================================
    Component: Datepicker
  ========================================================================== */
@@ -304,21 +7,21 @@
  * 3. Set animation
  * 4. Needed for scale animation
  */
-.uk-datepicker {
+.yb-datepicker {
   /* 1 */
   z-index: 1050;
   /* 2 */
   width: auto;
   /* 3 */
-  -webkit-animation: uk-fade 0.2s ease-in-out;
-  animation: uk-fade 0.2s ease-in-out;
+  -webkit-animation: yb-fade 0.2s ease-in-out;
+  animation: yb-fade 0.2s ease-in-out;
   /* 4 */
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
 }
-/* Sub-object: `uk-datepicker-nav`
+/* Sub-object: `yb-datepicker-nav`
 ========================================================================== */
-.uk-datepicker-nav {
+.yb-datepicker-nav {
   margin-bottom: 15px;
   text-align: center;
   line-height: 20px;
@@ -326,60 +29,60 @@
 /*
  * Micro clearfix
  */
-.uk-datepicker-nav:before,
-.uk-datepicker-nav:after {
+.yb-datepicker-nav:before,
+.yb-datepicker-nav:after {
   content: "";
   display: table;
 }
-.uk-datepicker-nav:after {
+.yb-datepicker-nav:after {
   clear: both;
 }
 /*
  * Previous and next navigation
  */
-.uk-datepicker-nav a {
+.yb-datepicker-nav a {
   color: #444;
   text-decoration: none;
 }
-.uk-datepicker-nav a:hover {
+.yb-datepicker-nav a:hover {
   color: #444;
 }
-.uk-datepicker-previous {
+.yb-datepicker-previous {
   float: left;
 }
-.uk-datepicker-next {
+.yb-datepicker-next {
   float: right;
 }
-.uk-datepicker-previous:after,
-.uk-datepicker-next:after {
+.yb-datepicker-previous:after,
+.yb-datepicker-next:after {
   width: 20px;
   font-family: FontAwesome;
 }
-.uk-datepicker-previous:after {
+.yb-datepicker-previous:after {
   content: "\f053";
 }
-.uk-datepicker-next:after {
+.yb-datepicker-next:after {
   content: "\f054";
 }
-/* Sub-object: `uk-datepicker-heading`
+/* Sub-object: `yb-datepicker-heading`
 ========================================================================== */
-/* Sub-object: `uk-datepicker-table`
+/* Sub-object: `yb-datepicker-table`
 ========================================================================== */
 /* Block element behavior */
-.uk-datepicker-table {
+.yb-datepicker-table {
   width: 100%;
 }
-.uk-datepicker-table th,
-.uk-datepicker-table td {
+.yb-datepicker-table th,
+.yb-datepicker-table td {
   padding: 2px;
 }
-.uk-datepicker-table th {
+.yb-datepicker-table th {
   font-size: 12px;
 }
 /*
  * Item
  */
-.uk-datepicker-table a {
+.yb-datepicker-table a {
   display: block;
   width: 26px;
   line-height: 24px;
@@ -391,9 +94,9 @@
   background-origin: border-box;
 }
 /*
- * Sub-object: `uk-datepicker-table-muted`
+ * Sub-object: `yb-datepicker-table-muted`
  */
-a.uk-datepicker-table-muted {
+a.yb-datepicker-table-muted {
   color: #999;
 }
 /*
@@ -401,8 +104,8 @@ a.uk-datepicker-table-muted {
  * 1. Apply hover style also to focus state
  * 2. Remove default focus style
  */
-.uk-datepicker-table a:hover,
-.uk-datepicker-table a:focus {
+.yb-datepicker-table a:hover,
+.yb-datepicker-table a:focus {
   background-color: #fafafa;
   color: #444;
   /* 2 */
@@ -412,7 +115,7 @@ a.uk-datepicker-table-muted {
   text-shadow: 0 1px 0 #fff;
 }
 /* OnClick */
-.uk-datepicker-table a:active {
+.yb-datepicker-table a:active {
   background-color: #f5f5f5;
   color: #444;
   border-color: rgba(0, 0, 0, 0.2);
@@ -423,7 +126,7 @@ a.uk-datepicker-table-muted {
 /*
  * Active
  */
-.uk-datepicker-table a.uk-active {
+.yb-datepicker-table a.yb-active {
   background: #009dd8;
   color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.2);

@@ -38,9 +38,9 @@
 
                 var content = '', i;
 
-                content += '<div class="uk-datepicker-nav">';
-                content += '<a href="" class="uk-datepicker-previous"></a>';
-                content += '<a href="" class="uk-datepicker-next"></a>';
+                content += '<div class="yb-datepicker-nav">';
+                content += '<a href="" class="yb-datepicker-previous"></a>';
+                content += '<a href="" class="yb-datepicker-next"></a>';
 
                 if (UI.formSelect) {
 
@@ -54,7 +54,7 @@
                         }
                     }
 
-                    months = '<span class="uk-form-select">'+ opts.i18n.months[data.month] + '<select class="update-picker-month">'+options.join('')+'</select></span>';
+                    months = '<span class="yb-form-select">'+ opts.i18n.months[data.month] + '<select class="update-picker-month">'+options.join('')+'</select></span>';
 
                     // --
 
@@ -71,17 +71,17 @@
                         }
                     }
 
-                    years  = '<span class="uk-form-select">'+ data.year + '<select class="update-picker-year">'+options.join('')+'</select></span>';
+                    years  = '<span class="yb-form-select">'+ data.year + '<select class="update-picker-year">'+options.join('')+'</select></span>';
 
-                    content += '<div class="uk-datepicker-heading">'+ months + ' ' + years +'</div>';
+                    content += '<div class="yb-datepicker-heading">'+ months + ' ' + years +'</div>';
 
                 } else {
-                    content += '<div class="uk-datepicker-heading">'+ opts.i18n.months[data.month] +' '+ data.year+'</div>';
+                    content += '<div class="yb-datepicker-heading">'+ opts.i18n.months[data.month] +' '+ data.year+'</div>';
                 }
 
                 content += '</div>';
 
-                content += '<table class="uk-datepicker-table">';
+                content += '<table class="yb-datepicker-table">';
                 content += '<thead>';
                 for(i = 0; i < data.weekdays.length; i++) {
                     if (data.weekdays[i]) {
@@ -99,9 +99,9 @@
                                 var day = data.days[i][d],
                                     cls = [];
 
-                                if(!day.inmonth) cls.push("uk-datepicker-table-muted");
-                                if(day.selected) cls.push("uk-active");
-                                if(day.disabled) cls.push('uk-datepicker-date-disabled uk-datepicker-table-muted');
+                                if(!day.inmonth) cls.push("yb-datepicker-table-muted");
+                                if(day.selected) cls.push("yb-active");
+                                if(day.disabled) cls.push('yb-datepicker-date-disabled yb-datepicker-table-muted');
 
                                 content += '<td><a href="" class="'+cls.join(" ")+'" data-date="'+day.day.format()+'">'+day.day.format("D")+'</a></td>';
                             }
@@ -127,13 +127,13 @@
             });
 
             // init code
-            UI.$html.on("focus.datepicker.uikit", "[data-uk-datepicker]", function(e) {
+            UI.$html.on("focus.datepicker.uikit", "[data-yb-datepicker]", function(e) {
 
                 var ele = UI.$(this);
 
                 if (!ele.data("datepicker")) {
                     e.preventDefault();
-                    UI.datepicker(ele, UI.Utils.options(ele.attr("data-uk-datepicker")));
+                    UI.datepicker(ele, UI.Utils.options(ele.attr("data-yb-datepicker")));
                     ele.trigger("focus");
                 }
             });
@@ -142,7 +142,7 @@
 
                 var target = UI.$(e.target);
 
-                if (active && target[0] != dropdown[0] && !target.data("datepicker") && !target.parents(".uk-datepicker:first").length) {
+                if (active && target[0] != dropdown[0] && !target.data("datepicker") && !target.parents(".yb-datepicker:first").length) {
                     active.hide();
                 }
             });
@@ -171,23 +171,23 @@
             // init dropdown
             if (!dropdown) {
 
-                dropdown = UI.$('<div class="uk-dropdown uk-datepicker"></div>');
+                dropdown = UI.$('<div class="yb-dropdown yb-datepicker"></div>');
 
-                dropdown.on("click", ".uk-datepicker-next, .uk-datepicker-previous, [data-date]", function(e){
+                dropdown.on("click", ".yb-datepicker-next, .yb-datepicker-previous, [data-date]", function(e){
 
                     e.stopPropagation();
                     e.preventDefault();
 
                     var ele = UI.$(this);
 
-                    if (ele.hasClass('uk-datepicker-date-disabled')) return false;
+                    if (ele.hasClass('yb-datepicker-date-disabled')) return false;
 
                     if (ele.is('[data-date]')) {
                         active.current = moment(ele.data("date"));
                         active.element.val(active.current.format(active.options.format)).trigger("change");
                         active.hide();
                     } else {
-                       active.add((ele.hasClass("uk-datepicker-next") ? 1:-1), "months");
+                       active.add((ele.hasClass("yb-datepicker-next") ? 1:-1), "months");
                     }
                 });
 

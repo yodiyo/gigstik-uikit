@@ -27,7 +27,7 @@
             autoplay         : false,
             autoplayInterval : 7000,
             pauseOnHover     : true,
-            activecls        : 'uk-active'
+            activecls        : 'yb-active'
         },
 
         boot:  function() {
@@ -37,12 +37,12 @@
 
                 setTimeout(function(){
 
-                    UI.$('[data-uk-slider]', context).each(function(){
+                    UI.$('[data-yb-slider]', context).each(function(){
 
                         var ele = UI.$(this);
 
                         if (!ele.data('slider')) {
-                            UI.slider(ele, UI.Utils.options(ele.attr('data-uk-slider')));
+                            UI.slider(ele, UI.Utils.options(ele.attr('data-yb-slider')));
                         }
                     });
 
@@ -54,18 +54,18 @@
 
             var $this = this;
 
-            this.container = this.element.find('.uk-slider');
+            this.container = this.element.find('.yb-slider');
             this.focus     = 0;
 
             UI.$win.on('resize load', UI.Utils.debounce(function() {
                 $this.resize(true);
             }, 100));
 
-            this.on('click.uk.slider', '[data-uk-slider-item]', function(e) {
+            this.on('click.uk.slider', '[data-yb-slider-item]', function(e) {
 
                 e.preventDefault();
 
-                var item = UI.$(this).attr('data-uk-slider-item');
+                var item = UI.$(this).attr('data-yb-slider-item');
 
                 if ($this.focus == item) return;
 
@@ -128,7 +128,7 @@
                             'pointer-pos-start': $this.pos
                         });
 
-                        $this.container.addClass('uk-drag');
+                        $this.container.addClass('yb-drag');
 
                         delayIdle = false;
                     };
@@ -294,9 +294,9 @@
             // mark elements
             var left = this.items.eq(idx).data('left');
 
-            this.items.removeClass('uk-slide-before uk-slide-after').each(function(i){
+            this.items.removeClass('yb-slide-before yb-slide-after').each(function(i){
                 if (i!==idx) {
-                    UI.$(this).addClass(UI.$(this).data('left') < left ? 'uk-slide-before':'uk-slide-after');
+                    UI.$(this).addClass(UI.$(this).data('left') < left ? 'yb-slide-before':'yb-slide-after');
                 }
             });
 
@@ -492,7 +492,7 @@
 
         if (dragging) {
 
-            dragging.container.removeClass('uk-drag');
+            dragging.container.removeClass('yb-drag');
 
             // TODO is this needed?
             dragging.items.eq(store.focus);

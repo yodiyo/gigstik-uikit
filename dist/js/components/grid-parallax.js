@@ -43,12 +43,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$('[data-uk-grid-parallax]', context).each(function() {
+                UI.$('[data-yb-grid-parallax]', context).each(function() {
 
                     var parallax = UI.$(this);
 
                     if (!parallax.data("gridparallax")) {
-                        UI.gridparallax(parallax, UI.Utils.options(parallax.attr("data-uk-grid-parallax")));
+                        UI.gridparallax(parallax, UI.Utils.options(parallax.attr("data-yb-grid-parallax")));
                     }
                 });
             });

@@ -1,20 +1,20 @@
 // Name:            Slider
 // Description:     Defines styles for a horizontal slider
 //
-// Component:       `uk-slider`
+// Component:       `yb-slider`
 //
-// Sub-objects:     `uk-slider-container`
+// Sub-objects:     `yb-slider-container`
 //
-// Modifier:        `uk-slider-fullscreen`
+// Modifier:        `yb-slider-fullscreen`
 //
-// States:          `uk-drag`
+// States:          `yb-drag`
 //
 // Markup:
 //
-// <!-- uk-slider -->
-// <div data-uk-slider>
-//     <div class="uk-slider-container">
-//         <ul class="uk-slider">
+// <!-- yb-slider -->
+// <div data-yb-slider>
+//     <div class="yb-slider-container">
+//         <ul class="yb-slider">
 //             <li></li>
 //             <li></li>
 //         </ul>
@@ -34,7 +34,7 @@
  * 3. Deactivate browser history navigation in IE11
  */
 
-.uk-slider {
+.yb-slider {
     /* 1 */
     position: relative;
     /* 2 */
@@ -47,7 +47,7 @@
  * 1. Reset list style without interfering with grid
  */
 
-.uk-slider:not(.uk-grid) {
+.yb-slider:not(.yb-grid) {
     /* 1 */
     margin: 0;
     padding: 0;
@@ -59,7 +59,7 @@
  * 1. Position items above each other
  */
 
-.uk-slider > * {
+.yb-slider > * {
     /* 1 */
     position: absolute;
     top: 0;
@@ -70,13 +70,13 @@
  * Clip child elements
  */
 
-.uk-slider-container { overflow: hidden; }
+.yb-slider-container { overflow: hidden; }
 
 /*
  * Dragged
  */
 
-.uk-slider:not(.uk-drag) {
+.yb-slider:not(.yb-drag) {
     -webkit-transition: -webkit-transform 200ms linear;
     transition: transform 200ms linear;
 }
@@ -85,7 +85,7 @@
  * 1. Makes text unselectable
  */
 
-.uk-slider.uk-drag {
+.yb-slider.yb-drag {
     cursor: col-resize;
     /* 1 */
     -moz-user-select: none;
@@ -100,8 +100,8 @@
  * Currently only works in Webkit
  */
 
-.uk-slider a,
-.uk-slider img {
+.yb-slider a,
+.yb-slider img {
     /* 1 */
     -webkit-user-drag: none;
     user-drag: none;
@@ -113,14 +113,14 @@
  * 1. Prevents images and links from being dragged in Firefox
  */
 
-.uk-slider img { pointer-events: none; }
+.yb-slider img { pointer-events: none; }
 
 
-/* Modifier: `uk-slider-fullscreen`
+/* Modifier: `yb-slider-fullscreen`
  ========================================================================== */
 
-.uk-slider-fullscreen,
-.uk-slider-fullscreen > li { height: 100vh; }
+.yb-slider-fullscreen,
+.yb-slider-fullscreen > li { height: 100vh; }
 
 
 // Hooks

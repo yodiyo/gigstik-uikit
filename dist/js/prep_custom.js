@@ -117,7 +117,7 @@
 CUSTOM JS
 ======*/
 
-$('[data-uk-scrollspy]').on('inview.uk.scrollspy', function(){
+$('[data-yb-scrollspy]').on('inview.uk.scrollspy', function(){
  
     var numItems = $('.radial-progress').length;
 
@@ -135,7 +135,7 @@ $('[data-uk-scrollspy]').on('inview.uk.scrollspy', function(){
 $(function(){
         
     });
-    $('#phone-img li:first-child').removeClass('uk-active');
+    $('#phone-img li:first-child').removeClass('yb-active');
 
 
    

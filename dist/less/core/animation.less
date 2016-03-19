@@ -1,29 +1,29 @@
 // Name:            Animation
 // Description:     Provides a useful set of keyframe animations
 //
-// Component:       `uk-animation-*`
+// Component:       `yb-animation-*`
 //
-// Modifiers:       `uk-animation-fade`
-//                  `uk-animation-scale-up`
-//                  `uk-animation-scale-down`
-//                  `uk-animation-slide-top`
-//                  `uk-animation-slide-bottom`
-//                  `uk-animation-slide-left`
-//                  `uk-animation-slide-right`
-//                  `uk-animation-scale`
-//                  `uk-animation-shake`
-//                  `uk-animation-reverse`
-//                  `uk-animation-15`
-//                  `uk-animation-top-left`
-//                  `uk-animation-top-center`
-//                  `uk-animation-top-right`
-//                  `uk-animation-middle-left`
-//                  `uk-animation-middle-right`
-//                  `uk-animation-bottom-left`
-//                  `uk-animation-bottom-center`
-//                  `uk-animation-bottom-right`
+// Modifiers:       `yb-animation-fade`
+//                  `yb-animation-scale-up`
+//                  `yb-animation-scale-down`
+//                  `yb-animation-slide-top`
+//                  `yb-animation-slide-bottom`
+//                  `yb-animation-slide-left`
+//                  `yb-animation-slide-right`
+//                  `yb-animation-scale`
+//                  `yb-animation-shake`
+//                  `yb-animation-reverse`
+//                  `yb-animation-15`
+//                  `yb-animation-top-left`
+//                  `yb-animation-top-center`
+//                  `yb-animation-top-right`
+//                  `yb-animation-middle-left`
+//                  `yb-animation-middle-right`
+//                  `yb-animation-bottom-left`
+//                  `yb-animation-bottom-center`
+//                  `yb-animation-bottom-right`
 //
-// Sub-objects:     `uk-animation-hover`
+// Sub-objects:     `yb-animation-hover`
 //
 // Uses:            Scrollspy
 //
@@ -40,7 +40,7 @@
    Component: Animation
  ========================================================================== */
 
-[class*='uk-animation-'] {
+[class*='yb-animation-'] {
     -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
     -webkit-animation-timing-function: ease-out;
@@ -52,7 +52,7 @@
 /* Hide animated element if scrollspy is used */
 @media screen {
 
-    [data-uk-scrollspy*='uk-animation-']:not([data-uk-scrollspy*='target']) { opacity: 0; }
+    [data-yb-scrollspy*='yb-animation-']:not([data-yb-scrollspy*='target']) { opacity: 0; }
 
 }
 
@@ -61,9 +61,9 @@
  * Higher specificity (!important) needed because of reverse modifier
  */
 
-.uk-animation-fade {
-    -webkit-animation-name: uk-fade;
-    animation-name: uk-fade;
+.yb-animation-fade {
+    -webkit-animation-name: yb-fade;
+    animation-name: yb-fade;
     -webkit-animation-duration: 0.8s;
     animation-duration: 0.8s;
     -webkit-animation-timing-function: linear !important;
@@ -74,63 +74,63 @@
  * Fade with scale
  */
 
-.uk-animation-scale-up {
-    -webkit-animation-name: uk-fade-scale-02;
-    animation-name: uk-fade-scale-02;
+.yb-animation-scale-up {
+    -webkit-animation-name: yb-fade-scale-02;
+    animation-name: yb-fade-scale-02;
 }
 
-.uk-animation-scale-down {
-    -webkit-animation-name: uk-fade-scale-18;
-    animation-name: uk-fade-scale-18;
+.yb-animation-scale-down {
+    -webkit-animation-name: yb-fade-scale-18;
+    animation-name: yb-fade-scale-18;
 }
 
 /*
  * Fade with slide
  */
 
-.uk-animation-slide-top {
-    -webkit-animation-name: uk-fade-top;
-    animation-name: uk-fade-top;
+.yb-animation-slide-top {
+    -webkit-animation-name: yb-fade-top;
+    animation-name: yb-fade-top;
 }
 
-.uk-animation-slide-bottom {
-    -webkit-animation-name: uk-fade-bottom;
-    animation-name: uk-fade-bottom;
+.yb-animation-slide-bottom {
+    -webkit-animation-name: yb-fade-bottom;
+    animation-name: yb-fade-bottom;
 }
 
-.uk-animation-slide-left {
-    -webkit-animation-name: uk-fade-left;
-    animation-name: uk-fade-left;
+.yb-animation-slide-left {
+    -webkit-animation-name: yb-fade-left;
+    animation-name: yb-fade-left;
 }
 
-.uk-animation-slide-right {
-    -webkit-animation-name: uk-fade-right;
-    animation-name: uk-fade-right;
+.yb-animation-slide-right {
+    -webkit-animation-name: yb-fade-right;
+    animation-name: yb-fade-right;
 }
 
 /*
  * Scale
  */
 
-.uk-animation-scale {
-    -webkit-animation-name: uk-scale-12;
-    animation-name: uk-scale-12;
+.yb-animation-scale {
+    -webkit-animation-name: yb-scale-12;
+    animation-name: yb-scale-12;
 }
 
 /*
  * Shake
  */
 
-.uk-animation-shake {
-    -webkit-animation-name: uk-shake;
-    animation-name: uk-shake;
+.yb-animation-shake {
+    -webkit-animation-name: yb-shake;
+    animation-name: yb-shake;
 }
 
 
 /* Direction modifiers
  ========================================================================== */
 
-.uk-animation-reverse {
+.yb-animation-reverse {
     -webkit-animation-direction: reverse;
     animation-direction: reverse;
     -webkit-animation-timing-function: ease-in;
@@ -141,7 +141,7 @@
 /* Duration modifiers
 ========================================================================== */
 
-.uk-animation-15 {
+.yb-animation-15 {
     -webkit-animation-duration: 15s;
     animation-duration: 15s;
 }
@@ -150,48 +150,48 @@
 /* Origin modifiers
 ========================================================================== */
 
-.uk-animation-top-left {
+.yb-animation-top-left {
      -webkit-transform-origin: 0 0;
      transform-origin: 0 0;
 }
 
-.uk-animation-top-center {
+.yb-animation-top-center {
      -webkit-transform-origin: 50% 0;
      transform-origin: 50% 0;
 }
 
-.uk-animation-top-right {
+.yb-animation-top-right {
      -webkit-transform-origin: 100% 0;
      transform-origin: 100% 0;
 }
 
-.uk-animation-middle-left {
+.yb-animation-middle-left {
      -webkit-transform-origin: 0 50%;
      transform-origin: 0 50%;
 }
 
-.uk-animation-middle-right {
+.yb-animation-middle-right {
      -webkit-transform-origin: 100% 50%;
      transform-origin: 100% 50%;
 }
 
-.uk-animation-bottom-left {
+.yb-animation-bottom-left {
      -webkit-transform-origin: 0 100%;
      transform-origin: 0 100%;
 }
 
-.uk-animation-bottom-center {
+.yb-animation-bottom-center {
      -webkit-transform-origin: 50% 100%;
      transform-origin: 50% 100%;
 }
 
-.uk-animation-bottom-right {
+.yb-animation-bottom-right {
      -webkit-transform-origin: 100% 100%;
      transform-origin: 100% 100%;
 }
 
 
-/* Sub-object: `uk-animation-hover`
+/* Sub-object: `yb-animation-hover`
 ========================================================================== */
 
 /*
@@ -199,10 +199,10 @@
  * Note: Firefox also needs this because animations are not triggered when switching between display `hidden` and `block`
  */
 
-.uk-animation-hover:not(:hover),
-.uk-animation-hover:not(:hover) [class*='uk-animation-'],
-.uk-touch .uk-animation-hover:not(.uk-hover),
-.uk-touch .uk-animation-hover:not(.uk-hover) [class*='uk-animation-'] {
+.yb-animation-hover:not(:hover),
+.yb-animation-hover:not(:hover) [class*='yb-animation-'],
+.yb-touch .yb-animation-hover:not(.yb-hover),
+.yb-touch .yb-animation-hover:not(.yb-hover) [class*='yb-animation-'] {
     -webkit-animation-name: none;
     animation-name: none;
 }
@@ -212,12 +212,12 @@
  * Used by dropdown, datepicker and slideshow component
  ========================================================================== */
 
-@-webkit-keyframes uk-fade {
+@-webkit-keyframes yb-fade {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-@keyframes uk-fade {
+@keyframes yb-fade {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
@@ -230,7 +230,7 @@
  * Top
  */
 
-@-webkit-keyframes uk-fade-top {
+@-webkit-keyframes yb-fade-top {
     0% {
         opacity: 0;
         -webkit-transform: translateY(-100%);
@@ -241,7 +241,7 @@
     }
 }
 
-@keyframes uk-fade-top {
+@keyframes yb-fade-top {
     0% {
         opacity: 0;
         transform: translateY(-100%);
@@ -256,7 +256,7 @@
  * Bottom
  */
 
-@-webkit-keyframes uk-fade-bottom {
+@-webkit-keyframes yb-fade-bottom {
     0% {
         opacity: 0;
         -webkit-transform: translateY(100%);
@@ -267,7 +267,7 @@
     }
 }
 
-@keyframes uk-fade-bottom {
+@keyframes yb-fade-bottom {
     0% {
         opacity: 0;
         transform: translateY(100%);
@@ -282,7 +282,7 @@
  * Left
  */
 
-@-webkit-keyframes uk-fade-left {
+@-webkit-keyframes yb-fade-left {
     0% {
         opacity: 0;
         -webkit-transform: translateX(-100%);
@@ -293,7 +293,7 @@
     }
 }
 
-@keyframes uk-fade-left {
+@keyframes yb-fade-left {
     0% {
         opacity: 0;
         transform: translateX(-100%);
@@ -308,7 +308,7 @@
  * Right
  */
 
-@-webkit-keyframes uk-fade-right {
+@-webkit-keyframes yb-fade-right {
     0% {
         opacity: 0;
         -webkit-transform: translateX(100%);
@@ -319,7 +319,7 @@
     }
 }
 
-@keyframes uk-fade-right {
+@keyframes yb-fade-right {
     0% {
         opacity: 0;
         transform: translateX(100%);
@@ -338,7 +338,7 @@
  * Scale by 0.2
  */
 
-@-webkit-keyframes uk-fade-scale-02 {
+@-webkit-keyframes yb-fade-scale-02 {
     0% {
         opacity: 0;
         -webkit-transform: scale(0.2);
@@ -349,7 +349,7 @@
     }
 }
 
-@keyframes uk-fade-scale-02 {
+@keyframes yb-fade-scale-02 {
     0% {
         opacity: 0;
         transform: scale(0.2);
@@ -365,7 +365,7 @@
  * Used by slideshow component
  */
 
-@-webkit-keyframes uk-fade-scale-15 {
+@-webkit-keyframes yb-fade-scale-15 {
     0% {
         opacity: 0;
         -webkit-transform: scale(1.5);
@@ -376,7 +376,7 @@
     }
 }
 
-@keyframes uk-fade-scale-15 {
+@keyframes yb-fade-scale-15 {
     0% {
         opacity: 0;
         transform: scale(1.5);
@@ -391,7 +391,7 @@
  * Scale by 1.8
  */
 
-@-webkit-keyframes uk-fade-scale-18 {
+@-webkit-keyframes yb-fade-scale-18 {
     0% {
         opacity: 0;
         -webkit-transform: scale(1.8);
@@ -402,7 +402,7 @@
     }
 }
 
-@keyframes uk-fade-scale-18 {
+@keyframes yb-fade-scale-18 {
     0% {
         opacity: 0;
         transform: scale(1.8);
@@ -422,12 +422,12 @@
  * Left
  */
 
-@-webkit-keyframes uk-slide-left {
+@-webkit-keyframes yb-slide-left {
     0% { -webkit-transform: translateX(-100%); }
     100% { -webkit-transform: translateX(0); }
 }
 
-@keyframes uk-slide-left {
+@keyframes yb-slide-left {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(0); }
 }
@@ -436,12 +436,12 @@
  * Right
  */
 
-@-webkit-keyframes uk-slide-right {
+@-webkit-keyframes yb-slide-right {
     0% { -webkit-transform: translateX(100%); }
     100% { -webkit-transform: translateX(0); }
 }
 
-@keyframes uk-slide-right {
+@keyframes yb-slide-right {
     0% { transform: translateX(100%); }
     100% { transform: translateX(0); }
 }
@@ -450,12 +450,12 @@
  * Left third
  */
 
-@-webkit-keyframes uk-slide-left-33 {
+@-webkit-keyframes yb-slide-left-33 {
     0% { -webkit-transform: translateX(33%); }
     100% { -webkit-transform: translateX(0); }
 }
 
-@keyframes uk-slide-left-33 {
+@keyframes yb-slide-left-33 {
     0% { transform: translateX(33%); }
     100% { transform: translateX(0); }
 }
@@ -464,12 +464,12 @@
  * Right third
  */
 
-@-webkit-keyframes uk-slide-right-33 {
+@-webkit-keyframes yb-slide-right-33 {
     0% { -webkit-transform: translateX(-33%); }
     100% { -webkit-transform: translateX(0); }
 }
 
-@keyframes uk-slide-right-33 {
+@keyframes yb-slide-right-33 {
     0% { transform: translateX(-33%); }
     100% { transform: translateX(0); }
 }
@@ -478,12 +478,12 @@
 /* Keyframes: Scale
  ========================================================================== */
 
-@-webkit-keyframes uk-scale-12 {
+@-webkit-keyframes yb-scale-12 {
     0% { -webkit-transform: scale(1.2); }
     100% { -webkit-transform: scale(1); }
 }
 
-@keyframes uk-scale-12 {
+@keyframes yb-scale-12 {
     0% { transform: scale(1.2); }
     100% { transform: scale(1); }
 }
@@ -493,12 +493,12 @@
  * Used by icon component
  ========================================================================== */
 
-@-webkit-keyframes uk-rotate {
+@-webkit-keyframes yb-rotate {
     0% { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(359deg); }
 }
 
-@keyframes uk-rotate {
+@keyframes yb-rotate {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(359deg); }
 }
@@ -507,7 +507,7 @@
 /* Keyframes: Shake
  ========================================================================== */
 
-@-webkit-keyframes uk-shake {
+@-webkit-keyframes yb-shake {
     0%, 100% { -webkit-transform: translateX(0); }
     10% { -webkit-transform: translateX(-9px); }
     20% { -webkit-transform: translateX(8px); }
@@ -520,7 +520,7 @@
     90% { -webkit-transform: translateX(-1px); }
 }
 
-@keyframes uk-shake {
+@keyframes yb-shake {
     0%, 100% { transform: translateX(0); }
     10% { transform: translateX(-9px); }
     20% { transform: translateX(8px); }
@@ -542,7 +542,7 @@
  * Top fixed
  */
 
-@-webkit-keyframes uk-slide-top-fixed {
+@-webkit-keyframes yb-slide-top-fixed {
     0% {
         opacity: 0;
         -webkit-transform: translateY(-10px);
@@ -553,7 +553,7 @@
     }
 }
 
-@keyframes uk-slide-top-fixed {
+@keyframes yb-slide-top-fixed {
     0% {
         opacity: 0;
         transform: translateY(-10px);
@@ -568,7 +568,7 @@
  * Bottom fixed
  */
 
-@-webkit-keyframes uk-slide-bottom-fixed {
+@-webkit-keyframes yb-slide-bottom-fixed {
     0% {
         opacity: 0;
         -webkit-transform: translateY(10px);
@@ -579,7 +579,7 @@
     }
 }
 
-@keyframes uk-slide-bottom-fixed {
+@keyframes yb-slide-bottom-fixed {
     0% {
         opacity: 0;
         transform: translateY(10px);

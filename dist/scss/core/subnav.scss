@@ -1,17 +1,17 @@
 // Name:            Subnav
 // Description:     Defines styles for the sub navigation
 //
-// Component:       `uk-subnav`
+// Component:       `yb-subnav`
 //
-// Modifiers:       `uk-subnav-line`
-//                  `uk-subnav-pill`
+// Modifiers:       `yb-subnav-line`
+//                  `yb-subnav-pill`
 //
-// States:          `uk-active`
+// States:          `yb-active`
 //
 // Markup:
 //
-// <!-- uk-subnav -->
-// <ul class="uk-subnav">
+// <!-- yb-subnav -->
+// <ul class="yb-subnav">
 //     <li><a href=""></a></li>
 // </ul>
 //
@@ -52,7 +52,7 @@ $subnav-disabled-color:                          #999 !default;
  * 2. Remove default list style
  */
 
-.uk-subnav {
+.yb-subnav {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -69,11 +69,11 @@ $subnav-disabled-color:                          #999 !default;
 
 /*
  * 1. Space is allocated solely based on content dimensions
- * 2. Horizontal gutter is using `padding` so `uk-width-*` classes can be applied
+ * 2. Horizontal gutter is using `padding` so `yb-width-*` classes can be applied
  * 3. Create position context for dropdowns
  */
 
-.uk-subnav > * {
+.yb-subnav > * {
     /* 1 */
     -ms-flex: none;
     -webkit-flex: none;
@@ -89,22 +89,22 @@ $subnav-disabled-color:                          #999 !default;
  * DEPRECATED IE9 Support
  */
 
-.uk-subnav:before,
-.uk-subnav:after {
+.yb-subnav:before,
+.yb-subnav:after {
     content: "";
     display: block;
     overflow: hidden;
 }
 
-.uk-subnav:after { clear: both; }
+.yb-subnav:after { clear: both; }
 
-.uk-subnav > * { float: left; }
+.yb-subnav > * { float: left; }
 
 
 /* Items
  ========================================================================== */
 
-.uk-subnav > * > * {
+.yb-subnav > * > * {
     display: inline-block;
     color: $subnav-color;
     @include hook-subnav();
@@ -115,8 +115,8 @@ $subnav-disabled-color:                          #999 !default;
  * 1. Apply hover style also to focus state
  */
 
-.uk-subnav > * > :hover,
-.uk-subnav > * > :focus { // 1
+.yb-subnav > * > :hover,
+.yb-subnav > * > :focus { // 1
     color: $subnav-hover-color;
     text-decoration: $subnav-hover-text-decoration;
     @include hook-subnav-hover();
@@ -126,7 +126,7 @@ $subnav-disabled-color:                          #999 !default;
  * Active
  */
 
-.uk-subnav > .uk-active > * {
+.yb-subnav > .yb-active > * {
     color: $subnav-active-color;
     @include hook-subnav-active();
 }
@@ -135,14 +135,14 @@ $subnav-disabled-color:                          #999 !default;
 /* Modifier: 'subnav-line'
  ========================================================================== */
 
-.uk-subnav-line > :before {
+.yb-subnav-line > :before {
     content: "";
     display: inline-block;
     height: $subnav-line-border-height;
     vertical-align: middle;
 }
 
-.uk-subnav-line > :nth-child(n+2):before {
+.yb-subnav-line > :nth-child(n+2):before {
     margin-right: $subnav-margin-horizontal;
     border-left: $subnav-line-border-width solid $subnav-line-border;
     @include hook-subnav-line-divider();
@@ -152,7 +152,7 @@ $subnav-disabled-color:                          #999 !default;
 /* Modifier: 'subnav-pill'
  ========================================================================== */
 
-.uk-subnav-pill > * > * {
+.yb-subnav-pill > * > * {
     padding: $subnav-pill-padding-vertical $subnav-pill-padding-horizontal;
     @include hook-subnav-pill();
 }
@@ -163,8 +163,8 @@ $subnav-disabled-color:                          #999 !default;
  * 2. Remove default focus style
  */
 
-.uk-subnav-pill > * > :hover,
-.uk-subnav-pill > * > :focus { // 1
+.yb-subnav-pill > * > :hover,
+.yb-subnav-pill > * > :focus { // 1
     background: $subnav-pill-hover-background;
     color: $subnav-pill-hover-color;
     text-decoration: none;
@@ -178,7 +178,7 @@ $subnav-disabled-color:                          #999 !default;
  * `li` needed for higher specificity to override hover
  */
 
-.uk-subnav-pill > .uk-active > * {
+.yb-subnav-pill > .yb-active > * {
     background: $subnav-pill-active-background;
     color: $subnav-pill-active-color;
     @include hook-subnav-pill-active();
@@ -188,7 +188,7 @@ $subnav-disabled-color:                          #999 !default;
 /* Disabled state
  ========================================================================== */
 
-.uk-subnav > .uk-disabled > * {
+.yb-subnav > .yb-disabled > * {
     background: none;
     color: $subnav-disabled-color;
     text-decoration: none;

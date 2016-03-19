@@ -39,12 +39,12 @@
             // auto init
             UI.ready(function(context) {
 
-                UI.$("[data-uk-slideset]", context).each(function(){
+                UI.$("[data-yb-slideset]", context).each(function(){
 
                     var ele = UI.$(this);
 
                     if(!ele.data("slideset")) {
-                        UI.slideset(ele, UI.Utils.options(ele.attr("data-uk-slideset")));
+                        UI.slideset(ele, UI.Utils.options(ele.attr("data-yb-slideset")));
                     }
                 });
             });
@@ -55,15 +55,15 @@
             var $this = this;
 
             this.activeSet = false;
-            this.list      = this.element.find('.uk-slideset');
-            this.nav       = this.element.find('.uk-slideset-nav');
+            this.list      = this.element.find('.yb-slideset');
+            this.nav       = this.element.find('.yb-slideset-nav');
             this.controls  = this.options.controls ? UI.$(this.options.controls) : this.element;
 
             UI.$win.on("resize load", UI.Utils.debounce(function() {
                 $this.updateSets();
             }, 100));
 
-            $this.list.addClass('uk-grid-width-1-'+$this.options.default);
+            $this.list.addClass('yb-grid-width-1-'+$this.options.default);
 
             ['xlarge', 'large', 'medium', 'small'].forEach(function(bp) {
 
@@ -71,10 +71,10 @@
                     return;
                 }
 
-                $this.list.addClass('uk-grid-width-'+bp+'-1-'+$this.options[bp]);
+                $this.list.addClass('yb-grid-width-'+bp+'-1-'+$this.options[bp]);
             });
 
-            this.on("click.uk.slideset", '[data-uk-slideset-item]', function(e) {
+            this.on("click.uk.slideset", '[data-yb-slideset-item]', function(e) {
 
                 e.preventDefault();
 
@@ -82,7 +82,7 @@
                     return;
                 }
 
-                var set = UI.$(this).attr('data-uk-slideset-item');
+                var set = UI.$(this).attr('data-yb-slideset-item');
 
                 if ($this.activeSet === set) return;
 
@@ -97,21 +97,21 @@
 
             });
 
-            this.controls.on('click.uk.slideset', '[data-uk-filter]', function(e) {
+            this.controls.on('click.uk.slideset', '[data-yb-filter]', function(e) {
 
                 var ele = UI.$(this);
 
-                if (ele.parent().hasClass('uk-slideset')) {
+                if (ele.parent().hasClass('yb-slideset')) {
                     return;
                 }
 
                 e.preventDefault();
 
-                if ($this.animating || $this.currentFilter == ele.attr('data-uk-filter')) {
+                if ($this.animating || $this.currentFilter == ele.attr('data-yb-filter')) {
                     return;
                 }
 
-                $this.updateFilter(ele.attr('data-uk-filter'));
+                $this.updateFilter(ele.attr('data-yb-filter'));
 
                 $this._hide().then(function(){
 
@@ -159,10 +159,10 @@
             if (this.nav.length && this.nav.empty()) {
 
                 for (i=0;i<this.sets.length;i++) {
-                    this.nav.append('<li data-uk-slideset-item="'+i+'"><a></a></li>');
+                    this.nav.append('<li data-yb-slideset-item="'+i+'"><a></a></li>');
                 }
 
-                this.nav[this.nav.children().length==1 ? 'addClass':'removeClass']('uk-invisible');
+                this.nav[this.nav.children().length==1 ? 'addClass':'removeClass']('yb-invisible');
             }
 
             this.activeSet = false;
@@ -175,16 +175,16 @@
 
             this.currentFilter = currentfilter;
 
-            this.controls.find('[data-uk-filter]').each(function(){
+            this.controls.find('[data-yb-filter]').each(function(){
 
                 filter = UI.$(this);
 
-                if (!filter.parent().hasClass('uk-slideset')) {
+                if (!filter.parent().hasClass('yb-slideset')) {
 
-                    if (filter.attr('data-uk-filter') == $this.currentFilter) {
-                        filter.addClass('uk-active');
+                    if (filter.attr('data-yb-filter') == $this.currentFilter) {
+                        filter.addClass('yb-active');
                     } else {
-                        filter.removeClass('uk-active');
+                        filter.removeClass('yb-active');
                     }
                 }
             });
@@ -203,7 +203,7 @@
                         return;
                     }
 
-                    tmp.attr('class', 'uk-grid-width-'+bp+'-1-2').width();
+                    tmp.attr('class', 'yb-grid-width-'+bp+'-1-2').width();
 
                     if (testdiv.width() == 50) {
                         breakpoint = bp;
@@ -229,7 +229,7 @@
 
                 this.children.each(function(index){
 
-                    var ele = UI.$(this), f = ele.attr('data-uk-filter'), infilter = filter.length ? false : true;
+                    var ele = UI.$(this), f = ele.attr('data-yb-filter'), infilter = filter.length ? false : true;
 
                     if (f) {
 
@@ -273,15 +273,15 @@
             this.animating = true;
 
             if (this.nav.length) {
-                this.nav.children().removeClass('uk-active').eq(setIndex).addClass('uk-active');
+                this.nav.children().removeClass('yb-active').eq(setIndex).addClass('yb-active');
             }
 
             animation.apply($this, [current, next, dir]).then(function(){
 
                 UI.Utils.checkDisplay(next, true);
 
-                $this.children.hide().removeClass('uk-active');
-                next.addClass('uk-active').css({'display': '', 'opacity':''});
+                $this.children.hide().removeClass('yb-active');
+                next.addClass('yb-active').css({'display': '', 'opacity':''});
 
                 $this.animating = false;
                 $this.activeSet = setIndex;
@@ -351,20 +351,20 @@
         },
 
         'fade': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-fade', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-fade', current, next]);
         },
 
         'slide-bottom': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-bottom', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-bottom', current, next]);
         },
 
         'slide-top': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-top', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-top', current, next]);
         },
 
         'slide-vertical': function(current, next, dir) {
 
-            var anim = ['uk-animation-slide-top', 'uk-animation-slide-bottom'];
+            var anim = ['yb-animation-slide-top', 'yb-animation-slide-bottom'];
 
             if (dir == -1) {
                 anim.reverse();
@@ -375,7 +375,7 @@
 
         'slide-horizontal': function(current, next, dir) {
 
-            var anim = ['uk-animation-slide-right', 'uk-animation-slide-left'];
+            var anim = ['yb-animation-slide-right', 'yb-animation-slide-left'];
 
             if (dir == -1) {
                 anim.reverse();
@@ -385,7 +385,7 @@
         },
 
         'scale': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-scale-up', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-scale-up', current, next]);
         }
     };
 
@@ -419,7 +419,7 @@
         release = function() {
 
             if (current && current.length) {
-                current.hide().removeClass(clsOut+' uk-animation-reverse').css({'opacity':'', 'animation-delay': '', 'animation':''});
+                current.hide().removeClass(clsOut+' yb-animation-reverse').css({'opacity':'', 'animation-delay': '', 'animation':''});
             }
 
             if (!next.length) {
@@ -466,7 +466,7 @@
 
                         ele.css('display', 'none').css('display', '').css('opacity', 0).on(UI.support.animation.end, function(){
                             ele.removeClass(clsOut);
-                        }).addClass(clsOut+' uk-animation-reverse');
+                        }).addClass(clsOut+' yb-animation-reverse');
 
                     }.bind(this), i * delay);
 

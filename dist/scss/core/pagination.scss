@@ -1,22 +1,22 @@
 // Name:            Pagination
 // Description:     Defines styles for a navigation between pages
 //
-// Component:       `uk-pagination`
+// Component:       `yb-pagination`
 //
-// Sub-objects:     `uk-pagination-previous`
-//                  `uk-pagination-next`
+// Sub-objects:     `yb-pagination-previous`
+//                  `yb-pagination-next`
 //
-// Modifiers:       `uk-pagination-left`
-//                  `uk-pagination-right`
+// Modifiers:       `yb-pagination-left`
+//                  `yb-pagination-right`
 //
-// States:          `uk-active`
-//                  `uk-disabled`
+// States:          `yb-active`
+//                  `yb-disabled`
 //
 // Markup:
 //
-// <!-- uk-pagination -->
-// <ul class="uk-pagination">
-//     <li class="uk-active"><span></span></li>
+// <!-- yb-pagination -->
+// <ul class="yb-pagination">
+//     <li class="yb-active"><span></span></li>
 //     <li><a href=""></a></li>
 // </ul>
 //
@@ -55,7 +55,7 @@ $pagination-disabled-color:                      #999 !default;
  * 3. Remove whitespace between child elements when using `inline-block`
  */
 
-.uk-pagination {
+.yb-pagination {
     /* 1 */
     padding: 0;
     list-style: none;
@@ -67,16 +67,16 @@ $pagination-disabled-color:                      #999 !default;
 
 /*
  * Micro clearfix
- * Needed if `uk-pagination-previous` or `uk-pagination-next` sub-objects are used
+ * Needed if `yb-pagination-previous` or `yb-pagination-next` sub-objects are used
  */
 
-.uk-pagination:before,
-.uk-pagination:after {
+.yb-pagination:before,
+.yb-pagination:after {
     content: "";
     display: table;
 }
 
-.uk-pagination:after { clear: both; }
+.yb-pagination:after { clear: both; }
 
 
 /* Items
@@ -87,7 +87,7 @@ $pagination-disabled-color:                      #999 !default;
  * 2. Remove the gap at the bottom of it container
  */
 
-.uk-pagination > li {
+.yb-pagination > li {
     display: inline-block;
     /* 1 */
     font-size: $pagination-font-size;
@@ -95,15 +95,15 @@ $pagination-disabled-color:                      #999 !default;
     vertical-align: top;
 }
 
-.uk-pagination > li:nth-child(n+2) { margin-left: $pagination-margin-left; }
+.yb-pagination > li:nth-child(n+2) { margin-left: $pagination-margin-left; }
 
 /*
  * 1. Makes pagination more robust against different box-sizing use
  * 2. Reset text-align to center if alignment modifier is used
  */
 
-.uk-pagination > li > a,
-.uk-pagination > li > span {
+.yb-pagination > li > a,
+.yb-pagination > li > span {
     display: inline-block;
     min-width: $pagination-line-height + (2 * $pagination-padding-vertical) - (2 * $pagination-padding-horizontal);
     padding: $pagination-padding-vertical $pagination-padding-horizontal;
@@ -120,7 +120,7 @@ $pagination-disabled-color:                      #999 !default;
  * Links
  */
 
-.uk-pagination > li > a {
+.yb-pagination > li > a {
     background: $pagination-background;
     color: $pagination-color;
     @include hook-pagination-link();
@@ -132,8 +132,8 @@ $pagination-disabled-color:                      #999 !default;
  * 2. Remove default focus style
  */
 
-.uk-pagination > li > a:hover,
-.uk-pagination > li > a:focus { // 1
+.yb-pagination > li > a:hover,
+.yb-pagination > li > a:focus { // 1
     background-color: $pagination-hover-background;
     color: $pagination-hover-color;
     /* 2 */
@@ -142,7 +142,7 @@ $pagination-disabled-color:                      #999 !default;
 }
 
 /* OnClick */
-.uk-pagination > li > a:active {
+.yb-pagination > li > a:active {
     background-color: $pagination-onclick-background;
     color: $pagination-onclick-color;
     @include hook-pagination-link-active();
@@ -152,7 +152,7 @@ $pagination-disabled-color:                      #999 !default;
  * Active
  */
 
-.uk-pagination > .uk-active > span {
+.yb-pagination > .yb-active > span {
     background: $pagination-active-background;
     color: $pagination-active-color;
     @include hook-pagination-active();
@@ -162,7 +162,7 @@ $pagination-disabled-color:                      #999 !default;
  * Disabled
  */
 
-.uk-pagination > .uk-disabled > span {
+.yb-pagination > .yb-disabled > span {
     background-color: $pagination-disabled-background;
     color: $pagination-disabled-color;
     @include hook-pagination-disabled();
@@ -172,15 +172,15 @@ $pagination-disabled-color:                      #999 !default;
 /* Previous and next navigation
  ========================================================================== */
 
-.uk-pagination-previous { float: left; }
-.uk-pagination-next { float: right; }
+.yb-pagination-previous { float: left; }
+.yb-pagination-next { float: right; }
 
 
 /* Alignment modifiers
  ========================================================================== */
 
-.uk-pagination-left { text-align: left; }
-.uk-pagination-right { text-align: right; }
+.yb-pagination-left { text-align: left; }
+.yb-pagination-right { text-align: right; }
 
 
 // Hooks

@@ -27,8 +27,8 @@
             top          : 0,
             bottom       : 0,
             animation    : '',
-            clsinit      : 'uk-sticky-init',
-            clsactive    : 'uk-active',
+            clsinit      : 'yb-sticky-init',
+            clsactive    : 'yb-active',
             clsinactive  : '',
             getWidthFrom : '',
             showup      : false,
@@ -64,12 +64,12 @@
 
                 setTimeout(function(){
 
-                    UI.$("[data-uk-sticky]", context).each(function(){
+                    UI.$("[data-yb-sticky]", context).each(function(){
 
                         var $ele = UI.$(this);
 
                         if(!$ele.data("sticky")) {
-                            UI.sticky($ele, UI.Utils.options($ele.attr('data-uk-sticky')));
+                            UI.sticky($ele, UI.Utils.options($ele.attr('data-yb-sticky')));
                         }
                     });
 
@@ -82,7 +82,7 @@
 
             var boundary = this.options.boundary, boundtoparent;
 
-            this.wrapper = this.element.wrap('<div class="uk-sticky-placeholder"></div>').parent();
+            this.wrapper = this.element.wrap('<div class="yb-sticky-placeholder"></div>').parent();
             this.computeWrapper();
             this.element.css('margin', 0);
 
@@ -140,7 +140,7 @@
 
                     var finalize = function() {
                         this.element.css({"position":"", "top":"", "width":"", "left":"", "margin":"0"});
-                        this.element.removeClass([this.options.animation, 'uk-animation-reverse', this.options.clsactive].join(' '));
+                        this.element.removeClass([this.options.animation, 'yb-animation-reverse', this.options.clsactive].join(' '));
                         this.element.addClass(this.options.clsinactive);
                         this.element.trigger('inactive.uk.sticky');
 
@@ -157,7 +157,7 @@
                             finalize();
                         }).width(); // force redraw
 
-                        this.element.addClass(this.options.animation+' '+'uk-animation-reverse');
+                        this.element.addClass(this.options.animation+' '+'yb-animation-reverse');
                     } else {
                         finalize();
                     }

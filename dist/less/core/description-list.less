@@ -1,10 +1,10 @@
 // Name:            Description list
 // Description:     Defines styles for description lists
 //
-// Component:       `uk-description-list`
+// Component:       `yb-description-list`
 //
-// Modifiers:       `uk-description-list-horizontal`
-//                  `uk-description-list-line`
+// Modifiers:       `yb-description-list-horizontal`
+//                  `yb-description-list-line`
 //
 // ========================================================================
 
@@ -28,15 +28,15 @@
  ========================================================================== */
 
 
-/* Modifier: `uk-description-list-horizontal`
+/* Modifier: `yb-description-list-horizontal`
  ========================================================================== */
 
 /* Tablet and bigger */
 @media (min-width: @breakpoint-medium) {
 
-    .uk-description-list-horizontal { overflow: hidden; }
+    .yb-description-list-horizontal { overflow: hidden; }
 
-    .uk-description-list-horizontal > dt {
+    .yb-description-list-horizontal > dt {
         width: @description-list-horizontal-width;
         float: left;
         clear: both;
@@ -45,22 +45,22 @@
         white-space: nowrap;
     }
 
-    .uk-description-list-horizontal > dd { margin-left: @description-list-horizontal-margin-left; }
+    .yb-description-list-horizontal > dd { margin-left: @description-list-horizontal-margin-left; }
 }
 
 
-/* Modifier: `uk-description-list-line`
+/* Modifier: `yb-description-list-line`
  ========================================================================== */
 
-.uk-description-list-line > dt { font-weight: @description-list-line-font-weight; }
+.yb-description-list-line > dt { font-weight: @description-list-line-font-weight; }
 
-.uk-description-list-line > dt:nth-child(n+2) {
+.yb-description-list-line > dt:nth-child(n+2) {
     margin-top: @description-list-line-margin-top;
     padding-top: @description-list-line-margin-top;
     border-top: @description-list-line-border-width solid @description-list-line-border;
 }
 
-.uk-description-list-line > dd { color: @description-list-line-color; }
+.yb-description-list-line > dd { color: @description-list-line-color; }
 
 
 // Hooks

@@ -1,300 +1,3 @@
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ========================================================================
    Component: Slider
  ========================================================================== */
@@ -303,7 +6,7 @@
  * 2. Create stacking context to prevent z-index issues with other components
  * 3. Deactivate browser history navigation in IE11
  */
-.uk-slider {
+.yb-slider {
   /* 1 */
   position: relative;
   /* 2 */
@@ -314,7 +17,7 @@
 /*
  * 1. Reset list style without interfering with grid
  */
-.uk-slider:not(.uk-grid) {
+.yb-slider:not(.yb-grid) {
   /* 1 */
   margin: 0;
   padding: 0;
@@ -324,7 +27,7 @@
  * Sub-object item
  * 1. Position items above each other
  */
-.uk-slider > * {
+.yb-slider > * {
   /* 1 */
   position: absolute;
   top: 0;
@@ -333,20 +36,20 @@
 /*
  * Clip child elements
  */
-.uk-slider-container {
+.yb-slider-container {
   overflow: hidden;
 }
 /*
  * Dragged
  */
-.uk-slider:not(.uk-drag) {
+.yb-slider:not(.yb-drag) {
   -webkit-transition: -webkit-transform 200ms linear;
   transition: transform 200ms linear;
 }
 /*
  * 1. Makes text unselectable
  */
-.uk-slider.uk-drag {
+.yb-slider.yb-drag {
   cursor: col-resize;
   /* 1 */
   -moz-user-select: none;
@@ -359,8 +62,8 @@
  * 2. Disables the default callout shown when you touch and hold a touch target
  * Currently only works in Webkit
  */
-.uk-slider a,
-.uk-slider img {
+.yb-slider a,
+.yb-slider img {
   /* 1 */
   -webkit-user-drag: none;
   user-drag: none;
@@ -370,12 +73,12 @@
 /*
  * 1. Prevents images and links from being dragged in Firefox
  */
-.uk-slider img {
+.yb-slider img {
   pointer-events: none;
 }
-/* Modifier: `uk-slider-fullscreen`
+/* Modifier: `yb-slider-fullscreen`
  ========================================================================== */
-.uk-slider-fullscreen,
-.uk-slider-fullscreen > li {
+.yb-slider-fullscreen,
+.yb-slider-fullscreen > li {
   height: 100vh;
 }

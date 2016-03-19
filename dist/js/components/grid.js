@@ -32,12 +32,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$('[data-uk-grid]', context).each(function(){
+                UI.$('[data-yb-grid]', context).each(function(){
 
                     var ele = UI.$(this);
 
                     if(!ele.data("grid")) {
-                        UI.grid(ele, UI.Utils.options(ele.attr('data-uk-grid')));
+                        UI.grid(ele, UI.Utils.options(ele.attr('data-yb-grid')));
                     }
                 });
             });
@@ -60,15 +60,15 @@
                 this.controls = UI.$(this.options.controls);
 
                 // filter
-                this.controls.on('click', '[data-uk-filter]', function(e){
+                this.controls.on('click', '[data-yb-filter]', function(e){
                     e.preventDefault();
                     $this.filter(UI.$(this).data('ukFilter'));
                 });
 
                 // sort
-                this.controls.on('click', '[data-uk-sort]', function(e){
+                this.controls.on('click', '[data-yb-sort]', function(e){
                     e.preventDefault();
-                    var cmd = UI.$(this).attr('data-uk-sort').split(':');
+                    var cmd = UI.$(this).attr('data-yb-sort').split(':');
                     $this.sort(cmd[0], cmd[1]);
                 });
             }
@@ -239,7 +239,7 @@
 
             children.each(function(index){
 
-                var ele = UI.$(this), f = ele.attr('data-uk-filter'), infilter = filter.length ? false : true;
+                var ele = UI.$(this), f = ele.attr('data-yb-filter'), infilter = filter.length ? false : true;
 
                 if (f) {
 
@@ -263,7 +263,7 @@
             $this.updateLayout(elements.visible);
 
             if (this.controls && this.controls.length) {
-                this.controls.find('[data-uk-filter]').removeClass('uk-active').filter('[data-uk-filter="'+filter+'"]').addClass('uk-active');
+                this.controls.find('[data-yb-filter]').removeClass('yb-active').filter('[data-yb-filter="'+filter+'"]').addClass('yb-active');
             }
         },
 
@@ -290,7 +290,7 @@
             this.updateLayout(elements.filter(':visible'));
 
             if (this.controls && this.controls.length) {
-                this.controls.find('[data-uk-sort]').removeClass('uk-active').filter('[data-uk-sort="'+by+':'+(order == -1 ? 'desc':'asc')+'"]').addClass('uk-active');
+                this.controls.find('[data-yb-sort]').removeClass('yb-active').filter('[data-yb-sort="'+by+':'+(order == -1 ? 'desc':'asc')+'"]').addClass('yb-active');
             }
         }
     });

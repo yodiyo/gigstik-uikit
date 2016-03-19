@@ -1,9 +1,9 @@
 // Name:            Placeholder
 // Description:     Defines styles for placeholder boxes
 //
-// Component:       `uk-placeholder`
+// Component:       `yb-placeholder`
 //
-// Modifiers:       `uk-placeholder-large`
+// Modifiers:       `yb-placeholder-large`
 //
 // ========================================================================
 
@@ -24,7 +24,7 @@ $placeholder-large-padding-vertical:             80px !default;
    Component: Placeholder
  ========================================================================== */
 
-.uk-placeholder {
+.yb-placeholder {
     margin-bottom: $placeholder-margin-vertical;
     padding: $placeholder-padding;
     border: 1px dashed $placeholder-border;
@@ -37,19 +37,19 @@ $placeholder-large-padding-vertical:             80px !default;
  * Add margin if adjacent element
  */
 
-* + .uk-placeholder { margin-top: $placeholder-margin-vertical; }
+* + .yb-placeholder { margin-top: $placeholder-margin-vertical; }
 
 /*
  * Remove margin from the last-child
  */
 
-.uk-placeholder > :last-child { margin-bottom: 0; }
+.yb-placeholder > :last-child { margin-bottom: 0; }
 
 
-/* Modifier: `uk-placeholder-large`
+/* Modifier: `yb-placeholder-large`
  ========================================================================== */
 
-.uk-placeholder-large {
+.yb-placeholder-large {
     padding-top: $placeholder-large-padding-vertical;
     padding-bottom: $placeholder-large-padding-vertical;
     @include hook-placeholder-large();

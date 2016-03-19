@@ -1,27 +1,27 @@
 // Name:            Search
 // Description:     Defines a search component
 //
-// Component:       `uk-search`
+// Component:       `yb-search`
 //
-// Sub-objects:     `uk-search-field`
+// Sub-objects:     `yb-search-field`
 //
-// Modifier:        (Nav) `uk-nav-search`
-//                  (Dropdown) `uk-dropdown-search`
+// Modifier:        (Nav) `yb-nav-search`
+//                  (Dropdown) `yb-dropdown-search`
 //
-// States:          `uk-active`
-//                  `uk-loading`
+// States:          `yb-active`
+//                  `yb-loading`
 //
 // Uses:            Animation
 //                  Icon: FontAwesome
-//                  Navbar: `uk-navbar-flip`
+//                  Navbar: `yb-navbar-flip`
 //
 // Used by:         Off-canvas
 //
 // Markup:
 //
-// <!-- uk-search -->
-// <form class="uk-search" data-uk-search>
-//     <input class="uk-search-field" type="search" placeholder="">
+// <!-- yb-search -->
+// <form class="yb-search" data-yb-search>
+//     <input class="yb-search-field" type="search" placeholder="">
 // </form>
 //
 // ========================================================================
@@ -49,7 +49,7 @@ $dropdown-search-width:                          300px !default;
 $dropdown-search-margin-top:                     0 !default;
 $dropdown-search-background:                     #f5f5f5 !default;
 $dropdown-search-color:                          #444 !default;
-$dropdown-search-animation:                      uk-slide-top-fixed !default;
+$dropdown-search-animation:                      yb-slide-top-fixed !default;
 $dropdown-search-navbar-margin-top:              5px !default;
 $dropdown-search-navbar-margin-right:            -15px !default;
 
@@ -81,7 +81,7 @@ $offcanvas-search-icon-color:                    #777 !default;
  * 2. Needed for `form` element
  */
 
-.uk-search {
+.yb-search {
     display: inline-block;
     /* 1 */
     position: relative;
@@ -94,7 +94,7 @@ $offcanvas-search-icon-color:                    #777 !default;
  * Icon
  */
 
-.uk-search:before {
+.yb-search:before {
     content: $search-icon;
     position: absolute;
     top: 0;
@@ -109,14 +109,14 @@ $offcanvas-search-icon-color:                    #777 !default;
 }
 
 
-/* Sub-object `uk-search-field`
+/* Sub-object `yb-search-field`
  ========================================================================== */
 
 /*
  * Removes inner padding and border in Firefox 4+.
  */
 
-.uk-search-field::-moz-focus-inner {
+.yb-search-field::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
@@ -125,20 +125,20 @@ $offcanvas-search-icon-color:                    #777 !default;
  * Remove inner padding and search cancel button in Chrome, Safari and Opera on OS X.
  */
 
-.uk-search-field::-webkit-search-cancel-button,
-.uk-search-field::-webkit-search-decoration { -webkit-appearance: none; }
+.yb-search-field::-webkit-search-cancel-button,
+.yb-search-field::-webkit-search-decoration { -webkit-appearance: none; }
 
 /*
  * Removes cancel button in IE10
  */
 
-.uk-search-field::-ms-clear { display: none; }
+.yb-search-field::-ms-clear { display: none; }
 
 /*
  * Removes placeholder transparency in Firefox.
  */
 
-.uk-search-field::-moz-placeholder { opacity: 1; }
+.yb-search-field::-moz-placeholder { opacity: 1; }
 
 /*
  * 1. Define consistent box sizing.
@@ -149,7 +149,7 @@ $offcanvas-search-icon-color:                    #777 !default;
  * 6. Style
  */
 
-.uk-search-field {
+.yb-search-field {
     /* 1 */
     box-sizing: border-box;
     /* 2 */
@@ -174,25 +174,25 @@ $offcanvas-search-icon-color:                    #777 !default;
 }
 
 /* Placeholder */
-.uk-search-field:-ms-input-placeholder { color: $search-placeholder-color !important; }
-.uk-search-field::-moz-placeholder { color: $search-placeholder-color; }
-.uk-search-field::-webkit-input-placeholder { color: $search-placeholder-color; }
+.yb-search-field:-ms-input-placeholder { color: $search-placeholder-color !important; }
+.yb-search-field::-moz-placeholder { color: $search-placeholder-color; }
+.yb-search-field::-webkit-input-placeholder { color: $search-placeholder-color; }
 
 /* Focus */
-.uk-search-field:focus {
+.yb-search-field:focus {
     outline: 0;
     @include hook-search-field-focus();
 }
 
 /* Focus + Active */
-.uk-search-field:focus,
-.uk-search.uk-active .uk-search-field { width: $search-focus-width; }
+.yb-search-field:focus,
+.yb-search.yb-active .yb-search-field { width: $search-focus-width; }
 
 
-/* Dropdown modifier: `uk-dropdown-search`
+/* Dropdown modifier: `yb-dropdown-search`
  ========================================================================== */
 
-.uk-dropdown-search {
+.yb-dropdown-search {
     width: $dropdown-search-width;
     margin-top: $dropdown-search-margin-top;
     background: $dropdown-search-background;
@@ -200,29 +200,29 @@ $offcanvas-search-icon-color:                    #777 !default;
     @include hook-dropdown-search();
 }
 
-.uk-open > .uk-dropdown-search {
+.yb-open > .yb-dropdown-search {
     -webkit-animation: $dropdown-search-animation 0.2s ease-in-out;
     animation: $dropdown-search-animation 0.2s ease-in-out;
 }
 
 /*
- * Dependency `uk-navbar-flip`
+ * Dependency `yb-navbar-flip`
  */
 
-.uk-navbar-flip .uk-dropdown-search {
+.yb-navbar-flip .yb-dropdown-search {
     margin-top: $dropdown-search-navbar-margin-top;
     margin-right: $dropdown-search-navbar-margin-right;
 }
 
 
-/* Nav modifier `uk-nav-search`
+/* Nav modifier `yb-nav-search`
  ========================================================================== */
 
 /*
  * Items
  */
 
-.uk-nav-search > li > a {
+.yb-nav-search > li > a {
     color: $nav-search-color;
     @include hook-nav-search();
 }
@@ -232,7 +232,7 @@ $offcanvas-search-icon-color:                    #777 !default;
  * 1. Remove default focus style
  */
 
-.uk-nav-search > li.uk-active > a {
+.yb-nav-search > li.yb-active > a {
     background: $nav-search-active-background;
     color: $nav-search-active-color;
     /* 1 */
@@ -241,19 +241,19 @@ $offcanvas-search-icon-color:                    #777 !default;
 }
 
 /*
- * Sub-object: `uk-nav-header`
+ * Sub-object: `yb-nav-header`
  */
 
-.uk-nav-search .uk-nav-header {
+.yb-nav-search .yb-nav-header {
     color: $nav-search-header-color;
     @include hook-nav-search-header();
 }
 
 /*
- * Sub-object: `uk-nav-divider`
+ * Sub-object: `yb-nav-divider`
  */
 
-.uk-nav-search .uk-nav-divider {
+.yb-nav-search .yb-nav-divider {
     border-top: $nav-search-divider-border-width solid $nav-search-divider-border;
     @include hook-nav-search-divider();
 }
@@ -262,21 +262,21 @@ $offcanvas-search-icon-color:                    #777 !default;
  * Nested items
  */
 
-.uk-nav-search ul a { color: $nav-search-nested-color; }
-.uk-nav-search ul a:hover { color: $nav-search-nested-hover-color; }
+.yb-nav-search ul a { color: $nav-search-nested-color; }
+.yb-nav-search ul a:hover { color: $nav-search-nested-hover-color; }
 
 
 /* Search in offcanvas
  ========================================================================== */
 
-.uk-offcanvas .uk-search {
+.yb-offcanvas .yb-search {
     display: block;
     margin: $offcanvas-search-margin;
 }
 
-.uk-offcanvas .uk-search:before { color: $offcanvas-search-icon-color; }
+.yb-offcanvas .yb-search:before { color: $offcanvas-search-icon-color; }
 
-.uk-offcanvas .uk-search-field {
+.yb-offcanvas .yb-search-field {
     width: 100%;
     border-color: $offcanvas-search-border;
     background: $offcanvas-search-background;
@@ -284,9 +284,9 @@ $offcanvas-search-icon-color:                    #777 !default;
     @include hook-offcanvas-search-field();
 }
 
-.uk-offcanvas .uk-search-field:-ms-input-placeholder { color: $offcanvas-search-placeholder-color !important; }
-.uk-offcanvas .uk-search-field::-moz-placeholder { color: $offcanvas-search-placeholder-color; }
-.uk-offcanvas .uk-search-field::-webkit-input-placeholder { color: $offcanvas-search-placeholder-color; }
+.yb-offcanvas .yb-search-field:-ms-input-placeholder { color: $offcanvas-search-placeholder-color !important; }
+.yb-offcanvas .yb-search-field::-moz-placeholder { color: $offcanvas-search-placeholder-color; }
+.yb-offcanvas .yb-search-field::-webkit-input-placeholder { color: $offcanvas-search-placeholder-color; }
 
 
 // Hooks

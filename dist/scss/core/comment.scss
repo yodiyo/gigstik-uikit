@@ -1,26 +1,26 @@
 // Name:            Comment
 // Description:     Defines styles for comment threads
 //
-// Component:       `uk-comment`
+// Component:       `yb-comment`
 //
-// Sub-objects:     `uk-comment-header`
-//                  `uk-comment-avatar`
-//                  `uk-comment-title`
-//                  `uk-comment-meta`
-//                  `uk-comment-body`
-//                  `uk-comment-list`
-//                  `uk-comment-primary`
+// Sub-objects:     `yb-comment-header`
+//                  `yb-comment-avatar`
+//                  `yb-comment-title`
+//                  `yb-comment-meta`
+//                  `yb-comment-body`
+//                  `yb-comment-list`
+//                  `yb-comment-primary`
 //
 // Markup:
 //
-// <!-- uk-comment -->
-// <article class="uk-comment">
-//     <header class="uk-comment-header">
-//         <img class="uk-comment-avatar" src="avatar.svg" width="50" height="50" alt="">
-//         <h4 class="uk-comment-title"></h4>
-//         <div class="uk-comment-meta"></div>
+// <!-- yb-comment -->
+// <article class="yb-comment">
+//     <header class="yb-comment-header">
+//         <img class="yb-comment-avatar" src="avatar.svg" width="50" height="50" alt="">
+//         <h4 class="yb-comment-title"></h4>
+//         <div class="yb-comment-meta"></div>
 //     </header>
-//     <div class="uk-comment-body">
+//     <div class="yb-comment-body">
 //         <p></p>
 //     </div>
 // </article>
@@ -52,15 +52,15 @@ $comment-list-padding-left:                      100px !default;
    Component: Comment
  ========================================================================== */
 
-.uk-comment {
+.yb-comment {
     @include hook-comment();
 }
 
 
-/* Sub-object `uk-comment-header`
+/* Sub-object `yb-comment-header`
  ========================================================================== */
 
-.uk-comment-header {
+.yb-comment-header {
     margin-bottom: $comment-header-margin-bottom;
     @include hook-comment-header();
 }
@@ -69,29 +69,29 @@ $comment-list-padding-left:                      100px !default;
  * Micro clearfix
  */
 
-.uk-comment-header:before,
-.uk-comment-header:after {
+.yb-comment-header:before,
+.yb-comment-header:after {
     content: "";
     display: table;
 }
 
-.uk-comment-header:after { clear: both; }
+.yb-comment-header:after { clear: both; }
 
 
-/* Sub-object `uk-comment-avatar`
+/* Sub-object `yb-comment-avatar`
  ========================================================================== */
 
-.uk-comment-avatar {
+.yb-comment-avatar {
     margin-right: $comment-avatar-margin-right;
     float: left;
     @include hook-comment-avatar();
 }
 
 
-/* Sub-object `uk-comment-title`
+/* Sub-object `yb-comment-title`
  ========================================================================== */
 
-.uk-comment-title {
+.yb-comment-title {
     margin: $comment-title-margin-top 0 0 0;
     font-size: $comment-title-font-size;
     line-height: $comment-title-line-height;
@@ -99,10 +99,10 @@ $comment-list-padding-left:                      100px !default;
 }
 
 
-/* Sub-object `uk-comment-meta`
+/* Sub-object `yb-comment-meta`
  ========================================================================== */
 
-.uk-comment-meta {
+.yb-comment-meta {
     margin: $comment-meta-margin-top 0 0 0;
     font-size: $comment-meta-font-size;
     line-height: $comment-meta-line-height;
@@ -111,10 +111,10 @@ $comment-list-padding-left:                      100px !default;
 }
 
 
-/* Sub-object `uk-comment-body`
+/* Sub-object `yb-comment-body`
  ========================================================================== */
 
-.uk-comment-body {
+.yb-comment-body {
     @include hook-comment-body();
 }
 
@@ -122,37 +122,37 @@ $comment-list-padding-left:                      100px !default;
  * Remove margin from the last-child
  */
 
- .uk-comment-body > :last-child { margin-bottom: 0; }
+ .yb-comment-body > :last-child { margin-bottom: 0; }
 
 
-/* Sub-object `uk-comment-list`
+/* Sub-object `yb-comment-list`
  ========================================================================== */
 
-.uk-comment-list {
+.yb-comment-list {
     padding: 0;
     list-style: none;
 }
 
-.uk-comment-list .uk-comment + ul {
+.yb-comment-list .yb-comment + ul {
     margin: $comment-list-margin-top 0 0 0;
     list-style: none;
 }
 
-.uk-comment-list > li:nth-child(n+2),
-.uk-comment-list .uk-comment + ul > li:nth-child(n+2) { margin-top: $comment-list-margin-top; }
+.yb-comment-list > li:nth-child(n+2),
+.yb-comment-list .yb-comment + ul > li:nth-child(n+2) { margin-top: $comment-list-margin-top; }
 
 /* Tablet and bigger */
 @media (min-width: $breakpoint-medium) {
 
-    .uk-comment-list .uk-comment + ul { padding-left: $comment-list-padding-left; }
+    .yb-comment-list .yb-comment + ul { padding-left: $comment-list-padding-left; }
 
 }
 
 
-/* Modifier `uk-comment-primary`
+/* Modifier `yb-comment-primary`
  ========================================================================== */
 
-.uk-comment-primary {
+.yb-comment-primary {
     @include hook-comment-primary();
 }
 

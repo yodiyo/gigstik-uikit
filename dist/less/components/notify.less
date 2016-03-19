@@ -1,21 +1,21 @@
 // Name:            Notify
 // Description:     Defines styles for toggleable notifications
 //
-// Component:       `uk-notify`
+// Component:       `yb-notify`
 //
-// Sub-objects:     `uk-notify-message`
+// Sub-objects:     `yb-notify-message`
 //
-// Modifiers:       `uk-notify-top-center`
-//                  `uk-notify-top-right`
-//                  `uk-notify-bottom-left`
-//                  `uk-notify-bottom-center`
-//                  `uk-notify-bottom-right`
-//                  `uk-notify-message-primary`
-//                  `uk-notify-message-success`
-//                  `uk-notify-message-warning`
-//                  `uk-notify-message-danger`
+// Modifiers:       `yb-notify-top-center`
+//                  `yb-notify-top-right`
+//                  `yb-notify-bottom-left`
+//                  `yb-notify-bottom-center`
+//                  `yb-notify-bottom-right`
+//                  `yb-notify-message-primary`
+//                  `yb-notify-message-success`
+//                  `yb-notify-message-warning`
+//                  `yb-notify-message-danger`
 //
-// Uses:            Close: `uk-close`
+// Uses:            Close: `yb-close`
 //
 // ========================================================================
 
@@ -55,7 +55,7 @@
  * Message container for positioning
  */
 
-.uk-notify {
+.yb-notify {
     position: fixed;
     top: @notify-position;
     left: @notify-position;
@@ -69,21 +69,21 @@
 /* Position modifiers
 ========================================================================== */
 
-.uk-notify-top-right,
-.uk-notify-bottom-right  {
+.yb-notify-top-right,
+.yb-notify-bottom-right  {
     left: auto;
     right: @notify-position;
 }
 
-.uk-notify-top-center,
-.uk-notify-bottom-center {
+.yb-notify-top-center,
+.yb-notify-bottom-center {
     left: 50%;
     margin-left: (@notify-width / -2);
 }
 
-.uk-notify-bottom-left,
-.uk-notify-bottom-right,
-.uk-notify-bottom-center {
+.yb-notify-bottom-left,
+.yb-notify-bottom-right,
+.yb-notify-bottom-center {
     top: auto;
     bottom: @notify-position;
 }
@@ -99,7 +99,7 @@
      * Fit in small screen
      */
 
-    .uk-notify {
+    .yb-notify {
         left: 10px;
         right: 10px;
         width: auto;
@@ -109,10 +109,10 @@
 }
 
 
-/* Sub-object: `uk-notify-message`
+/* Sub-object: `yb-notify-message`
 ========================================================================== */
 
-.uk-notify-message {
+.yb-notify-message {
     position: relative;
     margin-bottom: @notify-message-margin-bottom;
     padding: @notify-message-padding;
@@ -128,48 +128,48 @@
 /* Close in notify
  ========================================================================== */
 
-.uk-notify-message > .uk-close {
+.yb-notify-message > .yb-close {
     visibility: hidden;
     float: right;
 }
 
-.uk-notify-message:hover > .uk-close { visibility: visible; }
+.yb-notify-message:hover > .yb-close { visibility: visible; }
 
 
-/* Modifier: `uk-alert-info`
+/* Modifier: `yb-alert-info`
  ========================================================================== */
 
-.uk-notify-message-primary {
+.yb-notify-message-primary {
     background: @notify-message-primary-background;
     color: @notify-message-primary-color;
     .hook-notify-message-primary;
 }
 
 
-/* Modifier: `uk-alert-success`
+/* Modifier: `yb-alert-success`
  ========================================================================== */
 
-.uk-notify-message-success {
+.yb-notify-message-success {
     background: @notify-message-success-background;
     color: @notify-message-success-color;
     .hook-notify-message-success;
 }
 
 
-/* Modifier: `uk-notify-message-warning`
+/* Modifier: `yb-notify-message-warning`
  ========================================================================== */
 
-.uk-notify-message-warning {
+.yb-notify-message-warning {
     background: @notify-message-warning-background;
     color: @notify-message-warning-color;
     .hook-notify-message-warning;
 }
 
 
-/* Modifier: `uk-notify-message-danger`
+/* Modifier: `yb-notify-message-danger`
  ========================================================================== */
 
-.uk-notify-message-danger {
+.yb-notify-message-danger {
     background: @notify-message-danger-background;
     color: @notify-message-danger-color;
     .hook-notify-message-danger;

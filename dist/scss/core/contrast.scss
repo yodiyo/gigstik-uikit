@@ -1,7 +1,7 @@
 // Name:            Contrast
 // Description:     Utility class to adjust colors for dark or colored blocks
 //
-// Component:       `uk-contrast`
+// Component:       `yb-contrast`
 //
 // ========================================================================
 
@@ -104,7 +104,7 @@ $contrast-text-primary-color:                    #2d7091 !default;
    Component: Contrast
  ========================================================================== */
 
-.uk-contrast {
+.yb-contrast {
 
     color: $contrast-base-color;
 
@@ -116,13 +116,13 @@ $contrast-text-primary-color:                    #2d7091 !default;
     //
 
     a:not([class]),
-    .uk-link  {
+    .yb-link  {
         color: $contrast-base-link-color;
         text-decoration: $contrast-base-link-text-decoration;
     }
 
     a:not([class]):hover,
-    .uk-link:hover {
+    .yb-link:hover {
         color: $contrast-base-link-hover-color;
         text-decoration: $contrast-base-link-hover-text-decoration;
     }
@@ -160,65 +160,65 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Nav
     // ========================================================================
 
-    .uk-nav li > a,
-    .uk-nav li > a:hover { text-decoration: none; }
+    .yb-nav li > a,
+    .yb-nav li > a:hover { text-decoration: none; }
 
     //
     // Nav Site
     //
 
-    .uk-nav-side > li > a {
+    .yb-nav-side > li > a {
         color: $contrast-nav-side-color;
         @include hook-contrast-nav-side();
     }
 
-    .uk-nav-side > li > a:hover,
-    .uk-nav-side > li > a:focus {
+    .yb-nav-side > li > a:hover,
+    .yb-nav-side > li > a:focus {
         background: $contrast-nav-side-hover-background;
         color: $contrast-nav-side-hover-color;
         @include hook-contrast-nav-side-hover();
     }
 
-    .uk-nav-side > li.uk-active > a {
+    .yb-nav-side > li.yb-active > a {
         background: $contrast-nav-side-active-background;
         color: $contrast-nav-side-active-color;
         @include hook-contrast-nav-side-active();
     }
 
     // Nav header
-    .uk-nav-side .uk-nav-header {
+    .yb-nav-side .yb-nav-header {
         color: $contrast-nav-side-header-color;
         @include hook-contrast-nav-side-header();
     }
 
     // Nav divider
-    .uk-nav-side .uk-nav-divider {
+    .yb-nav-side .yb-nav-divider {
         border-top-color: $contrast-nav-side-divider-border;
         @include hook-contrast-nav-side-divider();
     }
 
     // Nested items
-    .uk-nav-side ul a { color: $contrast-nav-side-nested-color; }
-    .uk-nav-side ul a:hover { color: $contrast-nav-side-nested-hover-color; }
+    .yb-nav-side ul a { color: $contrast-nav-side-nested-color; }
+    .yb-nav-side ul a:hover { color: $contrast-nav-side-nested-hover-color; }
 
 
     // Subnav
     // ========================================================================
 
-    .uk-subnav > * > a {
+    .yb-subnav > * > a {
         color: $contrast-subnav-color;
         text-decoration: none;
         @include hook-contrast-subnav();
     }
 
-    .uk-subnav > * > a:hover,
-    .uk-subnav > * > a:focus {
+    .yb-subnav > * > a:hover,
+    .yb-subnav > * > a:focus {
         color: $contrast-subnav-hover-color;
         text-decoration: $contrast-subnav-hover-text-decoration;
         @include hook-contrast-subnav-hover();
     }
 
-    .uk-subnav > .uk-active > a {
+    .yb-subnav > .yb-active > a {
         color: $contrast-subnav-active-color;
         @include hook-contrast-subnav-active();
     }
@@ -227,7 +227,7 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Subnav line
     //
 
-    .uk-subnav-line > :nth-child(n+2):before {
+    .yb-subnav-line > :nth-child(n+2):before {
         border-left-color: $contrast-subnav-line-border;
         @include hook-contrast-subnav-line-divider();
     }
@@ -236,15 +236,15 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Subnav pill
     //
 
-    .uk-subnav-pill > * > a:hover,
-    .uk-subnav-pill > * > a:focus {
+    .yb-subnav-pill > * > a:hover,
+    .yb-subnav-pill > * > a:focus {
         background: $contrast-subnav-pill-hover-background;
         color: $contrast-subnav-pill-hover-color;
         text-decoration: none;
         @include hook-contrast-subnav-pill-hover();
     }
 
-    .uk-subnav-pill > .uk-active > a {
+    .yb-subnav-pill > .yb-active > a {
         background: $contrast-subnav-pill-active-background;
         color: $contrast-subnav-pill-active-color;
         @include hook-contrast-subnav-pill-active();
@@ -254,17 +254,17 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Tab
     // ========================================================================
 
-    .uk-tab { border-bottom-color: $contrast-tab-border; }
+    .yb-tab { border-bottom-color: $contrast-tab-border; }
 
-    .uk-tab > li > a {
+    .yb-tab > li > a {
         border-color: transparent;
         color: $contrast-tab-color;
         @include hook-contrast-tab();
     }
 
-    .uk-tab > li > a:hover,
-    .uk-tab > li > a:focus,
-    .uk-tab > li.uk-open > a {
+    .yb-tab > li > a:hover,
+    .yb-tab > li > a:focus,
+    .yb-tab > li.yb-open > a {
         border-color: $contrast-tab-hover-border;
         background: $contrast-tab-hover-background;
         color: $contrast-tab-hover-color;
@@ -273,7 +273,7 @@ $contrast-text-primary-color:                    #2d7091 !default;
     }
 
     /* Active */
-    .uk-tab > li.uk-active > a {
+    .yb-tab > li.yb-active > a {
         border-color: $contrast-tab-active-border;
         border-bottom-color: transparent;
         background: $contrast-tab-active-background;
@@ -285,19 +285,19 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Tab center
     //
 
-    .uk-tab-center { border-bottom-color: $contrast-tab-border; }
+    .yb-tab-center { border-bottom-color: $contrast-tab-border; }
 
     //
     // Tab grid
     //
 
-    .uk-tab-grid:before { border-top-color: $contrast-tab-border; }
+    .yb-tab-grid:before { border-top-color: $contrast-tab-border; }
 
 
     // List
     // ========================================================================
 
-    .uk-list-line > li:nth-child(n+2) {
+    .yb-list-line > li:nth-child(n+2) {
         border-top-color: $contrast-list-line-border;
         @include hook-contrast-list-line();
     }
@@ -306,23 +306,23 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Form
     // ========================================================================
 
-    .uk-form select,
-    .uk-form textarea,
-    .uk-form input:not([type]),
-    .uk-form input[type="text"],
-    .uk-form input[type="password"],
-    .uk-form input[type="datetime"],
-    .uk-form input[type="datetime-local"],
-    .uk-form input[type="date"],
-    .uk-form input[type="month"],
-    .uk-form input[type="time"],
-    .uk-form input[type="week"],
-    .uk-form input[type="number"],
-    .uk-form input[type="email"],
-    .uk-form input[type="url"],
-    .uk-form input[type="search"],
-    .uk-form input[type="tel"],
-    .uk-form input[type="color"] {
+    .yb-form select,
+    .yb-form textarea,
+    .yb-form input:not([type]),
+    .yb-form input[type="text"],
+    .yb-form input[type="password"],
+    .yb-form input[type="datetime"],
+    .yb-form input[type="datetime-local"],
+    .yb-form input[type="date"],
+    .yb-form input[type="month"],
+    .yb-form input[type="time"],
+    .yb-form input[type="week"],
+    .yb-form input[type="number"],
+    .yb-form input[type="email"],
+    .yb-form input[type="url"],
+    .yb-form input[type="search"],
+    .yb-form input[type="tel"],
+    .yb-form input[type="color"] {
         border-color: $contrast-form-border;
         background: $contrast-form-background;
         color: $contrast-form-color;
@@ -341,29 +341,29 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Placeholder
     //
 
-    .uk-form :-ms-input-placeholder { color: $contrast-form-placeholder-color !important; }
-    .uk-form ::-moz-placeholder { color: $contrast-form-placeholder-color; }
-    .uk-form ::-webkit-input-placeholder { color: $contrast-form-placeholder-color; }
+    .yb-form :-ms-input-placeholder { color: $contrast-form-placeholder-color !important; }
+    .yb-form ::-moz-placeholder { color: $contrast-form-placeholder-color; }
+    .yb-form ::-webkit-input-placeholder { color: $contrast-form-placeholder-color; }
 
 
     // Button
     // ========================================================================
 
-    .uk-button {
+    .yb-button {
         color: $contrast-button-color;
         background: $contrast-button-background;
         @include hook-contrast-button();
     }
 
-    .uk-button:hover,
-    .uk-button:focus {
+    .yb-button:hover,
+    .yb-button:focus {
         background-color: $contrast-button-hover-background;
         color: $contrast-button-hover-color;
         @include hook-contrast-button-hover();
     }
 
-    .uk-button:active,
-    .uk-button.uk-active {
+    .yb-button:active,
+    .yb-button.yb-active {
         background-color: $contrast-button-active-background;
         color: $contrast-button-active-color;
         @include hook-contrast-button-active();
@@ -373,21 +373,21 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Button primary
     //
 
-    .uk-button-primary {
+    .yb-button-primary {
         background-color: $contrast-button-primary-background;
         color: $contrast-button-primary-color;
         @include hook-contrast-button-primary();
     }
 
-    .uk-button-primary:hover,
-    .uk-button-primary:focus {
+    .yb-button-primary:hover,
+    .yb-button-primary:focus {
         background-color: $contrast-button-primary-hover-background;
         color: $contrast-button-primary-hover-color;
         @include hook-contrast-button-primary-hover();
     }
 
-    .uk-button-primary:active,
-    .uk-button-primary.uk-active {
+    .yb-button-primary:active,
+    .yb-button-primary.yb-active {
         background-color: $contrast-button-primary-active-background;
         color: $contrast-button-primary-active-color;
         @include hook-contrast-button-primary-active();
@@ -401,12 +401,12 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Icon hover
     //
 
-    .uk-icon-hover {
+    .yb-icon-hover {
         color: $contrast-icon-hover-color;
         @include hook-contrast-icon-hover();
     }
 
-    .uk-icon-hover:hover {
+    .yb-icon-hover:hover {
         color: $contrast-icon-hover-hover-color;
         @include hook-contrast-icon-hover-hover();
     }
@@ -415,20 +415,20 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Icon button
     //
 
-    .uk-icon-button {
+    .yb-icon-button {
         background: $contrast-icon-button-background;
         color: $contrast-icon-button-color;
         @include hook-contrast-icon-button();
     }
 
-    .uk-icon-button:hover,
-    .uk-icon-button:focus {
+    .yb-icon-button:hover,
+    .yb-icon-button:focus {
         background-color: $contrast-icon-button-hover-background;
         color: $contrast-icon-button-hover-color;
         @include hook-contrast-icon-button-hover();
     }
 
-    .uk-icon-button:active {
+    .yb-icon-button:active {
         background-color: $contrast-icon-button-active-background;
         color: $contrast-icon-button-active-color;
         @include hook-contrast-icon-button-active();
@@ -438,8 +438,8 @@ $contrast-text-primary-color:                    #2d7091 !default;
     // Text
     // ========================================================================
 
-    .uk-text-muted { color: $contrast-text-muted-color !important; }
-    .uk-text-primary { color: $contrast-text-primary-color !important; }
+    .yb-text-muted { color: $contrast-text-muted-color !important; }
+    .yb-text-primary { color: $contrast-text-primary-color !important; }
 
 
     // Misc hook

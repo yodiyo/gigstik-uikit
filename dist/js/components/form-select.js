@@ -20,19 +20,19 @@
 
         defaults: {
             'target': '>span:first',
-            'activeClass': 'uk-active'
+            'activeClass': 'yb-active'
         },
 
         boot: function() {
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-form-select]", context).each(function(){
+                UI.$("[data-yb-form-select]", context).each(function(){
 
                     var ele = UI.$(this);
 
                     if (!ele.data("formSelect")) {
-                        UI.formSelect(ele, UI.Utils.options(ele.attr("data-uk-form-select")));
+                        UI.formSelect(ele, UI.Utils.options(ele.attr("data-yb-form-select")));
                     }
                 });
             });

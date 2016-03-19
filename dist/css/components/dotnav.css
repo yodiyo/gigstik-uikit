@@ -1,300 +1,3 @@
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-/*! UIkit 2.25.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ========================================================================
    Component: Dotnav
  ========================================================================== */
@@ -302,7 +5,7 @@
  * 1. Gutter
  * 2. Remove default list style
  */
-.uk-dotnav {
+.yb-dotnav {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -318,9 +21,9 @@
 }
 /*
  * 1. Space is allocated solely based on content dimensions
- * 2. Horizontal gutter is using `padding` so `uk-width-*` classes can be applied
+ * 2. Horizontal gutter is using `padding` so `yb-width-*` classes can be applied
  */
-.uk-dotnav > * {
+.yb-dotnav > * {
   /* 1 */
   -ms-flex: none;
   -webkit-flex: none;
@@ -332,16 +35,16 @@
 /*
  * DEPRECATED IE9 Support
  */
-.uk-dotnav:before,
-.uk-dotnav:after {
+.yb-dotnav:before,
+.yb-dotnav:after {
   content: "";
   display: block;
   overflow: hidden;
 }
-.uk-dotnav:after {
+.yb-dotnav:after {
   clear: both;
 }
-.uk-dotnav > * {
+.yb-dotnav > * {
   float: left;
 }
 /* Items
@@ -350,7 +53,7 @@
  * Items
  * 1. Hide text if present
  */
-.uk-dotnav > * > * {
+.yb-dotnav > * > * {
   display: block;
   box-sizing: content-box;
   width: 20px;
@@ -367,47 +70,47 @@
  * 1. Apply hover style also to focus state
  * 2. Remove default focus style
  */
-.uk-dotnav > * > :hover,
-.uk-dotnav > * > :focus {
+.yb-dotnav > * > :hover,
+.yb-dotnav > * > :focus {
   background: rgba(50, 50, 50, 0.4);
   /* 2 */
   outline: none;
 }
 /* OnClick */
-.uk-dotnav > * > :active {
+.yb-dotnav > * > :active {
   background: rgba(50, 50, 50, 0.6);
 }
 /* Active */
-.uk-dotnav > .uk-active > * {
+.yb-dotnav > .yb-active > * {
   background: rgba(50, 50, 50, 0.4);
 }
-/* Modifier: `uk-dotnav-contrast`
+/* Modifier: `yb-dotnav-contrast`
  ========================================================================== */
-.uk-dotnav-contrast > * > * {
+.yb-dotnav-contrast > * > * {
   background: rgba(255, 255, 255, 0.4);
 }
 /*
  * Hover
  * 1. Apply hover style also to focus state
  */
-.uk-dotnav-contrast > * > :hover,
-.uk-dotnav-contrast > * > :focus {
+.yb-dotnav-contrast > * > :hover,
+.yb-dotnav-contrast > * > :focus {
   background: rgba(255, 255, 255, 0.7);
 }
 /* OnClick */
-.uk-dotnav-contrast > * > :active {
+.yb-dotnav-contrast > * > :active {
   background: rgba(255, 255, 255, 0.9);
 }
 /* Active */
-.uk-dotnav-contrast > .uk-active > * {
+.yb-dotnav-contrast > .yb-active > * {
   background: rgba(255, 255, 255, 0.9);
 }
-/* Modifier: 'uk-dotnav-vertical'
+/* Modifier: 'yb-dotnav-vertical'
  ========================================================================== */
 /*
  * DEPRECATED
  */
-.uk-dotnav-vertical {
+.yb-dotnav-vertical {
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
@@ -415,6 +118,6 @@
 /*
  * DEPRECATED IE9 Support
  */
-.uk-dotnav-vertical > * {
+.yb-dotnav-vertical > * {
   float: none;
 }

@@ -39,12 +39,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$('textarea[data-uk-htmleditor]', context).each(function() {
+                UI.$('textarea[data-yb-htmleditor]', context).each(function() {
 
                     var editor = UI.$(this);
 
                     if (!editor.data('htmleditor')) {
-                        UI.htmleditor(editor, UI.Utils.options(editor.attr('data-uk-htmleditor')));
+                        UI.htmleditor(editor, UI.Utils.options(editor.attr('data-yb-htmleditor')));
                     }
                 });
             });
@@ -61,10 +61,10 @@
             tpl = tpl.replace(/\{:lblCodeview}/g, this.options.lblCodeview);
 
             this.htmleditor = UI.$(tpl);
-            this.content    = this.htmleditor.find('.uk-htmleditor-content');
-            this.toolbar    = this.htmleditor.find('.uk-htmleditor-toolbar');
-            this.preview    = this.htmleditor.find('.uk-htmleditor-preview').children().eq(0);
-            this.code       = this.htmleditor.find('.uk-htmleditor-code');
+            this.content    = this.htmleditor.find('.yb-htmleditor-content');
+            this.toolbar    = this.htmleditor.find('.yb-htmleditor-toolbar');
+            this.preview    = this.htmleditor.find('.yb-htmleditor-preview').children().eq(0);
+            this.code       = this.htmleditor.find('.yb-htmleditor-code');
 
             this.element.before(this.htmleditor).appendTo(this.code);
             this.editor = this.CodeMirror.fromTextArea(this.element[0], this.options.codemirror);
@@ -79,7 +79,7 @@
             // iframe mode?
             if (this.options.iframe) {
 
-                this.iframe = UI.$('<iframe class="uk-htmleditor-iframe" frameborder="0" scrolling="auto" height="100" width="100%"></iframe>');
+                this.iframe = UI.$('<iframe class="yb-htmleditor-iframe" frameborder="0" scrolling="auto" height="100" width="100%"></iframe>');
                 this.preview.append(this.iframe);
 
                 // must open and close document object to start using it!
@@ -116,15 +116,15 @@
 
                 }, 10));
 
-            this.htmleditor.on('click', '.uk-htmleditor-button-code, .uk-htmleditor-button-preview', function(e) {
+            this.htmleditor.on('click', '.yb-htmleditor-button-code, .yb-htmleditor-button-preview', function(e) {
 
                 e.preventDefault();
 
                 if ($this.htmleditor.attr('data-mode') == 'tab') {
 
-                    $this.htmleditor.find('.uk-htmleditor-button-code, .uk-htmleditor-button-preview').removeClass('uk-active').filter(this).addClass('uk-active');
+                    $this.htmleditor.find('.yb-htmleditor-button-code, .yb-htmleditor-button-preview').removeClass('yb-active').filter(this).addClass('yb-active');
 
-                    $this.activetab = UI.$(this).hasClass('uk-htmleditor-button-code') ? 'code' : 'preview';
+                    $this.activetab = UI.$(this).hasClass('yb-htmleditor-button-code') ? 'code' : 'preview';
                     $this.htmleditor.attr('data-active-tab', $this.activetab);
                     $this.editor.refresh();
                 }
@@ -163,7 +163,7 @@
                 $this.debouncedRedraw();
             });
 
-            this.element.attr('data-uk-check-display', 1).on('display.uk.check', function(e) {
+            this.element.attr('data-yb-check-display', 1).on('display.uk.check', function(e) {
                 if (this.htmleditor.is(":visible")) this.fit();
             }.bind(this));
 
@@ -238,7 +238,7 @@
 
                 var title = $this.buttons[button].title ? $this.buttons[button].title : button;
 
-                bar.push('<li><a data-htmleditor-button="'+button+'" title="'+title+'" data-uk-tooltip>'+$this.buttons[button].label+'</a></li>');
+                bar.push('<li><a data-htmleditor-button="'+button+'" title="'+title+'" data-yb-tooltip>'+$this.buttons[button].label+'</a></li>');
             });
 
             this.toolbar.html(bar.join('\n'));
@@ -258,9 +258,9 @@
                     this.htmleditor.attr('data-active-tab', this.activetab);
                 }
 
-                this.htmleditor.find('.uk-htmleditor-button-code, .uk-htmleditor-button-preview').removeClass('uk-active')
-                    .filter(this.activetab == 'code' ? '.uk-htmleditor-button-code' : '.uk-htmleditor-button-preview')
-                    .addClass('uk-active');
+                this.htmleditor.find('.yb-htmleditor-button-code, .yb-htmleditor-button-preview').removeClass('yb-active')
+                    .filter(this.activetab == 'code' ? '.yb-htmleditor-button-code' : '.yb-htmleditor-button-preview')
+                    .addClass('yb-active');
             }
 
             this.editor.refresh();
@@ -371,20 +371,20 @@
 
 
     UI.components.htmleditor.template = [
-        '<div class="uk-htmleditor uk-clearfix" data-mode="split">',
-            '<div class="uk-htmleditor-navbar">',
-                '<ul class="uk-htmleditor-navbar-nav uk-htmleditor-toolbar"></ul>',
-                '<div class="uk-htmleditor-navbar-flip">',
-                    '<ul class="uk-htmleditor-navbar-nav">',
-                        '<li class="uk-htmleditor-button-code"><a>{:lblCodeview}</a></li>',
-                        '<li class="uk-htmleditor-button-preview"><a>{:lblPreview}</a></li>',
-                        '<li><a data-htmleditor-button="fullscreen"><i class="uk-icon-expand"></i></a></li>',
+        '<div class="yb-htmleditor yb-clearfix" data-mode="split">',
+            '<div class="yb-htmleditor-navbar">',
+                '<ul class="yb-htmleditor-navbar-nav yb-htmleditor-toolbar"></ul>',
+                '<div class="yb-htmleditor-navbar-flip">',
+                    '<ul class="yb-htmleditor-navbar-nav">',
+                        '<li class="yb-htmleditor-button-code"><a>{:lblCodeview}</a></li>',
+                        '<li class="yb-htmleditor-button-preview"><a>{:lblPreview}</a></li>',
+                        '<li><a data-htmleditor-button="fullscreen"><i class="yb-icon-expand"></i></a></li>',
                     '</ul>',
                 '</div>',
             '</div>',
-            '<div class="uk-htmleditor-content">',
-                '<div class="uk-htmleditor-code"></div>',
-                '<div class="uk-htmleditor-preview"><div></div></div>',
+            '<div class="yb-htmleditor-content">',
+                '<div class="yb-htmleditor-code"></div>',
+                '<div class="yb-htmleditor-preview"><div></div></div>',
             '</div>',
         '</div>'
     ].join('');
@@ -398,39 +398,39 @@
 
                 fullscreen: {
                     title  : 'Fullscreen',
-                    label  : '<i class="uk-icon-expand"></i>'
+                    label  : '<i class="yb-icon-expand"></i>'
                 },
                 bold : {
                     title  : 'Bold',
-                    label  : '<i class="uk-icon-bold"></i>'
+                    label  : '<i class="yb-icon-bold"></i>'
                 },
                 italic : {
                     title  : 'Italic',
-                    label  : '<i class="uk-icon-italic"></i>'
+                    label  : '<i class="yb-icon-italic"></i>'
                 },
                 strike : {
                     title  : 'Strikethrough',
-                    label  : '<i class="uk-icon-strikethrough"></i>'
+                    label  : '<i class="yb-icon-strikethrough"></i>'
                 },
                 blockquote : {
                     title  : 'Blockquote',
-                    label  : '<i class="uk-icon-quote-right"></i>'
+                    label  : '<i class="yb-icon-quote-right"></i>'
                 },
                 link : {
                     title  : 'Link',
-                    label  : '<i class="uk-icon-link"></i>'
+                    label  : '<i class="yb-icon-link"></i>'
                 },
                 image : {
                     title  : 'Image',
-                    label  : '<i class="uk-icon-picture-o"></i>'
+                    label  : '<i class="yb-icon-picture-o"></i>'
                 },
                 listUl : {
                     title  : 'Unordered List',
-                    label  : '<i class="uk-icon-list-ul"></i>'
+                    label  : '<i class="yb-icon-list-ul"></i>'
                 },
                 listOl : {
                     title  : 'Ordered List',
-                    label  : '<i class="uk-icon-list-ol"></i>'
+                    label  : '<i class="yb-icon-list-ol"></i>'
                 }
 
             });
@@ -467,11 +467,11 @@
             });
 
             editor.htmleditor.on('click', 'a[data-htmleditor-button="fullscreen"]', function() {
-                editor.htmleditor.toggleClass('uk-htmleditor-fullscreen');
+                editor.htmleditor.toggleClass('yb-htmleditor-fullscreen');
 
                 var wrap = editor.editor.getWrapperElement();
 
-                if (editor.htmleditor.hasClass('uk-htmleditor-fullscreen')) {
+                if (editor.htmleditor.hasClass('yb-htmleditor-fullscreen')) {
 
                     editor.editor.state.fullScreenRestore = {scrollTop: window.pageYOffset, scrollLeft: window.pageXOffset, width: wrap.style.width, height: wrap.style.height};
                     wrap.style.width  = '';
@@ -591,7 +591,7 @@
                 },
                 disableMarkdown: function() {
                     this.editor.setOption('mode', 'htmlmixed');
-                    this.htmleditor.find('.uk-htmleditor-button-code a').html(this.options.lblCodeview);
+                    this.htmleditor.find('.yb-htmleditor-button-code a').html(this.options.lblCodeview);
                     this.render();
                 }
 
@@ -605,7 +605,7 @@
 
             function enableMarkdown() {
                 editor.editor.setOption('mode', 'gfm');
-                editor.htmleditor.find('.uk-htmleditor-button-code a').html(editor.options.lblMarkedview);
+                editor.htmleditor.find('.yb-htmleditor-button-code a').html(editor.options.lblMarkedview);
             }
 
             function addAction(name, replace, mode) {

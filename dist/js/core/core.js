@@ -227,7 +227,7 @@
 
     UI.Utils.checkDisplay = function(context, initanimation) {
 
-        var elements = UI.$('[data-uk-margin], [data-uk-grid-match], [data-uk-grid-margin], [data-uk-check-display]', context || document), animated;
+        var elements = UI.$('[data-yb-margin], [data-yb-grid-match], [data-yb-grid-margin], [data-yb-check-display]', context || document), animated;
 
         if (context && !elements.length) {
             elements = $(context);
@@ -239,7 +239,7 @@
         if (initanimation) {
 
             if (typeof(initanimation)!='string') {
-                initanimation = '[class*="uk-animation-"]';
+                initanimation = '[class*="yb-animation-"]';
             }
 
             elements.find(initanimation).each(function(){
@@ -627,7 +627,7 @@
             UI.$body = UI.$('body');
 
             UI.ready(function(context){
-                UI.domObserve('[data-uk-observe]');
+                UI.domObserve('[data-yb-observe]');
             });
 
             UI.on('changed.uk.dom', function(e) {
@@ -688,13 +688,13 @@
                 // remove css hover rules for touch devices
                 // UI.Utils.removeCssRules(/\.uk-(?!navbar).*:hover/);
 
-                // viewport unit fix for uk-height-viewport - should be fixed in iOS 8
+                // viewport unit fix for yb-height-viewport - should be fixed in iOS 8
                 if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
 
                     UI.$win.on('load orientationchange resize', UI.Utils.debounce((function(){
 
                         var fn = function() {
-                            $('.uk-height-viewport').css('height', window.innerHeight);
+                            $('.yb-height-viewport').css('height', window.innerHeight);
                             return fn;
                         };
 
@@ -719,15 +719,15 @@
     }());
 
     // add touch identifier class
-    UI.$html.addClass(UI.support.touch ? "uk-touch" : "uk-notouch");
+    UI.$html.addClass(UI.support.touch ? "yb-touch" : "yb-notouch");
 
-    // add uk-hover class on tap to support overlays on touch devices
+    // add yb-hover class on tap to support overlays on touch devices
     if (UI.support.touch) {
 
         var hoverset = false,
             exclude,
-            hovercls = 'uk-hover',
-            selector = '.uk-overlay, .uk-overlay-hover, .uk-overlay-toggle, .uk-animation-hover, .uk-has-hover';
+            hovercls = 'yb-hover',
+            selector = '.yb-overlay, .yb-overlay-hover, .yb-overlay-toggle, .yb-animation-hover, .yb-has-hover';
 
         UI.$html.on('mouseenter touchstart MSPointerDown pointerdown', selector, function() {
 

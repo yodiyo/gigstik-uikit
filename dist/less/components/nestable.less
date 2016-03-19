@@ -1,25 +1,25 @@
 // Name:            Nestable
 // Description:     Defines styles for nestable lists
 //
-// Component:       `uk-nestable`
+// Component:       `yb-nestable`
 //
-// Sub-objects:     `uk-nestable-list`
-//                  `uk-nestable-item`
-//                  `uk-nestable-handle`
-//                  `uk-nestable-moving`
-//                  `uk-nestable-toggle`
-//                  `uk-nestable-panel`
+// Sub-objects:     `yb-nestable-list`
+//                  `yb-nestable-item`
+//                  `yb-nestable-handle`
+//                  `yb-nestable-moving`
+//                  `yb-nestable-toggle`
+//                  `yb-nestable-panel`
 //
-// Modifier:        `uk-nestable-dragged`
-//                  `uk-nestable-placeholder`
+// Modifier:        `yb-nestable-dragged`
+//                  `yb-nestable-placeholder`
 //
-// States:          `uk-parent`
-//                  `uk-collapsed`
+// States:          `yb-parent`
+//                  `yb-collapsed`
 //
 // Markup:
 //
-// <!-- uk-nestable -->
-// <ul class="uk-nestable" data-uk-nestable>
+// <!-- yb-nestable -->
+// <ul class="yb-nestable" data-yb-nestable>
 //     <li></li>
 //     <li></li>
 // </ul>
@@ -51,7 +51,7 @@
    Component: Nestable
  ========================================================================== */
 
-.uk-nestable {
+.yb-nestable {
     padding: 0;
     list-style: none;
     .hook-nestable;
@@ -62,46 +62,46 @@
  * Currently only works in Webkit
  */
 
-.uk-nestable a,
-.uk-nestable img { -webkit-touch-callout: none; }
+.yb-nestable a,
+.yb-nestable img { -webkit-touch-callout: none; }
 
 
-/* Sub-object `uk-nestable-list`
+/* Sub-object `yb-nestable-list`
  ========================================================================== */
 
-.uk-nestable-list {
+.yb-nestable-list {
     margin: 0;
     padding-left: @nestable-padding-left;
     list-style: none;
 }
 
 
-/* Sub-modifier `uk-nestable-item`
+/* Sub-modifier `yb-nestable-item`
  ========================================================================== */
 
 /*
  * 1. Deactivate browser touch actions in IE11
  */
 
-.uk-nestable-item {
+.yb-nestable-item {
     /* 1 */
     touch-action: none;
     .hook-nestable-item;
 }
 
-.uk-nestable-item + .uk-nestable-item { margin-top: @nestable-item-margin; }
+.yb-nestable-item + .yb-nestable-item { margin-top: @nestable-item-margin; }
 
-.uk-nestable-list:not(.uk-nestable-dragged) > .uk-nestable-item:first-child { margin-top: @nestable-item-margin; }
+.yb-nestable-list:not(.yb-nestable-dragged) > .yb-nestable-item:first-child { margin-top: @nestable-item-margin; }
 
 
-/* Sub-modifier `uk-nestable-dragged`
+/* Sub-modifier `yb-nestable-dragged`
  ========================================================================== */
 
 /*
  * 1. Reset style
  */
 
-.uk-nestable-dragged {
+.yb-nestable-dragged {
     position: absolute;
     z-index: @nestable-dragged-z-index;
     pointer-events: none;
@@ -111,14 +111,14 @@
 }
 
 
-/* Sub-modifier `uk-nestable-placeholder`
+/* Sub-modifier `yb-nestable-placeholder`
  ========================================================================== */
 
-.uk-nestable-placeholder { position: relative; }
+.yb-nestable-placeholder { position: relative; }
 
-.uk-nestable-placeholder > * { opacity: 0; }
+.yb-nestable-placeholder > * { opacity: 0; }
 
-.uk-nestable-placeholder:after {
+.yb-nestable-placeholder:after {
     content: '';
     position: absolute;
     top: 0;
@@ -134,31 +134,31 @@
 /* Empty List
  ========================================================================== */
 
-.uk-nestable-empty {
+.yb-nestable-empty {
     min-height: @nestable-empty-height;
     .hook-nestable-empty;
 }
 
 
-/* Sub-object `uk-nestable-handle`
+/* Sub-object `yb-nestable-handle`
  ========================================================================== */
 
 /*
  * Deactivate browser touch actions in IE11
  */
 
-.uk-nestable-handle { touch-action: none; }
+.yb-nestable-handle { touch-action: none; }
 
 /* Hover */
-.uk-nestable-handle:hover { cursor: move; }
+.yb-nestable-handle:hover { cursor: move; }
 
 
-/* Sub-object `uk-nestable-moving`
+/* Sub-object `yb-nestable-moving`
  ========================================================================== */
 
-.uk-nestable-moving,
+.yb-nestable-moving,
 /* Needed if moving over links or buttons */
-.uk-nestable-moving * { cursor: move; }
+.yb-nestable-moving * { cursor: move; }
 
 
 /* [data-nestable-action='toggle']
@@ -178,35 +178,35 @@
 }
 
 
-/* Sub-object `.uk-nestable-toggle`
+/* Sub-object `.yb-nestable-toggle`
  ========================================================================== */
 
-.uk-nestable-toggle {
+.yb-nestable-toggle {
     display: inline-block;
     visibility: hidden;
     .hook-nestable-toggle;
 }
 
-.uk-nestable-toggle:after {
+.yb-nestable-toggle:after {
     content: @nestable-toggle-icon;
     font-family: FontAwesome;
 }
 
-.uk-parent > :not(.uk-nestable-list) .uk-nestable-toggle { visibility: visible; }
+.yb-parent > :not(.yb-nestable-list) .yb-nestable-toggle { visibility: visible; }
 
 /*
  * Collapsed
  */
 
-.uk-collapsed .uk-nestable-list { display: none; }
+.yb-collapsed .yb-nestable-list { display: none; }
 
-.uk-collapsed .uk-nestable-toggle:after { content: @nestable-toggle-collapsed-icon; }
+.yb-collapsed .yb-nestable-toggle:after { content: @nestable-toggle-collapsed-icon; }
 
 
-/* Sub-object `uk-nestable-panel`
+/* Sub-object `yb-nestable-panel`
  ========================================================================== */
 
-.uk-nestable-panel {
+.yb-nestable-panel {
     padding: @nestable-panel-padding;
     background: @nestable-panel-background;
     .hook-nestable-panel;

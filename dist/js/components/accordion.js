@@ -22,9 +22,9 @@
             animate    : true,
             easing     : 'swing',
             duration   : 300,
-            toggle     : '.uk-accordion-title',
-            containers : '.uk-accordion-content',
-            clsactive  : 'uk-active'
+            toggle     : '.yb-accordion-title',
+            containers : '.yb-accordion-content',
+            clsactive  : 'yb-active'
         },
 
         boot:  function() {
@@ -34,12 +34,12 @@
 
                 setTimeout(function(){
 
-                    UI.$("[data-uk-accordion]", context).each(function(){
+                    UI.$("[data-yb-accordion]", context).each(function(){
 
                         var ele = UI.$(this);
 
                         if(!ele.data("accordion")) {
-                            UI.accordion(ele, UI.Utils.options(ele.attr('data-uk-accordion')));
+                            UI.accordion(ele, UI.Utils.options(ele.attr('data-yb-accordion')));
                         }
                     });
 

@@ -15,8 +15,8 @@
 
         defaults: {
             "target"     : false,
-            "cls"        : "uk-scrollspy-inview",
-            "initcls"    : "uk-scrollspy-init-inview",
+            "cls"        : "yb-scrollspy-inview",
+            "initcls"    : "yb-scrollspy-init-inview",
             "topoffset"  : 0,
             "leftoffset" : 0,
             "repeat"     : false,
@@ -32,12 +32,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-scrollspy]", context).each(function() {
+                UI.$("[data-yb-scrollspy]", context).each(function() {
 
                     var element = UI.$(this);
 
                     if (!element.data("scrollspy")) {
-                        var obj = UI.scrollspy(element, UI.Utils.options(element.attr("data-uk-scrollspy")));
+                        var obj = UI.scrollspy(element, UI.Utils.options(element.attr("data-yb-scrollspy")));
                     }
                 });
             });
@@ -70,7 +70,7 @@
 
                         element.data('scrollspy-idle', setTimeout(function(){
 
-                            element.addClass("uk-scrollspy-inview").toggleClass(toggle).width();
+                            element.addClass("yb-scrollspy-inview").toggleClass(toggle).width();
                             element.trigger("inview.uk.scrollspy");
 
                             element.data('scrollspy-idle', false);
@@ -88,7 +88,7 @@
                             element.data('scrollspy-idle', false);
                         }
 
-                        element.removeClass("uk-scrollspy-inview").toggleClass(toggle);
+                        element.removeClass("yb-scrollspy-inview").toggleClass(toggle);
                         element.data('inviewstate', false);
 
                         element.trigger("outview.uk.scrollspy");
@@ -118,7 +118,7 @@
     UI.component('scrollspynav', {
 
         defaults: {
-            "cls"          : 'uk-active',
+            "cls"          : 'yb-active',
             "closest"      : false,
             "topoffset"    : 0,
             "leftoffset"   : 0,
@@ -134,12 +134,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-scrollspy-nav]", context).each(function() {
+                UI.$("[data-yb-scrollspy-nav]", context).each(function() {
 
                     var element = UI.$(this);
 
                     if (!element.data("scrollspynav")) {
-                        var obj = UI.scrollspynav(element, UI.Utils.options(element.attr("data-uk-scrollspy-nav")));
+                        var obj = UI.scrollspynav(element, UI.Utils.options(element.attr("data-yb-scrollspy-nav")));
                     }
                 });
             });

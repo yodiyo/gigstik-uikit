@@ -1,7 +1,7 @@
 // Name:            Text
 // Description:     Collection of useful text utility classes to style your content
 //
-// Component:       `uk-text-*`
+// Component:       `yb-text-*`
 //
 // ========================================================================
 
@@ -30,12 +30,12 @@ $text-contrast-color:                            #fff !default;
 /* Size modifiers
  ========================================================================== */
 
-.uk-text-small {
+.yb-text-small {
     font-size: $text-small-font-size;
     line-height: $text-small-line-height;
 }
 
-.uk-text-large {
+.yb-text-large {
     font-size: $text-large-font-size;
     line-height: $text-large-line-height;
     font-weight: $text-large-font-weight;
@@ -45,45 +45,45 @@ $text-contrast-color:                            #fff !default;
 /* Weight modifiers
  ========================================================================== */
 
-.uk-text-bold { font-weight: bold; }
+.yb-text-bold { font-weight: bold; }
 
 
 /* Color modifiers
  ========================================================================== */
 
-.uk-text-muted { color: $text-muted-color !important; }
-.uk-text-primary { color: $text-primary-color !important; }
-.uk-text-success { color: $text-success-color !important; }
-.uk-text-warning { color: $text-warning-color !important; }
-.uk-text-danger { color: $text-danger-color !important; }
-.uk-text-contrast { color: $text-contrast-color !important; }
+.yb-text-muted { color: $text-muted-color !important; }
+.yb-text-primary { color: $text-primary-color !important; }
+.yb-text-success { color: $text-success-color !important; }
+.yb-text-warning { color: $text-warning-color !important; }
+.yb-text-danger { color: $text-danger-color !important; }
+.yb-text-contrast { color: $text-contrast-color !important; }
 
 
 /* Alignment modifiers
  ========================================================================== */
 
-.uk-text-left { text-align: left !important; }
-.uk-text-right { text-align: right !important; }
-.uk-text-center { text-align: center !important; }
-.uk-text-justify { text-align: justify !important; }
+.yb-text-left { text-align: left !important; }
+.yb-text-right { text-align: right !important; }
+.yb-text-center { text-align: center !important; }
+.yb-text-justify { text-align: justify !important; }
 
-.uk-text-top { vertical-align: top !important; }
-.uk-text-middle { vertical-align: middle !important; }
-.uk-text-bottom { vertical-align: bottom !important; }
+.yb-text-top { vertical-align: top !important; }
+.yb-text-middle { vertical-align: middle !important; }
+.yb-text-bottom { vertical-align: bottom !important; }
 
 /* Only tablets portrait and smaller */
 @media (max-width: $breakpoint-medium-max) {
 
-    .uk-text-center-medium { text-align: center !important; }
-    .uk-text-left-medium { text-align: left !important; }
+    .yb-text-center-medium { text-align: center !important; }
+    .yb-text-left-medium { text-align: left !important; }
 
 }
 
 /* Phone landscape and smaller */
 @media (max-width: $breakpoint-small-max) {
 
-    .uk-text-center-small { text-align: center !important; }
-    .uk-text-left-small { text-align: left !important; }
+    .yb-text-center-small { text-align: center !important; }
+    .yb-text-left-small { text-align: left !important; }
 
 }
 
@@ -95,13 +95,13 @@ $text-contrast-color:                            #fff !default;
  * Prevent text from wrapping onto multiple lines
  */
 
-.uk-text-nowrap { white-space: nowrap; }
+.yb-text-nowrap { white-space: nowrap; }
 
 /*
  * Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
  */
 
-.uk-text-truncate {
+.yb-text-truncate {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -111,7 +111,7 @@ $text-contrast-color:                            #fff !default;
  * Break strings if their length exceeds the width of their container
  */
 
-.uk-text-break {
+.yb-text-break {
     word-wrap: break-word;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;

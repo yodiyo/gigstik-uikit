@@ -1,25 +1,25 @@
 // Name:            Panel
 // Description:     Defines styles for reusable content areas
 //
-// Component:       `uk-panel`
+// Component:       `yb-panel`
 //
-// Sub-objects:     `uk-panel-title`
-//                  `uk-panel-badge`
-//                  `uk-panel-teaser`
-//                  `uk-panel-body`
+// Sub-objects:     `yb-panel-title`
+//                  `yb-panel-badge`
+//                  `yb-panel-teaser`
+//                  `yb-panel-body`
 //
-// Modifiers:       `uk-panel-box`
-//                  `uk-panel-box-hover`
-//                  `uk-panel-box-primary`
-//                  `uk-panel-box-primary-hover`
-//                  `uk-panel-box-secondary`
-//                  `uk-panel-box-secondary-hover`
-//                  `uk-panel-hover`
-//                  `uk-panel-header`
-//                  `uk-panel-space`
-//                  `uk-panel-divider`
+// Modifiers:       `yb-panel-box`
+//                  `yb-panel-box-hover`
+//                  `yb-panel-box-primary`
+//                  `yb-panel-box-primary-hover`
+//                  `yb-panel-box-secondary`
+//                  `yb-panel-box-secondary-hover`
+//                  `yb-panel-hover`
+//                  `yb-panel-header`
+//                  `yb-panel-space`
+//                  `yb-panel-divider`
 //
-// Uses:            Nav: `uk-nav-side`
+// Uses:            Nav: `yb-nav-side`
 //
 // Used by:         Dropdown
 //                  Off-canvas
@@ -27,10 +27,10 @@
 //
 // Markup:
 //
-// <!-- uk-panel -->
-// <div class="uk-panel">
-//     <div class="uk-panel-badge uk-badge"></div>
-//     <h3 class="uk-panel-title"></h3>
+// <!-- yb-panel -->
+// <div class="yb-panel">
+//     <div class="yb-panel-badge yb-badge"></div>
+//     <h3 class="yb-panel-title"></h3>
 //     <p></p>
 // </div>
 //
@@ -100,7 +100,7 @@ $panel-body-padding:                             $panel-box-padding !default;
  * 2. Create position context for badges
  */
 
-.uk-panel {
+.yb-panel {
     /* 1 */
     display: block;
     /* 2 */
@@ -111,32 +111,32 @@ $panel-body-padding:                             $panel-box-padding !default;
  * Allow panels to be anchors
  */
 
-.uk-panel,
-.uk-panel:hover { text-decoration: none; }
+.yb-panel,
+.yb-panel:hover { text-decoration: none; }
 
 /*
  * Micro clearfix to make panels more robust
  */
 
-.uk-panel:before,
-.uk-panel:after {
+.yb-panel:before,
+.yb-panel:after {
     content: "";
     display: table;
 }
 
-.uk-panel:after { clear: both; }
+.yb-panel:after { clear: both; }
 
 /*
- * Remove margin from the last-child if not `uk-widget-title`
+ * Remove margin from the last-child if not `yb-widget-title`
  */
 
-.uk-panel > :not(.uk-panel-title):last-child { margin-bottom: 0; }
+.yb-panel > :not(.yb-panel-title):last-child { margin-bottom: 0; }
 
 
-/* Sub-object: `uk-panel-title`
+/* Sub-object: `yb-panel-title`
  ========================================================================== */
 
-.uk-panel-title {
+.yb-panel-title {
     margin-top: 0;
     margin-bottom: $panel-title-margin-bottom;
     font-size: $panel-title-font-size;
@@ -148,10 +148,10 @@ $panel-body-padding:                             $panel-box-padding !default;
 }
 
 
-/* Sub-object: `uk-panel-badge`
+/* Sub-object: `yb-panel-badge`
  ========================================================================== */
 
-.uk-panel-badge {
+.yb-panel-badge {
     position: absolute;
     top: 0;
     right: 0;
@@ -159,41 +159,41 @@ $panel-body-padding:                             $panel-box-padding !default;
     @include hook-panel-badge();
 }
 
-/* Sub-object: `uk-panel-teaser`
+/* Sub-object: `yb-panel-teaser`
  ========================================================================== */
 
-.uk-panel-teaser { margin-bottom: $panel-teaser-margin-bottom; }
+.yb-panel-teaser { margin-bottom: $panel-teaser-margin-bottom; }
 
 
-/* Sub-object: `uk-panel-body`
+/* Sub-object: `yb-panel-body`
  ========================================================================== */
 
-.uk-panel-body { padding: $panel-body-padding; }
+.yb-panel-body { padding: $panel-body-padding; }
 
 
-/* Modifier: `uk-panel-box`
+/* Modifier: `yb-panel-box`
  ========================================================================== */
 
-.uk-panel-box {
+.yb-panel-box {
     padding: $panel-box-padding;
     background: $panel-box-background;
     color: $panel-box-color;
     @include hook-panel-box();
 }
 
-.uk-panel-box-hover:hover {
+.yb-panel-box-hover:hover {
     color: $panel-box-hover-color;
     @include hook-panel-box-hover();
 }
 
-.uk-panel-box .uk-panel-title { color: $panel-box-title-color; }
+.yb-panel-box .yb-panel-title { color: $panel-box-title-color; }
 
-.uk-panel-box .uk-panel-badge {
+.yb-panel-box .yb-panel-badge {
     top: $panel-box-badge-top;
     right: $panel-box-badge-right;
 }
 
-.uk-panel-box > .uk-panel-teaser {
+.yb-panel-box > .yb-panel-teaser {
     margin-top: $panel-box-teaser-margin;
     margin-left: $panel-box-teaser-margin;
     margin-right: $panel-box-teaser-margin;
@@ -203,74 +203,74 @@ $panel-body-padding:                             $panel-box-padding !default;
  * Nav in panel
  */
 
-.uk-panel-box > .uk-nav-side { margin: 0 (-$panel-box-padding); }
+.yb-panel-box > .yb-nav-side { margin: 0 (-$panel-box-padding); }
 
 /*
- * Sub-modifier: `uk-panel-box-primary`
+ * Sub-modifier: `yb-panel-box-primary`
  */
 
-.uk-panel-box-primary {
+.yb-panel-box-primary {
     background-color: $panel-box-primary-background;
     color: $panel-box-primary-color;
     @include hook-panel-box-primary();
 }
 
-.uk-panel-box-primary-hover:hover {
+.yb-panel-box-primary-hover:hover {
     color: $panel-box-primary-hover-color;
     @include hook-panel-box-primary-hover();
 }
 
-.uk-panel-box-primary .uk-panel-title { color: $panel-box-primary-title-color; }
+.yb-panel-box-primary .yb-panel-title { color: $panel-box-primary-title-color; }
 
 /*
- * Sub-modifier: `uk-panel-box-secondary`
+ * Sub-modifier: `yb-panel-box-secondary`
  */
 
-.uk-panel-box-secondary {
+.yb-panel-box-secondary {
     background-color: $panel-box-secondary-background;
     color: $panel-box-secondary-color;
     @include hook-panel-box-secondary();
 }
 
-.uk-panel-box-secondary-hover:hover {
+.yb-panel-box-secondary-hover:hover {
     color: $panel-box-secondary-hover-color;
     @include hook-panel-box-secondary-hover();
 }
 
-.uk-panel-box-secondary .uk-panel-title { color: $panel-box-secondary-title-color; }
+.yb-panel-box-secondary .yb-panel-title { color: $panel-box-secondary-title-color; }
 
 
-/* Modifier: `uk-panel-hover`
+/* Modifier: `yb-panel-hover`
  ========================================================================== */
 
-.uk-panel-hover {
+.yb-panel-hover {
     padding: $panel-hover-padding;
     color: $panel-hover-color;
     @include hook-panel-hover();
 }
 
-.uk-panel-hover:hover {
+.yb-panel-hover:hover {
     background: $panel-hover-hover-background;
     color: $panel-hover-hover-color;
     @include hook-panel-hover-hover();
 }
 
-.uk-panel-hover .uk-panel-badge {
+.yb-panel-hover .yb-panel-badge {
     top: $panel-hover-badge-top;
     right: $panel-hover-badge-right;
 }
 
-.uk-panel-hover > .uk-panel-teaser {
+.yb-panel-hover > .yb-panel-teaser {
     margin-top: $panel-hover-teaser-margin;
     margin-left: $panel-hover-teaser-margin;
     margin-right: $panel-hover-teaser-margin;
 }
 
 
-/* Modifier: `uk-panel-header`
+/* Modifier: `yb-panel-header`
  ========================================================================== */
 
-.uk-panel-header .uk-panel-title {
+.yb-panel-header .yb-panel-title {
     padding-bottom: $panel-header-title-padding;
     border-bottom: $panel-header-title-border-width solid $panel-header-title-border;
     color: $panel-header-title-color;
@@ -278,23 +278,23 @@ $panel-body-padding:                             $panel-box-padding !default;
 }
 
 
-/* Modifier: `uk-panel-space`
+/* Modifier: `yb-panel-space`
  ========================================================================== */
 
-.uk-panel-space { padding: $panel-space-padding; }
+.yb-panel-space { padding: $panel-space-padding; }
 
-.uk-panel-space .uk-panel-badge {
+.yb-panel-space .yb-panel-badge {
     top: $panel-space-padding;
     right: $panel-space-padding;
 }
 
 
-/* Modifier: `uk-panel-divider`
+/* Modifier: `yb-panel-divider`
  ========================================================================== */
 
-.uk-panel + .uk-panel-divider { margin-top: ($panel-divider-gutter * 2) !important; }
+.yb-panel + .yb-panel-divider { margin-top: ($panel-divider-gutter * 2) !important; }
 
-.uk-panel + .uk-panel-divider:before {
+.yb-panel + .yb-panel-divider:before {
     content: "";
     display: block;
     position: absolute;
@@ -307,8 +307,8 @@ $panel-body-padding:                             $panel-box-padding !default;
 /* Large screen and bigger */
 @media (min-width: $breakpoint-xlarge) {
 
-    .uk-panel + .uk-panel-divider { margin-top: ($panel-divider-gutter-large * 2) !important; }
-    .uk-panel + .uk-panel-divider:before { top: -($panel-divider-gutter-large); }
+    .yb-panel + .yb-panel-divider { margin-top: ($panel-divider-gutter-large * 2) !important; }
+    .yb-panel + .yb-panel-divider:before { top: -($panel-divider-gutter-large); }
 
 }
 

@@ -227,7 +227,7 @@
 
     UI.Utils.checkDisplay = function(context, initanimation) {
 
-        var elements = UI.$('[data-uk-margin], [data-uk-grid-match], [data-uk-grid-margin], [data-uk-check-display]', context || document), animated;
+        var elements = UI.$('[data-yb-margin], [data-yb-grid-match], [data-yb-grid-margin], [data-yb-check-display]', context || document), animated;
 
         if (context && !elements.length) {
             elements = $(context);
@@ -239,7 +239,7 @@
         if (initanimation) {
 
             if (typeof(initanimation)!='string') {
-                initanimation = '[class*="uk-animation-"]';
+                initanimation = '[class*="yb-animation-"]';
             }
 
             elements.find(initanimation).each(function(){
@@ -627,7 +627,7 @@
             UI.$body = UI.$('body');
 
             UI.ready(function(context){
-                UI.domObserve('[data-uk-observe]');
+                UI.domObserve('[data-yb-observe]');
             });
 
             UI.on('changed.uk.dom', function(e) {
@@ -688,13 +688,13 @@
                 // remove css hover rules for touch devices
                 // UI.Utils.removeCssRules(/\.uk-(?!navbar).*:hover/);
 
-                // viewport unit fix for uk-height-viewport - should be fixed in iOS 8
+                // viewport unit fix for yb-height-viewport - should be fixed in iOS 8
                 if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
 
                     UI.$win.on('load orientationchange resize', UI.Utils.debounce((function(){
 
                         var fn = function() {
-                            $('.uk-height-viewport').css('height', window.innerHeight);
+                            $('.yb-height-viewport').css('height', window.innerHeight);
                             return fn;
                         };
 
@@ -719,15 +719,15 @@
     }());
 
     // add touch identifier class
-    UI.$html.addClass(UI.support.touch ? "uk-touch" : "uk-notouch");
+    UI.$html.addClass(UI.support.touch ? "yb-touch" : "yb-notouch");
 
-    // add uk-hover class on tap to support overlays on touch devices
+    // add yb-hover class on tap to support overlays on touch devices
     if (UI.support.touch) {
 
         var hoverset = false,
             exclude,
-            hovercls = 'uk-hover',
-            selector = '.uk-overlay, .uk-overlay-hover, .uk-overlay-toggle, .uk-animation-hover, .uk-has-hover';
+            hovercls = 'yb-hover',
+            selector = '.yb-overlay, .yb-overlay-hover, .yb-overlay-toggle, .yb-animation-hover, .yb-has-hover';
 
         UI.$html.on('mouseenter touchstart MSPointerDown pointerdown', selector, function() {
 
@@ -932,7 +932,7 @@
     UI.component('stackMargin', {
 
         defaults: {
-            cls: 'uk-margin-small-top',
+            cls: 'yb-margin-small-top',
             rowfirst: false
         },
 
@@ -941,12 +941,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-margin]", context).each(function() {
+                UI.$("[data-yb-margin]", context).each(function() {
 
                     var ele = UI.$(this);
 
                     if (!ele.data("stackMargin")) {
-                        UI.stackMargin(ele, UI.Utils.options(ele.attr("data-uk-margin")));
+                        UI.stackMargin(ele, UI.Utils.options(ele.attr("data-yb-margin")));
                     }
                 });
             });
@@ -1031,7 +1031,7 @@
                 // init code
                 UI.ready(function(context) {
 
-                    UI.$("iframe.uk-responsive-width, [data-uk-responsive]", context).each(function() {
+                    UI.$("iframe.yb-responsive-width, [data-yb-responsive]", context).each(function() {
 
                         var ele = UI.$(this), obj;
 
@@ -1081,7 +1081,7 @@
     UI.Utils.stackMargin = function(elements, options) {
 
         options = UI.$.extend({
-            'cls': 'uk-margin-small-top'
+            'cls': 'yb-margin-small-top'
         }, options);
 
         options.cls = options.cls;
@@ -1213,7 +1213,7 @@
 
         // init code
         UI.ready(function(context) {
-            UI.Utils.inlineSvg('[data-uk-svg]', context);
+            UI.Utils.inlineSvg('[data-yb-svg]', context);
         });
 
     })({});
@@ -1229,11 +1229,11 @@
         boot: function() {
 
             // init code
-            UI.$html.on("click.smooth-scroll.uikit", "[data-uk-smooth-scroll]", function(e) {
+            UI.$html.on("click.smooth-scroll.uikit", "[data-yb-smooth-scroll]", function(e) {
                 var ele = UI.$(this);
 
                 if (!ele.data("smoothScroll")) {
-                    var obj = UI.smoothScroll(ele, UI.Utils.options(ele.attr("data-uk-smooth-scroll")));
+                    var obj = UI.smoothScroll(ele, UI.Utils.options(ele.attr("data-yb-smooth-scroll")));
                     ele.trigger("click");
                 }
 
@@ -1299,8 +1299,8 @@
 
         defaults: {
             "target"     : false,
-            "cls"        : "uk-scrollspy-inview",
-            "initcls"    : "uk-scrollspy-init-inview",
+            "cls"        : "yb-scrollspy-inview",
+            "initcls"    : "yb-scrollspy-init-inview",
             "topoffset"  : 0,
             "leftoffset" : 0,
             "repeat"     : false,
@@ -1316,12 +1316,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-scrollspy]", context).each(function() {
+                UI.$("[data-yb-scrollspy]", context).each(function() {
 
                     var element = UI.$(this);
 
                     if (!element.data("scrollspy")) {
-                        var obj = UI.scrollspy(element, UI.Utils.options(element.attr("data-uk-scrollspy")));
+                        var obj = UI.scrollspy(element, UI.Utils.options(element.attr("data-yb-scrollspy")));
                     }
                 });
             });
@@ -1354,7 +1354,7 @@
 
                         element.data('scrollspy-idle', setTimeout(function(){
 
-                            element.addClass("uk-scrollspy-inview").toggleClass(toggle).width();
+                            element.addClass("yb-scrollspy-inview").toggleClass(toggle).width();
                             element.trigger("inview.uk.scrollspy");
 
                             element.data('scrollspy-idle', false);
@@ -1372,7 +1372,7 @@
                             element.data('scrollspy-idle', false);
                         }
 
-                        element.removeClass("uk-scrollspy-inview").toggleClass(toggle);
+                        element.removeClass("yb-scrollspy-inview").toggleClass(toggle);
                         element.data('inviewstate', false);
 
                         element.trigger("outview.uk.scrollspy");
@@ -1402,7 +1402,7 @@
     UI.component('scrollspynav', {
 
         defaults: {
-            "cls"          : 'uk-active',
+            "cls"          : 'yb-active',
             "closest"      : false,
             "topoffset"    : 0,
             "leftoffset"   : 0,
@@ -1418,12 +1418,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-scrollspy-nav]", context).each(function() {
+                UI.$("[data-yb-scrollspy-nav]", context).each(function() {
 
                     var element = UI.$(this);
 
                     if (!element.data("scrollspynav")) {
-                        var obj = UI.scrollspynav(element, UI.Utils.options(element.attr("data-uk-scrollspy-nav")));
+                        var obj = UI.scrollspynav(element, UI.Utils.options(element.attr("data-yb-scrollspy-nav")));
                     }
                 });
             });
@@ -1501,7 +1501,7 @@
 
         defaults: {
             target    : false,
-            cls       : 'uk-hidden',
+            cls       : 'yb-hidden',
             animation : false,
             duration  : 200
         },
@@ -1511,11 +1511,11 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-toggle]", context).each(function() {
+                UI.$("[data-yb-toggle]", context).each(function() {
                     var ele = UI.$(this);
 
                     if (!ele.data("toggle")) {
-                        var obj = UI.toggle(ele, UI.Utils.options(ele.attr("data-uk-toggle")));
+                        var obj = UI.toggle(ele, UI.Utils.options(ele.attr("data-yb-toggle")));
                     }
                 });
 
@@ -1533,7 +1533,7 @@
 
             var $this = this;
 
-            this.aria = (this.options.cls.indexOf('uk-hidden') !== -1);
+            this.aria = (this.options.cls.indexOf('yb-hidden') !== -1);
 
             this.getToggles();
 
@@ -1577,7 +1577,7 @@
 
                     } else {
 
-                        UI.Utils.animate(this, animations[1]+' uk-animation-reverse').then(function(){
+                        UI.Utils.animate(this, animations[1]+' yb-animation-reverse').then(function(){
                             ele.toggleClass($this.options.cls).css('animation-duration', '');
                             UI.Utils.checkDisplay(ele);
                         });
@@ -1603,7 +1603,7 @@
         updateAria: function() {
             if (this.aria && this.totoggle.length) {
                 this.totoggle.each(function(){
-                    UI.$(this).attr('aria-hidden', UI.$(this).hasClass('uk-hidden'));
+                    UI.$(this).attr('aria-hidden', UI.$(this).hasClass('yb-hidden'));
                 });
             }
         }
@@ -1620,19 +1620,19 @@
         defaults: {
             "fade": true,
             "duration": 200,
-            "trigger": ".uk-alert-close"
+            "trigger": ".yb-alert-close"
         },
 
         boot: function() {
 
             // init code
-            UI.$html.on("click.alert.uikit", "[data-uk-alert]", function(e) {
+            UI.$html.on("click.alert.uikit", "[data-yb-alert]", function(e) {
 
                 var ele = UI.$(this);
 
                 if (!ele.data("alert")) {
 
-                    var alert = UI.alert(ele, UI.Utils.options(ele.attr("data-uk-alert")));
+                    var alert = UI.alert(ele, UI.Utils.options(ele.attr("data-yb-alert")));
 
                     if (UI.$(e.target).is(alert.options.trigger)) {
                         e.preventDefault();
@@ -1684,20 +1684,20 @@
     UI.component('buttonRadio', {
 
         defaults: {
-            "activeClass": 'uk-active',
-            "target": ".uk-button"
+            "activeClass": 'yb-active',
+            "target": ".yb-button"
         },
 
         boot: function() {
 
             // init code
-            UI.$html.on("click.buttonradio.uikit", "[data-uk-button-radio]", function(e) {
+            UI.$html.on("click.buttonradio.uikit", "[data-yb-button-radio]", function(e) {
 
                 var ele = UI.$(this);
 
                 if (!ele.data("buttonRadio")) {
 
-                    var obj    = UI.buttonRadio(ele, UI.Utils.options(ele.attr("data-uk-button-radio"))),
+                    var obj    = UI.buttonRadio(ele, UI.Utils.options(ele.attr("data-yb-button-radio"))),
                         target = UI.$(e.target);
 
                     if (target.is(obj.options.target)) {
@@ -1740,18 +1740,18 @@
     UI.component('buttonCheckbox', {
 
         defaults: {
-            "activeClass": 'uk-active',
-            "target": ".uk-button"
+            "activeClass": 'yb-active',
+            "target": ".yb-button"
         },
 
         boot: function() {
 
-            UI.$html.on("click.buttoncheckbox.uikit", "[data-uk-button-checkbox]", function(e) {
+            UI.$html.on("click.buttoncheckbox.uikit", "[data-yb-button-checkbox]", function(e) {
                 var ele = UI.$(this);
 
                 if (!ele.data("buttonCheckbox")) {
 
-                    var obj    = UI.buttonCheckbox(ele, UI.Utils.options(ele.attr("data-uk-button-checkbox"))),
+                    var obj    = UI.buttonCheckbox(ele, UI.Utils.options(ele.attr("data-yb-button-checkbox"))),
                         target = UI.$(e.target);
 
                     if (target.is(obj.options.target)) {
@@ -1795,12 +1795,12 @@
 
         boot: function() {
 
-            UI.$html.on("click.button.uikit", "[data-uk-button]", function(e) {
+            UI.$html.on("click.button.uikit", "[data-yb-button]", function(e) {
                 var ele = UI.$(this);
 
                 if (!ele.data("button")) {
 
-                    var obj = UI.button(ele, UI.Utils.options(ele.attr("data-uk-button")));
+                    var obj = UI.button(ele, UI.Utils.options(ele.attr("data-yb-button")));
                     ele.trigger("click");
                 }
             });
@@ -1811,23 +1811,23 @@
             var $this = this;
 
             // Init ARIA
-            this.element.attr('aria-pressed', this.element.hasClass("uk-active"));
+            this.element.attr('aria-pressed', this.element.hasClass("yb-active"));
 
             this.on("click", function(e) {
 
                 if ($this.element.is('a[href="#"]')) e.preventDefault();
 
                 $this.toggle();
-                $this.trigger("change.uk.button", [$this.element.blur().hasClass("uk-active")]);
+                $this.trigger("change.uk.button", [$this.element.blur().hasClass("yb-active")]);
             });
 
         },
 
         toggle: function() {
-            this.element.toggleClass("uk-active");
+            this.element.toggleClass("yb-active");
 
             // Update ARIA
-            this.element.attr('aria-pressed', this.element.hasClass("uk-active"));
+            this.element.attr('aria-pressed', this.element.hasClass("yb-active"));
         }
     });
 
@@ -1893,7 +1893,7 @@
            'justify'         : false,
            'boundary'        : UI.$win,
            'delay'           : 0,
-           'dropdownSelector': '.uk-dropdown,.uk-dropdown-blank',
+           'dropdownSelector': '.yb-dropdown,.yb-dropdown-blank',
            'hoverDelayIdle'  : 250,
            'preventflip'     : false
         },
@@ -1905,13 +1905,13 @@
             var triggerevent = UI.support.touch ? "click" : "mouseenter";
 
             // init code
-            UI.$html.on(triggerevent+".dropdown.uikit", "[data-uk-dropdown]", function(e) {
+            UI.$html.on(triggerevent+".dropdown.uikit", "[data-yb-dropdown]", function(e) {
 
                 var ele = UI.$(this);
 
                 if (!ele.data("dropdown")) {
 
-                    var dropdown = UI.dropdown(ele, UI.Utils.options(ele.attr("data-uk-dropdown")));
+                    var dropdown = UI.dropdown(ele, UI.Utils.options(ele.attr("data-yb-dropdown")));
 
                     if (triggerevent=="click" || (triggerevent=="mouseenter" && dropdown.options.mode=="hover")) {
                         dropdown.element.trigger(triggerevent);
@@ -1933,7 +1933,7 @@
                 return UI.$.inArray(UI.$(this).css('position'), ['relative', 'fixed', 'absolute']) !== -1;
             }).slice(0,1);
 
-            this.centered  = this.dropdown.hasClass('uk-dropdown-center');
+            this.centered  = this.dropdown.hasClass('yb-dropdown-center');
             this.justified = this.options.justify ? UI.$(this.options.justify) : false;
 
             this.boundary  = UI.$(this.options.boundary);
@@ -1943,20 +1943,20 @@
             }
 
             // legacy DEPRECATED!
-            if (this.dropdown.hasClass('uk-dropdown-up')) {
+            if (this.dropdown.hasClass('yb-dropdown-up')) {
                 this.options.pos = 'top-left';
             }
-            if (this.dropdown.hasClass('uk-dropdown-flip')) {
+            if (this.dropdown.hasClass('yb-dropdown-flip')) {
                 this.options.pos = this.options.pos.replace('left','right');
             }
-            if (this.dropdown.hasClass('uk-dropdown-center')) {
+            if (this.dropdown.hasClass('yb-dropdown-center')) {
                 this.options.pos = this.options.pos.replace(/(left|right)/,'center');
             }
             //-- end legacy
 
             // Init ARIA
             this.element.attr('aria-haspopup', 'true');
-            this.element.attr('aria-expanded', this.element.hasClass("uk-open"));
+            this.element.attr('aria-expanded', this.element.hasClass("yb-open"));
 
             if (this.options.mode == "click" || UI.support.touch) {
 
@@ -1973,13 +1973,13 @@
                         $target.blur();
                     }
 
-                    if (!$this.element.hasClass('uk-open')) {
+                    if (!$this.element.hasClass('yb-open')) {
 
                         $this.show();
 
                     } else {
 
-                        if (!$this.dropdown.find(e.target).length || $target.is(".uk-dropdown-close") || $target.parents(".uk-dropdown-close").length) {
+                        if (!$this.dropdown.find(e.target).length || $target.is(".yb-dropdown-close") || $target.parents(".yb-dropdown-close").length) {
                             $this.hide();
                         }
                     }
@@ -2036,7 +2036,7 @@
                     }
 
                     if (active && active == $this) {
-                        if (!$this.dropdown.find(e.target).length || $target.is(".uk-dropdown-close") || $target.parents(".uk-dropdown-close").length) {
+                        if (!$this.dropdown.find(e.target).length || $target.is(".yb-dropdown-close") || $target.parents(".yb-dropdown-close").length) {
                             $this.hide();
                         }
                         return;
@@ -2066,7 +2066,7 @@
             this.trigger('beforeshow.uk.dropdown', [this]);
 
             this.checkDimensions();
-            this.element.addClass('uk-open');
+            this.element.addClass('yb-open');
 
             // Update ARIA
             this.element.attr('aria-expanded', 'true');
@@ -2083,7 +2083,7 @@
 
             this.trigger('beforehide.uk.dropdown', [this, force]);
 
-            this.element.removeClass('uk-open');
+            this.element.removeClass('yb-open');
 
             if (this.remainIdle) {
                 clearTimeout(this.remainIdle);
@@ -2128,7 +2128,7 @@
             if (!this.dropdown.length) return;
 
             // reset
-            this.dropdown.removeClass('uk-dropdown-top uk-dropdown-bottom uk-dropdown-left uk-dropdown-right uk-dropdown-stack').css({
+            this.dropdown.removeClass('yb-dropdown-top yb-dropdown-bottom yb-dropdown-left yb-dropdown-right yb-dropdown-stack').css({
                 'top-left':'',
                 'left':'',
                 'margin-left' :'',
@@ -2206,11 +2206,11 @@
             }
 
             if (width > boundarywidth) {
-                dropdown.addClass("uk-dropdown-stack");
+                dropdown.addClass("yb-dropdown-stack");
                 this.trigger('stack.uk.dropdown', [this]);
             }
 
-            dropdown.css(css).css("display", "").addClass('uk-dropdown-'+pp[0]);
+            dropdown.css(css).css("display", "").addClass('yb-dropdown-'+pp[0]);
         },
 
         checkBoundary: function(left, top, width, height, boundarywidth) {
@@ -2243,11 +2243,11 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-dropdown-overlay]", context).each(function() {
+                UI.$("[data-yb-dropdown-overlay]", context).each(function() {
                     var ele = UI.$(this);
 
                     if (!ele.data("dropdownOverlay")) {
-                        UI.dropdownOverlay(ele, UI.Utils.options(ele.attr("data-uk-dropdown-overlay")));
+                        UI.dropdownOverlay(ele, UI.Utils.options(ele.attr("data-yb-dropdown-overlay")));
                     }
                 });
             });
@@ -2258,10 +2258,10 @@
             var $this = this;
 
             this.justified = this.options.justify ? UI.$(this.options.justify) : false;
-            this.overlay   = this.element.find('uk-dropdown-overlay');
+            this.overlay   = this.element.find('yb-dropdown-overlay');
 
             if (!this.overlay.length) {
-                this.overlay = UI.$('<div class="uk-dropdown-overlay"></div>').appendTo(this.element);
+                this.overlay = UI.$('<div class="yb-dropdown-overlay"></div>').appendTo(this.element);
             }
 
             this.overlay.addClass(this.options.cls);
@@ -2280,12 +2280,12 @@
 
                     var h = $this.dropdown.dropdown.outerHeight(true);
 
-                    $this.dropdown.element.removeClass('uk-open');
+                    $this.dropdown.element.removeClass('yb-open');
 
                     $this.overlay.stop().css('display', 'block').animate({height: h}, $this.options.duration, function() {
 
                        $this.dropdown.dropdown.css('visibility', '');
-                       $this.dropdown.element.addClass('uk-open');
+                       $this.dropdown.element.addClass('yb-open');
 
                        UI.Utils.checkDisplay($this.dropdown.dropdown, true);
                     });
@@ -2378,11 +2378,11 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-grid-match]", context).each(function() {
+                UI.$("[data-yb-grid-match]", context).each(function() {
                     var grid = UI.$(this), obj;
 
                     if (!grid.data("gridMatchHeight")) {
-                        obj = UI.gridMatchHeight(grid, UI.Utils.options(grid.attr("data-uk-grid-match")));
+                        obj = UI.gridMatchHeight(grid, UI.Utils.options(grid.attr("data-yb-grid-match")));
                     }
                 });
             });
@@ -2447,8 +2447,8 @@
     UI.component('gridMargin', {
 
         defaults: {
-            cls      : 'uk-grid-margin',
-            rowfirst : 'uk-row-first'
+            cls      : 'yb-grid-margin',
+            rowfirst : 'yb-row-first'
         },
 
         boot: function() {
@@ -2456,11 +2456,11 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-grid-margin]", context).each(function() {
+                UI.$("[data-yb-grid-margin]", context).each(function() {
                     var grid = UI.$(this), obj;
 
                     if (!grid.data("gridMargin")) {
-                        obj = UI.gridMargin(grid, UI.Utils.options(grid.attr("data-uk-grid-margin")));
+                        obj = UI.gridMargin(grid, UI.Utils.options(grid.attr("data-yb-grid-margin")));
                     }
                 });
             });
@@ -2503,14 +2503,14 @@
             var $this = this;
 
             this.paddingdir = "padding-" + (UI.langdirection == 'left' ? "right":"left");
-            this.dialog     = this.find(".uk-modal-dialog");
+            this.dialog     = this.find(".yb-modal-dialog");
 
             this.active     = false;
 
             // Update ARIA
-            this.element.attr('aria-hidden', this.element.hasClass("uk-open"));
+            this.element.attr('aria-hidden', this.element.hasClass("yb-open"));
 
-            this.on("click", ".uk-modal-close", function(e) {
+            this.on("click", ".yb-modal-close", function(e) {
                 e.preventDefault();
                 $this.hide();
             }).on("click", function(e) {
@@ -2539,7 +2539,7 @@
                 active.hide(true);
             }
 
-            this.element.removeClass("uk-open").show();
+            this.element.removeClass("yb-open").show();
             this.resize();
 
             if (this.options.modal) {
@@ -2554,12 +2554,12 @@
                 this.hasTransitioned = false;
                 this.element.one(UI.support.transition.end, function(){
                     $this.hasTransitioned = true;
-                }).addClass("uk-open");
+                }).addClass("yb-open");
             } else {
-                this.element.addClass("uk-open");
+                this.element.addClass("yb-open");
             }
 
-            $html.addClass("uk-modal-page").height(); // force browser engine redraw
+            $html.addClass("yb-modal-page").height(); // force browser engine redraw
 
             // Update ARIA
             this.element.attr('aria-hidden', 'false');
@@ -2579,7 +2579,7 @@
 
                 this.one(UI.support.transition.end, function() {
                     $this._hide();
-                }).removeClass("uk-open");
+                }).removeClass("yb-open");
 
             } else {
 
@@ -2615,7 +2615,7 @@
         updateScrollable: function() {
 
             // has scrollable?
-            var scrollable = this.dialog.find('.uk-overflow-container:visible:first');
+            var scrollable = this.dialog.find('.yb-overflow-container:visible:first');
 
             if (scrollable.length) {
 
@@ -2643,13 +2643,13 @@
             if (activeCount > 0) activeCount--;
             else activeCount = 0;
 
-            this.element.hide().removeClass('uk-open');
+            this.element.hide().removeClass('yb-open');
 
             // Update ARIA
             this.element.attr('aria-hidden', 'true');
 
             if (!activeCount) {
-                $html.removeClass('uk-modal-page');
+                $html.removeClass('yb-modal-page');
                 body.css(this.paddingdir, "");
             }
 
@@ -2669,7 +2669,7 @@
         boot: function() {
 
             // init code
-            UI.$html.on("click.modal.uikit", "[data-uk-modal]", function(e) {
+            UI.$html.on("click.modal.uikit", "[data-yb-modal]", function(e) {
 
                 var ele = UI.$(this);
 
@@ -2678,7 +2678,7 @@
                 }
 
                 if (!ele.data("modalTrigger")) {
-                    var modal = UI.modalTrigger(ele, UI.Utils.options(ele.attr("data-uk-modal")));
+                    var modal = UI.modalTrigger(ele, UI.Utils.options(ele.attr("data-yb-modal")));
                     modal.show();
                 }
 
@@ -2735,15 +2735,15 @@
         return modal;
     };
 
-    UI.modal.dialog.template = '<div class="uk-modal"><div class="uk-modal-dialog" style="min-height:0;"></div></div>';
+    UI.modal.dialog.template = '<div class="yb-modal"><div class="yb-modal-dialog" style="min-height:0;"></div></div>';
 
     UI.modal.alert = function(content, options) {
 
         options = UI.$.extend(true, {bgclose:false, keyboard:false, modal:false, labels:UI.modal.labels}, options);
 
         var modal = UI.modal.dialog(([
-            '<div class="uk-margin uk-modal-content">'+String(content)+'</div>',
-            '<div class="uk-modal-footer uk-text-right"><button class="uk-button uk-button-primary uk-modal-close">'+options.labels.Ok+'</button></div>'
+            '<div class="yb-margin yb-modal-content">'+String(content)+'</div>',
+            '<div class="yb-modal-footer yb-text-right"><button class="yb-button yb-button-primary yb-modal-close">'+options.labels.Ok+'</button></div>'
         ]).join(""), options);
 
         modal.on('show.uk.modal', function(){
@@ -2764,8 +2764,8 @@
         options   = UI.$.extend(true, {bgclose:false, keyboard:false, modal:false, labels:UI.modal.labels}, UI.$.isFunction(options) ? {}:options);
 
         var modal = UI.modal.dialog(([
-            '<div class="uk-margin uk-modal-content">'+String(content)+'</div>',
-            '<div class="uk-modal-footer uk-text-right"><button class="uk-button js-modal-confirm-cancel">'+options.labels.Cancel+'</button> <button class="uk-button uk-button-primary js-modal-confirm">'+options.labels.Ok+'</button></div>'
+            '<div class="yb-margin yb-modal-content">'+String(content)+'</div>',
+            '<div class="yb-modal-footer yb-text-right"><button class="yb-button js-modal-confirm-cancel">'+options.labels.Cancel+'</button> <button class="yb-button yb-button-primary js-modal-confirm">'+options.labels.Ok+'</button></div>'
         ]).join(""), options);
 
         modal.element.find(".js-modal-confirm, .js-modal-confirm-cancel").on("click", function(){
@@ -2788,9 +2788,9 @@
         options  = UI.$.extend(true, {bgclose:false, keyboard:false, modal:false, labels:UI.modal.labels}, options);
 
         var modal = UI.modal.dialog(([
-            text ? '<div class="uk-modal-content uk-form">'+String(text)+'</div>':'',
-            '<div class="uk-margin-small-top uk-modal-content uk-form"><p><input type="text" class="uk-width-1-1"></p></div>',
-            '<div class="uk-modal-footer uk-text-right"><button class="uk-button uk-modal-close">'+options.labels.Cancel+'</button> <button class="uk-button uk-button-primary js-modal-ok">'+options.labels.Ok+'</button></div>'
+            text ? '<div class="yb-modal-content yb-form">'+String(text)+'</div>':'',
+            '<div class="yb-margin-small-top yb-modal-content yb-form"><p><input type="text" class="yb-width-1-1"></p></div>',
+            '<div class="yb-modal-footer yb-text-right"><button class="yb-button yb-modal-close">'+options.labels.Cancel+'</button> <button class="yb-button yb-button-primary js-modal-ok">'+options.labels.Ok+'</button></div>'
         ]).join(""), options),
 
         input = modal.element.find("input[type='text']").val(value || '').on('keyup', function(e){
@@ -2817,10 +2817,10 @@
     UI.modal.blockUI = function(content, options) {
 
         var modal = UI.modal.dialog(([
-            '<div class="uk-margin uk-modal-content">'+String(content || '<div class="uk-text-center">...</div>')+'</div>'
+            '<div class="yb-margin yb-modal-content">'+String(content || '<div class="yb-text-center">...</div>')+'</div>'
         ]).join(""), UI.$.extend({bgclose:false, keyboard:false, modal:false}, options));
 
-        modal.content = modal.element.find('.uk-modal-content:first');
+        modal.content = modal.element.find('.yb-modal-content:first');
 
         return modal.show();
     };
@@ -2854,7 +2854,7 @@
                 content = UI.$('<div></div>').html('UIkit.modal Error: Unsupported data type: ' + typeof content);
         }
 
-        content.appendTo(modal.element.find('.uk-modal-dialog'));
+        content.appendTo(modal.element.find('.yb-modal-dialog'));
 
         return modal;
     }
@@ -2868,8 +2868,8 @@
     UI.component('nav', {
 
         defaults: {
-            "toggle": ">li.uk-parent > a[href='#']",
-            "lists": ">li.uk-parent > ul",
+            "toggle": ">li.yb-parent > a[href='#']",
+            "lists": ">li.yb-parent > ul",
             "multiple": false
         },
 
@@ -2878,11 +2878,11 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-nav]", context).each(function() {
+                UI.$("[data-yb-nav]", context).each(function() {
                     var nav = UI.$(this);
 
                     if (!nav.data("nav")) {
-                        var obj = UI.nav(nav, UI.Utils.options(nav.attr("data-uk-nav")));
+                        var obj = UI.nav(nav, UI.Utils.options(nav.attr("data-yb-nav")));
                     }
                 });
             });
@@ -2901,13 +2901,13 @@
             this.find(this.options.lists).each(function() {
                 var $ele   = UI.$(this),
                     parent = $ele.parent(),
-                    active = parent.hasClass("uk-active");
+                    active = parent.hasClass("yb-active");
 
                 $ele.wrap('<div style="overflow:hidden;height:0;position:relative;"></div>');
-                parent.data("list-container", $ele.parent()[active ? 'removeClass':'addClass']('uk-hidden'));
+                parent.data("list-container", $ele.parent()[active ? 'removeClass':'addClass']('yb-hidden'));
 
                 // Init ARIA
-                parent.attr('aria-expanded', parent.hasClass("uk-open"));
+                parent.attr('aria-expanded', parent.hasClass("yb-open"));
 
                 if (active) $this.open(parent, true);
             });
@@ -2920,35 +2920,35 @@
 
             if (!this.options.multiple) {
 
-                element.children('.uk-open').not(li).each(function() {
+                element.children('.yb-open').not(li).each(function() {
 
                     var ele = UI.$(this);
 
                     if (ele.data('list-container')) {
                         ele.data('list-container').stop().animate({height: 0}, function() {
-                            UI.$(this).parent().removeClass('uk-open').end().addClass('uk-hidden');
+                            UI.$(this).parent().removeClass('yb-open').end().addClass('yb-hidden');
                         });
                     }
                 });
             }
 
-            $li.toggleClass('uk-open');
+            $li.toggleClass('yb-open');
 
             // Update ARIA
-            $li.attr('aria-expanded', $li.hasClass('uk-open'));
+            $li.attr('aria-expanded', $li.hasClass('yb-open'));
 
             if ($container) {
 
-                if ($li.hasClass('uk-open')) {
-                    $container.removeClass('uk-hidden');
+                if ($li.hasClass('yb-open')) {
+                    $container.removeClass('yb-hidden');
                 }
 
                 if (noanimation) {
 
-                    $container.stop().height($li.hasClass('uk-open') ? 'auto' : 0);
+                    $container.stop().height($li.hasClass('yb-open') ? 'auto' : 0);
 
-                    if (!$li.hasClass('uk-open')) {
-                        $container.addClass('uk-hidden');
+                    if (!$li.hasClass('yb-open')) {
+                        $container.addClass('yb-hidden');
                     }
 
                     this.trigger('display.uk.check');
@@ -2956,11 +2956,11 @@
                 } else {
 
                     $container.stop().animate({
-                        height: ($li.hasClass('uk-open') ? getHeight($container.find('ul:first')) : 0)
+                        height: ($li.hasClass('yb-open') ? getHeight($container.find('ul:first')) : 0)
                     }, function() {
 
-                        if (!$li.hasClass('uk-open')) {
-                            $container.addClass('uk-hidden');
+                        if (!$li.hasClass('yb-open')) {
+                            $container.addClass('yb-hidden');
                         } else {
                             $container.css('height', '');
                         }
@@ -3014,23 +3014,23 @@
             if (!element.length) return;
 
             var $body     = UI.$('body'),
-                bar       = element.find(".uk-offcanvas-bar:first"),
+                bar       = element.find(".yb-offcanvas-bar:first"),
                 rtl       = (UI.langdirection == "right"),
-                flip      = bar.hasClass("uk-offcanvas-bar-flip") ? -1:1,
+                flip      = bar.hasClass("yb-offcanvas-bar-flip") ? -1:1,
                 dir       = flip * (rtl ? -1 : 1),
 
                 scrollbarwidth =  window.innerWidth - $body.width();
 
             scrollpos = {x: window.pageXOffset, y: window.pageYOffset};
 
-            element.addClass("uk-active");
+            element.addClass("yb-active");
 
-            $body.css({"width": window.innerWidth - scrollbarwidth, "height": window.innerHeight}).addClass("uk-offcanvas-page");
+            $body.css({"width": window.innerWidth - scrollbarwidth, "height": window.innerHeight}).addClass("yb-offcanvas-page");
             $body.css((rtl ? "margin-right" : "margin-left"), (rtl ? -1 : 1) * (bar.outerWidth() * dir)).width(); // .width() - force redraw
 
             $html.css('margin-top', scrollpos.y * -1);
 
-            bar.addClass("uk-offcanvas-bar-show");
+            bar.addClass("yb-offcanvas-bar-show");
 
             this._initElement(element);
 
@@ -3043,14 +3043,14 @@
         hide: function(force) {
 
             var $body = UI.$('body'),
-                panel = UI.$(".uk-offcanvas.uk-active"),
+                panel = UI.$(".yb-offcanvas.yb-active"),
                 rtl   = (UI.langdirection == "right"),
-                bar   = panel.find(".uk-offcanvas-bar:first"),
+                bar   = panel.find(".yb-offcanvas-bar:first"),
                 finalize = function() {
-                    $body.removeClass("uk-offcanvas-page").css({"width": "", "height": "", "margin-left": "", "margin-right": ""});
-                    panel.removeClass("uk-active");
+                    $body.removeClass("yb-offcanvas-page").css({"width": "", "height": "", "margin-left": "", "margin-right": ""});
+                    panel.removeClass("yb-active");
 
-                    bar.removeClass("uk-offcanvas-bar-show");
+                    bar.removeClass("yb-offcanvas-bar-show");
                     $html.css('margin-top', '');
                     window.scrollTo(scrollpos.x, scrollpos.y);
                     bar.trigger('hide.uk.offcanvas', [panel, bar]);
@@ -3068,7 +3068,7 @@
                 }).css((rtl ? "margin-right" : "margin-left"), "");
 
                 setTimeout(function(){
-                    bar.removeClass("uk-offcanvas-bar-show");
+                    bar.removeClass("yb-offcanvas-bar-show");
                 }, 0);
 
             } else {
@@ -3086,9 +3086,9 @@
 
                 if (!e.type.match(/swipe/)) {
 
-                    if (!target.hasClass("uk-offcanvas-close")) {
-                        if (target.hasClass("uk-offcanvas-bar")) return;
-                        if (target.parents(".uk-offcanvas-bar:first").length) return;
+                    if (!target.hasClass("yb-offcanvas-close")) {
+                        if (target.hasClass("yb-offcanvas-bar")) return;
+                        if (target.parents(".yb-offcanvas-bar:first").length) return;
                     }
                 }
 
@@ -3120,7 +3120,7 @@
                     }
 
                     if (target.length && UI.Utils.scrollToElement) {
-                        UI.Utils.scrollToElement(target, UI.Utils.options(link.attr('data-uk-smooth-scroll') || '{}'));
+                        UI.Utils.scrollToElement(target, UI.Utils.options(link.attr('data-yb-smooth-scroll') || '{}'));
                     } else {
                         window.location.href = href;
                     }
@@ -3138,14 +3138,14 @@
         boot: function() {
 
             // init code
-            $html.on("click.offcanvas.uikit", "[data-uk-offcanvas]", function(e) {
+            $html.on("click.offcanvas.uikit", "[data-yb-offcanvas]", function(e) {
 
                 e.preventDefault();
 
                 var ele = UI.$(this);
 
                 if (!ele.data("offcanvasTrigger")) {
-                    var obj = UI.offcanvasTrigger(ele, UI.Utils.options(ele.attr("data-uk-offcanvas")));
+                    var obj = UI.offcanvasTrigger(ele, UI.Utils.options(ele.attr("data-yb-offcanvas")));
                     ele.trigger("click");
                 }
             });
@@ -3201,11 +3201,11 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-switcher]", context).each(function() {
+                UI.$("[data-yb-switcher]", context).each(function() {
                     var switcher = UI.$(this);
 
                     if (!switcher.data("switcher")) {
-                        var obj = UI.switcher(switcher, UI.Utils.options(switcher.attr("data-uk-switcher")));
+                        var obj = UI.switcher(switcher, UI.Utils.options(switcher.attr("data-yb-switcher")));
                     }
                 });
             });
@@ -3224,7 +3224,7 @@
 
                 this.connect = UI.$(this.options.connect);
 
-                this.connect.find(".uk-active").removeClass(".uk-active");
+                this.connect.find(".yb-active").removeClass(".yb-active");
 
                 // delegate switch commands within container content
                 if (this.connect.length) {
@@ -3232,11 +3232,11 @@
                     // Init ARIA for connect
                     this.connect.children().attr('aria-hidden', 'true');
 
-                    this.connect.on("click", '[data-uk-switcher-item]', function(e) {
+                    this.connect.on("click", '[data-yb-switcher-item]', function(e) {
 
                         e.preventDefault();
 
-                        var item = UI.$(this).attr('data-uk-switcher-item');
+                        var item = UI.$(this).attr('data-yb-switcher-item');
 
                         if ($this.index == item) return;
 
@@ -3262,7 +3262,7 @@
                 }
 
                 var toggles = this.find(this.options.toggle),
-                    active  = toggles.filter(".uk-active");
+                    active  = toggles.filter(".yb-active");
 
                 if (active.length) {
                     this.show(active, false);
@@ -3326,14 +3326,14 @@
                 animation = Animations.none;
             }
 
-            if (active.hasClass("uk-disabled")) return;
+            if (active.hasClass("yb-disabled")) return;
 
             // Update ARIA for Toggles
             toggles.attr('aria-expanded', 'false');
             active.attr('aria-expanded', 'true');
 
-            toggles.filter(".uk-active").removeClass("uk-active");
-            active.addClass("uk-active");
+            toggles.filter(".yb-active").removeClass("yb-active");
+            active.addClass("yb-active");
 
             if (this.options.connect && this.connect.length) {
 
@@ -3347,15 +3347,15 @@
 
                     var container = UI.$(this),
                         children  = UI.$(container.children()),
-                        current   = UI.$(children.filter('.uk-active')),
+                        current   = UI.$(children.filter('.yb-active')),
                         next      = UI.$(children.eq($this.index));
 
                         $this.animating = true;
 
                         animation.apply($this, [current, next]).then(function(){
 
-                            current.removeClass("uk-active");
-                            next.addClass("uk-active");
+                            current.removeClass("yb-active");
+                            next.addClass("yb-active");
 
                             // Update ARIA for connect
                             current.attr('aria-hidden', 'true');
@@ -3382,20 +3382,20 @@
         },
 
         'fade': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-fade', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-fade', current, next]);
         },
 
         'slide-bottom': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-bottom', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-bottom', current, next]);
         },
 
         'slide-top': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-top', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-top', current, next]);
         },
 
         'slide-vertical': function(current, next, dir) {
 
-            var anim = ['uk-animation-slide-top', 'uk-animation-slide-bottom'];
+            var anim = ['yb-animation-slide-top', 'yb-animation-slide-bottom'];
 
             if (current && current.index() > next.index()) {
                 anim.reverse();
@@ -3405,16 +3405,16 @@
         },
 
         'slide-left': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-left', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-left', current, next]);
         },
 
         'slide-right': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-slide-right', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-slide-right', current, next]);
         },
 
         'slide-horizontal': function(current, next, dir) {
 
-            var anim = ['uk-animation-slide-right', 'uk-animation-slide-left'];
+            var anim = ['yb-animation-slide-right', 'yb-animation-slide-left'];
 
             if (current && current.index() > next.index()) {
                 anim.reverse();
@@ -3424,7 +3424,7 @@
         },
 
         'scale': function(current, next) {
-            return coreAnimation.apply(this, ['uk-animation-scale-up', current, next]);
+            return coreAnimation.apply(this, ['yb-animation-scale-up', current, next]);
         }
     };
 
@@ -3451,7 +3451,7 @@
 
         release = function() {
 
-            if (current) current.hide().removeClass('uk-active '+clsOut+' uk-animation-reverse');
+            if (current) current.hide().removeClass('yb-active '+clsOut+' yb-animation-reverse');
 
             next.addClass(clsIn).one(UI.support.animation.end, function() {
 
@@ -3472,12 +3472,12 @@
 
             current.css('animation-duration', this.options.duration+'ms');
 
-            current.css('display', 'none').addClass(clsOut+' uk-animation-reverse').one(UI.support.animation.end, function() {
+            current.css('display', 'none').addClass(clsOut+' yb-animation-reverse').one(UI.support.animation.end, function() {
                 release();
             }.bind(this)).css('display', '');
 
         } else {
-            next.addClass('uk-active');
+            next.addClass('yb-active');
             release();
         }
 
@@ -3493,7 +3493,7 @@
     UI.component('tab', {
 
         defaults: {
-            'target'    : '>li:not(.uk-tab-responsive, .uk-disabled)',
+            'target'    : '>li:not(.yb-tab-responsive, .yb-disabled)',
             'connect'   : false,
             'active'    : 0,
             'animation' : false,
@@ -3506,12 +3506,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-tab]", context).each(function() {
+                UI.$("[data-yb-tab]", context).each(function() {
 
                     var tab = UI.$(this);
 
                     if (!tab.data("tab")) {
-                        var obj = UI.tab(tab, UI.Utils.options(tab.attr("data-uk-tab")));
+                        var obj = UI.tab(tab, UI.Utils.options(tab.attr("data-yb-tab")));
                     }
                 });
             });
@@ -3533,9 +3533,9 @@
 
                 var current = $this.find($this.options.target).not(this);
 
-                current.removeClass("uk-active").blur();
+                current.removeClass("yb-active").blur();
 
-                $this.trigger("change.uk.tab", [UI.$(this).addClass("uk-active"), $this.current]);
+                $this.trigger("change.uk.tab", [UI.$(this).addClass("yb-active"), $this.current]);
 
                 $this.current = UI.$(this);
 
@@ -3551,13 +3551,13 @@
             }
 
             // init responsive tab
-            this.responsivetab = UI.$('<li class="uk-tab-responsive uk-active"><a></a></li>').append('<div class="uk-dropdown uk-dropdown-small"><ul class="uk-nav uk-nav-dropdown"></ul><div>');
+            this.responsivetab = UI.$('<li class="yb-tab-responsive yb-active"><a></a></li>').append('<div class="yb-dropdown yb-dropdown-small"><ul class="yb-nav yb-nav-dropdown"></ul><div>');
 
-            this.responsivetab.dropdown = this.responsivetab.find('.uk-dropdown');
+            this.responsivetab.dropdown = this.responsivetab.find('.yb-dropdown');
             this.responsivetab.lst      = this.responsivetab.dropdown.find('ul');
             this.responsivetab.caption  = this.responsivetab.find('a:first');
 
-            if (this.element.hasClass("uk-tab-bottom")) this.responsivetab.dropdown.addClass("uk-dropdown-up");
+            if (this.element.hasClass("yb-tab-bottom")) this.responsivetab.dropdown.addClass("yb-dropdown-up");
 
             // handle click
             this.responsivetab.lst.on('click.uk.tab', 'a', function(e) {
@@ -3567,7 +3567,7 @@
 
                 var link = UI.$(this);
 
-                $this.element.children('li:not(.uk-tab-responsive)').eq(link.data('index')).trigger('click');
+                $this.element.children('li:not(.yb-tab-responsive)').eq(link.data('index')).trigger('click');
             });
 
             this.on('show.uk.switcher change.uk.tab', function(e, tab) {
@@ -3579,7 +3579,7 @@
             // init UIkit components
             if (this.options.connect) {
                 this.switcher = UI.switcher(this.element, {
-                    'toggle'    : '>li:not(.uk-tab-responsive)',
+                    'toggle'    : '>li:not(.yb-tab-responsive)',
                     'connect'   : this.options.connect,
                     'active'    : this.options.active,
                     'animation' : this.options.animation,
@@ -3591,7 +3591,7 @@
             UI.dropdown(this.responsivetab, {"mode": "click", "preventflip": "y"});
 
             // init
-            $this.trigger("change.uk.tab", [this.element.find(this.options.target).not('.uk-tab-responsive').filter('.uk-active')]);
+            $this.trigger("change.uk.tab", [this.element.find(this.options.target).not('.yb-tab-responsive').filter('.yb-active')]);
 
             this.check();
 
@@ -3606,10 +3606,10 @@
 
         check: function() {
 
-            var children = this.element.children('li:not(.uk-tab-responsive)').removeClass('uk-hidden');
+            var children = this.element.children('li:not(.yb-tab-responsive)').removeClass('yb-hidden');
 
             if (!children.length) {
-                this.responsivetab.addClass('uk-hidden');
+                this.responsivetab.addClass('yb-hidden');
                 return;
             }
 
@@ -3633,21 +3633,21 @@
                     item  = UI.$(children.eq(i));
                     link  = item.find('a');
 
-                    if (item.css('float') != 'none' && !item.attr('uk-dropdown')) {
+                    if (item.css('float') != 'none' && !item.attr('yb-dropdown')) {
 
-                        if (!item.hasClass('uk-disabled')) {
+                        if (!item.hasClass('yb-disabled')) {
 
                             clone = item[0].outerHTML.replace('<a ', '<a data-index="'+i+'" ');
 
                             this.responsivetab.lst.append(clone);
                         }
 
-                        item.addClass('uk-hidden');
+                        item.addClass('yb-hidden');
                     }
                 }
             }
 
-            this.responsivetab[this.responsivetab.lst.children('li').length ? 'removeClass':'addClass']('uk-hidden');
+            this.responsivetab[this.responsivetab.lst.children('li').length ? 'removeClass':'addClass']('yb-hidden');
         }
     });
 
@@ -3668,12 +3668,12 @@
             // auto init
             UI.ready(function(context) {
 
-                UI.$("[data-uk-cover]", context).each(function(){
+                UI.$("[data-yb-cover]", context).each(function(){
 
                     var ele = UI.$(this);
 
                     if(!ele.data("cover")) {
-                        var plugin = UI.cover(ele, UI.Utils.options(ele.attr("data-uk-cover")));
+                        var plugin = UI.cover(ele, UI.Utils.options(ele.attr("data-yb-cover")));
                     }
                 });
             });

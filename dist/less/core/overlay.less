@@ -1,46 +1,46 @@
 // Name:            Overlay
 // Description:     Defines styles for image overlays
 //
-// Component:       `uk-overlay`
+// Component:       `yb-overlay`
 //
-// Sub-objects:     `uk-overlay-panel`
-//                  `uk-overlay-hover`
-//                  `uk-overlay-active`
-//                  `uk-overlay-icon`
+// Sub-objects:     `yb-overlay-panel`
+//                  `yb-overlay-hover`
+//                  `yb-overlay-active`
+//                  `yb-overlay-icon`
 //
-// Modifier:        `uk-overlay-background`
-//                  `uk-overlay-image`
-//                  `uk-overlay-top`
-//                  `uk-overlay-bottom`
-//                  `uk-overlay-left`
-//                  `uk-overlay-right`
-//                  `uk-overlay-fade`
-//                  `uk-overlay-scale`
-//                  `uk-overlay-spin`
-//                  `uk-overlay-grayscale`
-//                  `uk-overlay-slide-top`
-//                  `uk-overlay-slide-bottom`
-//                  `uk-overlay-slide-left`
-//                  `uk-overlay-slide-right`
+// Modifier:        `yb-overlay-background`
+//                  `yb-overlay-image`
+//                  `yb-overlay-top`
+//                  `yb-overlay-bottom`
+//                  `yb-overlay-left`
+//                  `yb-overlay-right`
+//                  `yb-overlay-fade`
+//                  `yb-overlay-scale`
+//                  `yb-overlay-spin`
+//                  `yb-overlay-grayscale`
+//                  `yb-overlay-slide-top`
+//                  `yb-overlay-slide-bottom`
+//                  `yb-overlay-slide-left`
+//                  `yb-overlay-slide-right`
 //
-// DEPRECATED:      `uk-overlay-area`
-//                  `uk-overlay-area-content`
-//                  `uk-overlay-caption`
-//                  `uk-overlay-toggle`
+// DEPRECATED:      `yb-overlay-area`
+//                  `yb-overlay-area-content`
+//                  `yb-overlay-caption`
+//                  `yb-overlay-toggle`
 //
-// States:          `uk-hover`
-//                  `uk-active`
-//                  `uk-ignore`
+// States:          `yb-hover`
+//                  `yb-active`
+//                  `yb-ignore`
 //
-// Uses:            Icon: `[class*='uk-icon-']`
-//                  `uk-border-circle`
+// Uses:            Icon: `[class*='yb-icon-']`
+//                  `yb-border-circle`
 //
 // Markup:
 //
-// <!-- uk-overlay -->
-// <figure class="uk-overlay" href="">
+// <!-- yb-overlay -->
+// <figure class="yb-overlay" href="">
 //     <img src="" alt="">
-//     <figcaption class="uk-overlay-panel"></figcaption>
+//     <figcaption class="yb-overlay-panel"></figcaption>
 // </figure>
 //
 // ========================================================================
@@ -103,7 +103,7 @@
  * 7. Reset margin
  */
 
-.uk-overlay {
+.yb-overlay {
     /* 1 */
     display: inline-block;
     /* 2 */
@@ -121,16 +121,16 @@
 }
 
 /* 6 for Safari */
-.uk-overlay.uk-border-circle { -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); }
+.yb-overlay.yb-border-circle { -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); }
 
 /*
  * Remove margin from content
  */
 
-.uk-overlay > :first-child { margin-bottom: 0; }
+.yb-overlay > :first-child { margin-bottom: 0; }
 
 
-/* Sub-object `uk-overlay-panel`
+/* Sub-object `yb-overlay-panel`
  ========================================================================== */
 
 /*
@@ -138,7 +138,7 @@
  * 2. Style
  */
 
-.uk-overlay-panel {
+.yb-overlay-panel {
     /* 1 */
     position: absolute;
     top: 0;
@@ -155,53 +155,53 @@
  * Remove margin from the last-child
  */
 
-.uk-overlay-panel > :last-child,
-.uk-overlay-panel.uk-flex > * > :last-child { margin-bottom: 0; }
+.yb-overlay-panel > :last-child,
+.yb-overlay-panel.yb-flex > * > :last-child { margin-bottom: 0; }
 
 /*
  * Keep color for headings if the default heading color is changed
  */
 
-.uk-overlay-panel h1,
-.uk-overlay-panel h2,
-.uk-overlay-panel h3,
-.uk-overlay-panel h4,
-.uk-overlay-panel h5,
-.uk-overlay-panel h6 { color: inherit; }
+.yb-overlay-panel h1,
+.yb-overlay-panel h2,
+.yb-overlay-panel h3,
+.yb-overlay-panel h4,
+.yb-overlay-panel h5,
+.yb-overlay-panel h6 { color: inherit; }
 
-.uk-overlay-panel a:not([class]) {
+.yb-overlay-panel a:not([class]) {
     color: @overlay-panel-link-color;
     text-decoration: @overlay-panel-link-text-decoration;
 }
 
-.uk-overlay-panel a[class*='uk-icon-']:not(.uk-icon-button) { color: @overlay-panel-link-color; }
+.yb-overlay-panel a[class*='yb-icon-']:not(.yb-icon-button) { color: @overlay-panel-link-color; }
 
 
-/* Sub-object `uk-overlay-hover` and `uk-overlay-active`
+/* Sub-object `yb-overlay-hover` and `yb-overlay-active`
  ========================================================================== */
 
-.uk-overlay-hover:not(:hover):not(.uk-hover) .uk-overlay-panel:not(.uk-ignore) { opacity: 0; }
+.yb-overlay-hover:not(:hover):not(.yb-hover) .yb-overlay-panel:not(.yb-ignore) { opacity: 0; }
 
-.uk-overlay-active :not(.uk-active) > .uk-overlay-panel:not(.uk-ignore) { opacity: 0; }
+.yb-overlay-active :not(.yb-active) > .yb-overlay-panel:not(.yb-ignore) { opacity: 0; }
 
 
-/* Modifier `uk-overlay-background`
+/* Modifier `yb-overlay-background`
  ========================================================================== */
 
-.uk-overlay-background {
+.yb-overlay-background {
     background: @overlay-panel-background;
     .hook-overlay-background;
 }
 
 
-/* Modifier `uk-overlay-image`
+/* Modifier `yb-overlay-image`
  ========================================================================== */
 
 /*
  * Reset panel
  */
 
-.uk-overlay-image {
+.yb-overlay-image {
     padding: 0;
     .hook-overlay-image;
 }
@@ -210,19 +210,19 @@
 /* Position modifiers
  ========================================================================== */
 
-.uk-overlay-top { bottom: auto; }
+.yb-overlay-top { bottom: auto; }
 
-.uk-overlay-bottom { top: auto; }
+.yb-overlay-bottom { top: auto; }
 
-.uk-overlay-left { right: auto; }
+.yb-overlay-left { right: auto; }
 
-.uk-overlay-right { left: auto; }
+.yb-overlay-right { left: auto; }
 
 
-/* Sub-object `uk-overlay-icon`
+/* Sub-object `yb-overlay-icon`
  ========================================================================== */
 
-.uk-overlay-icon:before {
+.yb-overlay-icon:before {
     content: @overlay-icon;
     position: absolute;
     top: 50%;
@@ -243,44 +243,44 @@
 /* Transitions
  ========================================================================== */
 
-.uk-overlay-fade,
-.uk-overlay-scale,
-.uk-overlay-spin,
-.uk-overlay-grayscale,
-.uk-overlay-blur,
-[class*='uk-overlay-slide'] {
+.yb-overlay-fade,
+.yb-overlay-scale,
+.yb-overlay-spin,
+.yb-overlay-grayscale,
+.yb-overlay-blur,
+[class*='yb-overlay-slide'] {
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
     transition-property: opacity, transform, filter;
 }
 
-.uk-overlay-active .uk-overlay-fade,
-.uk-overlay-active .uk-overlay-scale,
-.uk-overlay-active .uk-overlay-spin,
-.uk-overlay-active [class*='uk-overlay-slide'] { transition-duration: 0.8s; }
+.yb-overlay-active .yb-overlay-fade,
+.yb-overlay-active .yb-overlay-scale,
+.yb-overlay-active .yb-overlay-spin,
+.yb-overlay-active [class*='yb-overlay-slide'] { transition-duration: 0.8s; }
 
 /*
  * Fade
  */
 
-.uk-overlay-fade { opacity: @overlay-fade-out-opacity; }
+.yb-overlay-fade { opacity: @overlay-fade-out-opacity; }
 
-.uk-overlay-hover:hover .uk-overlay-fade,
-.uk-overlay-hover.uk-hover .uk-overlay-fade,
-.uk-overlay-active .uk-active > .uk-overlay-fade { opacity: @overlay-fade-in-opacity; }
+.yb-overlay-hover:hover .yb-overlay-fade,
+.yb-overlay-hover.yb-hover .yb-overlay-fade,
+.yb-overlay-active .yb-active > .yb-overlay-fade { opacity: @overlay-fade-in-opacity; }
 
 /*
  * Scale
  */
 
-.uk-overlay-scale {
+.yb-overlay-scale {
     -webkit-transform: scale(@overlay-scale-out-scale);
     transform: scale(@overlay-scale-out-scale);
 }
 
-.uk-overlay-hover:hover .uk-overlay-scale,
-.uk-overlay-hover.uk-hover .uk-overlay-scale,
-.uk-overlay-active .uk-active > .uk-overlay-scale {
+.yb-overlay-hover:hover .yb-overlay-scale,
+.yb-overlay-hover.yb-hover .yb-overlay-scale,
+.yb-overlay-active .yb-active > .yb-overlay-scale {
     -webkit-transform: scale(@overlay-scale-in-scale);
     transform: scale(@overlay-scale-in-scale);
 }
@@ -289,14 +289,14 @@
  * Spin
  */
 
-.uk-overlay-spin {
+.yb-overlay-spin {
     -webkit-transform: scale(@overlay-spin-out-scale) rotate(@overlay-spin-out-rotate);
     transform: scale(@overlay-spin-out-scale) rotate(@overlay-spin-out-rotate);
 }
 
-.uk-overlay-hover:hover .uk-overlay-spin,
-.uk-overlay-hover.uk-hover .uk-overlay-spin,
-.uk-overlay-active .uk-active > .uk-overlay-spin {
+.yb-overlay-hover:hover .yb-overlay-spin,
+.yb-overlay-hover.yb-hover .yb-overlay-spin,
+.yb-overlay-active .yb-active > .yb-overlay-spin {
     -webkit-transform: scale(@overlay-spin-in-scale) rotate(@overlay-spin-in-rotate);
     transform: scale(@overlay-spin-in-scale) rotate(@overlay-spin-in-rotate);
 }
@@ -305,14 +305,14 @@
  * Grayscale
  */
 
-.uk-overlay-grayscale {
+.yb-overlay-grayscale {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
-.uk-overlay-hover:hover .uk-overlay-grayscale,
-.uk-overlay-hover.uk-hover .uk-overlay-grayscale,
-.uk-overlay-active .uk-active > .uk-overlay-grayscale {
+.yb-overlay-hover:hover .yb-overlay-grayscale,
+.yb-overlay-hover.yb-hover .yb-overlay-grayscale,
+.yb-overlay-active .yb-active > .yb-overlay-grayscale {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
 }
@@ -321,36 +321,36 @@
  * Slide
  */
 
-[class*='uk-overlay-slide'] { opacity: 0; }
+[class*='yb-overlay-slide'] { opacity: 0; }
 
 /* Top */
-.uk-overlay-slide-top {
+.yb-overlay-slide-top {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
 }
 
 /* Bottom */
-.uk-overlay-slide-bottom {
+.yb-overlay-slide-bottom {
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
 }
 
 /* Left */
-.uk-overlay-slide-left {
+.yb-overlay-slide-left {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
 }
 
 /* Right */
-.uk-overlay-slide-right {
+.yb-overlay-slide-right {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
 }
 
 /* Hover */
-.uk-overlay-hover:hover [class*='uk-overlay-slide'],
-.uk-overlay-hover.uk-hover [class*='uk-overlay-slide'],
-.uk-overlay-active .uk-active > [class*='uk-overlay-slide'] {
+.yb-overlay-hover:hover [class*='yb-overlay-slide'],
+.yb-overlay-hover.yb-hover [class*='yb-overlay-slide'],
+.yb-overlay-active .yb-active > [class*='yb-overlay-slide'] {
     opacity: 1;
     -webkit-transform: translateX(0) translateY(0);
     transform: translateX(0) translateY(0);
@@ -358,7 +358,7 @@
 
 
 /* DEPRECATED
- * Sub-object `uk-overlay-area`
+ * Sub-object `yb-overlay-area`
  ========================================================================== */
 
 /*
@@ -367,7 +367,7 @@
  * 3. Fade-in transition
  */
 
-.uk-overlay-area {
+.yb-overlay-area {
     /* 1 */
     position: absolute;
     top: 0;
@@ -386,20 +386,20 @@
 
 /*
  * Hover
- * 1. `uk-hover` to support touch devices
- * 2. Use optional `uk-overlay-toggle` to trigger the overlay earlier
+ * 1. `yb-hover` to support touch devices
+ * 2. Use optional `yb-overlay-toggle` to trigger the overlay earlier
  */
 
-.uk-overlay:hover .uk-overlay-area,
-.uk-overlay.uk-hover .uk-overlay-area, // 1
-.uk-overlay-toggle:hover .uk-overlay-area, // 2
-.uk-overlay-toggle.uk-hover .uk-overlay-area { opacity: 1; }
+.yb-overlay:hover .yb-overlay-area,
+.yb-overlay.yb-hover .yb-overlay-area, // 1
+.yb-overlay-toggle:hover .yb-overlay-area, // 2
+.yb-overlay-toggle.yb-hover .yb-overlay-area { opacity: 1; }
 
 /*
  * Icon
  */
 
-.uk-overlay-area:empty:before {
+.yb-overlay-area:empty:before {
     content: @overlay-area-icon;
     position: absolute;
     top: 50%;
@@ -418,7 +418,7 @@
 
 
 /* DEPRECATED
- * Sub-object `uk-overlay-area-content`
+ * Sub-object `yb-overlay-area-content`
  ========================================================================== */
 
 /*
@@ -426,13 +426,13 @@
  * Needed for Firefox
  */
 
-.uk-overlay-area:not(:empty) { font-size: 0.001px; }
+.yb-overlay-area:not(:empty) { font-size: 0.001px; }
 
 /*
  * 1. Needed for vertical alignment
  */
 
-.uk-overlay-area:not(:empty):before {
+.yb-overlay-area:not(:empty):before {
     content: '';
     display: inline-block;
     height: 100%;
@@ -446,7 +446,7 @@
  * 4. Set style
  */
 
-.uk-overlay-area-content {
+.yb-overlay-area-content {
     /* 1 */
     display: inline-block;
     box-sizing: border-box;
@@ -466,18 +466,18 @@
  * Remove margin from the last-child
  */
 
-.uk-overlay-area-content > :last-child { margin-bottom: 0; }
+.yb-overlay-area-content > :last-child { margin-bottom: 0; }
 
 /*
  * Links in overlay area
  */
 
-.uk-overlay-area-content a:not([class]),
-.uk-overlay-area-content a:not([class]):hover { color: @overlay-area-content-link-color; }
+.yb-overlay-area-content a:not([class]),
+.yb-overlay-area-content a:not([class]):hover { color: @overlay-area-content-link-color; }
 
 
 /* DEPRECATED
- * Sub-object `uk-overlay-caption`
+ * Sub-object `yb-overlay-caption`
  ========================================================================== */
 
 /*
@@ -486,7 +486,7 @@
  * 3. Fade-in transition
  */
 
-.uk-overlay-caption {
+.yb-overlay-caption {
     /* 1 */
     position: absolute;
     bottom: 0;
@@ -506,14 +506,14 @@
 
 /*
  * Hover
- * 1. `uk-hover` to support touch devices
- * 2. Use optional `uk-overlay-toggle` to trigger the overlay earlier
+ * 1. `yb-hover` to support touch devices
+ * 2. Use optional `yb-overlay-toggle` to trigger the overlay earlier
  */
 
-.uk-overlay:hover .uk-overlay-caption,
-.uk-overlay.uk-hover .uk-overlay-caption, // 1
-.uk-overlay-toggle:hover .uk-overlay-caption, // 2
-.uk-overlay-toggle.uk-hover .uk-overlay-caption { opacity: 1; }
+.yb-overlay:hover .yb-overlay-caption,
+.yb-overlay.yb-hover .yb-overlay-caption, // 1
+.yb-overlay-toggle:hover .yb-overlay-caption, // 2
+.yb-overlay-toggle.yb-hover .yb-overlay-caption { opacity: 1; }
 
 
 // Hooks

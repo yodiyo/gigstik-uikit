@@ -5,7 +5,7 @@
     UI.component('tab', {
 
         defaults: {
-            'target'    : '>li:not(.uk-tab-responsive, .uk-disabled)',
+            'target'    : '>li:not(.yb-tab-responsive, .yb-disabled)',
             'connect'   : false,
             'active'    : 0,
             'animation' : false,
@@ -18,12 +18,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$("[data-uk-tab]", context).each(function() {
+                UI.$("[data-yb-tab]", context).each(function() {
 
                     var tab = UI.$(this);
 
                     if (!tab.data("tab")) {
-                        var obj = UI.tab(tab, UI.Utils.options(tab.attr("data-uk-tab")));
+                        var obj = UI.tab(tab, UI.Utils.options(tab.attr("data-yb-tab")));
                     }
                 });
             });
@@ -45,9 +45,9 @@
 
                 var current = $this.find($this.options.target).not(this);
 
-                current.removeClass("uk-active").blur();
+                current.removeClass("yb-active").blur();
 
-                $this.trigger("change.uk.tab", [UI.$(this).addClass("uk-active"), $this.current]);
+                $this.trigger("change.uk.tab", [UI.$(this).addClass("yb-active"), $this.current]);
 
                 $this.current = UI.$(this);
 
@@ -63,13 +63,13 @@
             }
 
             // init responsive tab
-            this.responsivetab = UI.$('<li class="uk-tab-responsive uk-active"><a></a></li>').append('<div class="uk-dropdown uk-dropdown-small"><ul class="uk-nav uk-nav-dropdown"></ul><div>');
+            this.responsivetab = UI.$('<li class="yb-tab-responsive yb-active"><a></a></li>').append('<div class="yb-dropdown yb-dropdown-small"><ul class="yb-nav yb-nav-dropdown"></ul><div>');
 
-            this.responsivetab.dropdown = this.responsivetab.find('.uk-dropdown');
+            this.responsivetab.dropdown = this.responsivetab.find('.yb-dropdown');
             this.responsivetab.lst      = this.responsivetab.dropdown.find('ul');
             this.responsivetab.caption  = this.responsivetab.find('a:first');
 
-            if (this.element.hasClass("uk-tab-bottom")) this.responsivetab.dropdown.addClass("uk-dropdown-up");
+            if (this.element.hasClass("yb-tab-bottom")) this.responsivetab.dropdown.addClass("yb-dropdown-up");
 
             // handle click
             this.responsivetab.lst.on('click.uk.tab', 'a', function(e) {
@@ -79,7 +79,7 @@
 
                 var link = UI.$(this);
 
-                $this.element.children('li:not(.uk-tab-responsive)').eq(link.data('index')).trigger('click');
+                $this.element.children('li:not(.yb-tab-responsive)').eq(link.data('index')).trigger('click');
             });
 
             this.on('show.uk.switcher change.uk.tab', function(e, tab) {
@@ -91,7 +91,7 @@
             // init UIkit components
             if (this.options.connect) {
                 this.switcher = UI.switcher(this.element, {
-                    'toggle'    : '>li:not(.uk-tab-responsive)',
+                    'toggle'    : '>li:not(.yb-tab-responsive)',
                     'connect'   : this.options.connect,
                     'active'    : this.options.active,
                     'animation' : this.options.animation,
@@ -103,7 +103,7 @@
             UI.dropdown(this.responsivetab, {"mode": "click", "preventflip": "y"});
 
             // init
-            $this.trigger("change.uk.tab", [this.element.find(this.options.target).not('.uk-tab-responsive').filter('.uk-active')]);
+            $this.trigger("change.uk.tab", [this.element.find(this.options.target).not('.yb-tab-responsive').filter('.yb-active')]);
 
             this.check();
 
@@ -118,10 +118,10 @@
 
         check: function() {
 
-            var children = this.element.children('li:not(.uk-tab-responsive)').removeClass('uk-hidden');
+            var children = this.element.children('li:not(.yb-tab-responsive)').removeClass('yb-hidden');
 
             if (!children.length) {
-                this.responsivetab.addClass('uk-hidden');
+                this.responsivetab.addClass('yb-hidden');
                 return;
             }
 
@@ -145,21 +145,21 @@
                     item  = UI.$(children.eq(i));
                     link  = item.find('a');
 
-                    if (item.css('float') != 'none' && !item.attr('uk-dropdown')) {
+                    if (item.css('float') != 'none' && !item.attr('yb-dropdown')) {
 
-                        if (!item.hasClass('uk-disabled')) {
+                        if (!item.hasClass('yb-disabled')) {
 
                             clone = item[0].outerHTML.replace('<a ', '<a data-index="'+i+'" ');
 
                             this.responsivetab.lst.append(clone);
                         }
 
-                        item.addClass('uk-hidden');
+                        item.addClass('yb-hidden');
                     }
                 }
             }
 
-            this.responsivetab[this.responsivetab.lst.children('li').length ? 'removeClass':'addClass']('uk-hidden');
+            this.responsivetab[this.responsivetab.lst.children('li').length ? 'removeClass':'addClass']('yb-hidden');
         }
     });
 

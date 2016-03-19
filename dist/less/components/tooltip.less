@@ -1,16 +1,16 @@
 // Name:            Tooltip
 // Description:     Defines styles for tooltips
 //
-// Component:       `uk-tooltip`
+// Component:       `yb-tooltip`
 //
-// Modifiers        `uk-tooltip-top`
-//                  `uk-tooltip-top-left`
-//                  `uk-tooltip-top-right`
-//                  `uk-tooltip-bottom`
-//                  `uk-tooltip-bottom-left`
-//                  `uk-tooltip-bottom-right`
-//                  `uk-tooltip-left`
-//                  `uk-tooltip-right`
+// Modifiers        `yb-tooltip-top`
+//                  `yb-tooltip-top-left`
+//                  `yb-tooltip-top-right`
+//                  `yb-tooltip-bottom`
+//                  `yb-tooltip-bottom-left`
+//                  `yb-tooltip-bottom-right`
+//                  `yb-tooltip-left`
+//                  `yb-tooltip-right`
 //
 // ========================================================================
 
@@ -43,7 +43,7 @@
  * 4. Set style
  */
 
-.uk-tooltip {
+.yb-tooltip {
     /* 1 */
     display: none;
     /* 2 */
@@ -69,7 +69,7 @@
  * 1. Dashed is less antialised than solid
  */
 
-.uk-tooltip:after {
+.yb-tooltip:after {
     content: "";
     display: block;
     position: absolute;
@@ -87,9 +87,9 @@
  * Top
  */
 
-.uk-tooltip-top:after,
-.uk-tooltip-top-left:after,
-.uk-tooltip-top-right:after {
+.yb-tooltip-top:after,
+.yb-tooltip-top-left:after,
+.yb-tooltip-top-right:after {
     bottom: -@tooltip-triangle-size;
     border-top-style: solid;
     border-bottom: none;
@@ -102,9 +102,9 @@
  * Bottom
  */
 
-.uk-tooltip-bottom:after,
-.uk-tooltip-bottom-left:after,
-.uk-tooltip-bottom-right:after {
+.yb-tooltip-bottom:after,
+.yb-tooltip-bottom-left:after,
+.yb-tooltip-bottom-right:after {
     top: -@tooltip-triangle-size;
     border-bottom-style: solid;
     border-top: none;
@@ -117,8 +117,8 @@
  * Top/Bottom center
  */
 
-.uk-tooltip-top:after,
-.uk-tooltip-bottom:after {
+.yb-tooltip-top:after,
+.yb-tooltip-bottom:after {
     left: 50%;
     margin-left: -@tooltip-triangle-size;
 }
@@ -127,21 +127,21 @@
  * Top/Bottom left
  */
 
-.uk-tooltip-top-left:after,
-.uk-tooltip-bottom-left:after { left: @tooltip-offset-horizontal; }
+.yb-tooltip-top-left:after,
+.yb-tooltip-bottom-left:after { left: @tooltip-offset-horizontal; }
 
 /*
  * Top/Bottom right
  */
 
-.uk-tooltip-top-right:after,
-.uk-tooltip-bottom-right:after { right: @tooltip-offset-horizontal; }
+.yb-tooltip-top-right:after,
+.yb-tooltip-bottom-right:after { right: @tooltip-offset-horizontal; }
 
 /*
  * Left
  */
 
-.uk-tooltip-left:after {
+.yb-tooltip-left:after {
     right: -@tooltip-triangle-size;
     top: 50%;
     margin-top: -@tooltip-triangle-size;
@@ -156,7 +156,7 @@
  * Right
  */
 
-.uk-tooltip-right:after {
+.yb-tooltip-right:after {
     left: -@tooltip-triangle-size;
     top: 50%;
     margin-top: -@tooltip-triangle-size;

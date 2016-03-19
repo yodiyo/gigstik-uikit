@@ -33,12 +33,12 @@
             pauseOnHover       : true,
             kenburns           : false,
             kenburnsanimations : [
-                'uk-animation-middle-left',
-                'uk-animation-top-right',
-                'uk-animation-bottom-left',
-                'uk-animation-top-center',
+                'yb-animation-middle-left',
+                'yb-animation-top-right',
+                'yb-animation-bottom-left',
+                'yb-animation-top-center',
                 '', // middle-center
-                'uk-animation-bottom-right'
+                'yb-animation-bottom-right'
             ]
         },
 
@@ -51,12 +51,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$('[data-uk-slideshow]', context).each(function() {
+                UI.$('[data-yb-slideshow]', context).each(function() {
 
                     var slideshow = UI.$(this);
 
                     if (!slideshow.data("slideshow")) {
-                        UI.slideshow(slideshow, UI.Utils.options(slideshow.attr("data-uk-slideshow")));
+                        UI.slideshow(slideshow, UI.Utils.options(slideshow.attr("data-yb-slideshow")));
                     }
                 });
             });
@@ -66,13 +66,13 @@
 
             var $this = this, canvas, kbanimduration;
 
-            this.container     = this.element.hasClass('uk-slideshow') ? this.element : UI.$(this.find('.uk-slideshow'));
+            this.container     = this.element.hasClass('yb-slideshow') ? this.element : UI.$(this.find('.yb-slideshow'));
             this.slides        = this.container.children();
             this.slidesCount   = this.slides.length;
             this.current       = this.options.start;
             this.animating     = false;
-            this.triggers      = this.find('[data-uk-slideshow-item]');
-            this.fixFullscreen = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) && this.container.hasClass('uk-slideshow-fullscreen'); // viewport unit fix for height:100vh - should be fixed in iOS 8
+            this.triggers      = this.find('[data-yb-slideshow-item]');
+            this.fixFullscreen = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) && this.container.hasClass('yb-slideshow-fullscreen'); // viewport unit fix for height:100vh - should be fixed in iOS 8
 
             if (this.options.kenburns) {
 
@@ -102,7 +102,7 @@
                     switch(media[0].nodeName) {
                         case 'IMG':
 
-                            var cover = UI.$('<div class="uk-cover-background uk-position-cover"></div>').css({'background-image':'url('+ media.attr('src') + ')'});
+                            var cover = UI.$('<div class="yb-cover-background yb-position-cover"></div>').css({'background-image':'url('+ media.attr('src') + ')'});
 
                             if (media.attr('width') && media.attr('height')) {
                                 placeholder = UI.$('<canvas></canvas>').attr({width:media.attr('width'), height:media.attr('height')});
@@ -142,7 +142,7 @@
                                 .data('slideshow', $this)  // add self-reference for the vimeo-ready listener
                                 .attr('data-player-id', iframeId)  // add frameId for the vimeo-ready listener
                                 .attr('src', [src, (src.indexOf('?') > -1 ? '&':'?'), 'enablejsapi=1&api=1&player_id='+iframeId].join(''))
-                                .addClass('uk-position-absolute');
+                                .addClass('yb-position-absolute');
 
                             // disable pointer events
                             if(!UI.support.touch) media.css('pointer-events', 'none');
@@ -151,13 +151,13 @@
 
                             if (UI.cover) {
                                 UI.cover(media);
-                                media.attr('data-uk-cover', '{}');
+                                media.attr('data-yb-cover', '{}');
                             }
 
                             break;
 
                         case 'VIDEO':
-                            media.addClass('uk-cover-object uk-position-absolute');
+                            media.addClass('yb-cover-object yb-position-absolute');
                             placeholder = true;
 
                             if ($this.options.videomute) $this.mutemedia(media);
@@ -185,11 +185,11 @@
                 }
             });
 
-            this.on("click.uk.slideshow", '[data-uk-slideshow-item]', function(e) {
+            this.on("click.uk.slideshow", '[data-yb-slideshow-item]', function(e) {
 
                 e.preventDefault();
 
-                var slide = UI.$(this).attr('data-uk-slideshow-item');
+                var slide = UI.$(this).attr('data-yb-slideshow-item');
 
                 if ($this.current == slide) return;
 
@@ -206,8 +206,8 @@
             });
 
             // Set start slide
-            this.slides.attr('aria-hidden', 'true').eq(this.current).addClass('uk-active').attr('aria-hidden', 'false');
-            this.triggers.filter('[data-uk-slideshow-item="'+this.current+'"]').addClass('uk-active');
+            this.slides.attr('aria-hidden', 'true').eq(this.current).addClass('yb-active').attr('aria-hidden', 'false');
+            this.triggers.filter('[data-yb-slideshow-item="'+this.current+'"]').addClass('yb-active');
 
             UI.$win.on("resize load", UI.Utils.debounce(function() {
                 $this.resize();
@@ -261,7 +261,7 @@
 
         resize: function() {
 
-            if (this.container.hasClass('uk-slideshow-fullscreen')) return;
+            if (this.container.hasClass('yb-slideshow-fullscreen')) return;
 
             var height = this.options.height;
 
@@ -303,13 +303,13 @@
                         $this.playmedia(nextmedia);
                     }
 
-                    next.addClass("uk-active").attr('aria-hidden', 'false');
-                    current.removeClass("uk-active").attr('aria-hidden', 'true');
+                    next.addClass("yb-active").attr('aria-hidden', 'false');
+                    current.removeClass("yb-active").attr('aria-hidden', 'true');
 
                     $this.animating = false;
                     $this.current   = index;
 
-                    UI.Utils.checkDisplay(next, '[class*="uk-animation-"]:not(.uk-cover-background.uk-position-cover)');
+                    UI.Utils.checkDisplay(next, '[class*="yb-animation-"]:not(.yb-cover-background.yb-position-cover)');
 
                     $this.trigger('show.uk.slideshow', [next, current, $this]);
                 };
@@ -328,8 +328,8 @@
 
             Animations[animation].apply(this, [current, next, dir]).then(finalize);
 
-            $this.triggers.removeClass('uk-active');
-            $this.triggers.filter('[data-uk-slideshow-item="'+index+'"]').addClass('uk-active');
+            $this.triggers.removeClass('yb-active');
+            $this.triggers.filter('[data-yb-slideshow-item="'+index+'"]').addClass('yb-active');
         },
 
         applyKenBurns: function(slide) {
@@ -342,8 +342,8 @@
                 index      = this.kbindex || 0;
 
 
-            slide.data('cover').attr('class', 'uk-cover-background uk-position-cover').width();
-            slide.data('cover').addClass(['uk-animation-scale', 'uk-animation-reverse', animations[index].trim()].join(' '));
+            slide.data('cover').attr('class', 'yb-cover-background yb-position-cover').width();
+            slide.data('cover').addClass(['yb-animation-scale', 'yb-animation-reverse', animations[index].trim()].join(' '));
 
             this.kbindex = animations[index + 1] ? (index+1):0;
         },
@@ -443,14 +443,14 @@
 
             next.css('opacity', 1).one(UI.support.animation.end, function() {
 
-                current.removeClass(dir == -1 ? 'uk-slideshow-scroll-backward-out' : 'uk-slideshow-scroll-forward-out');
-                next.css('opacity', '').removeClass(dir == -1 ? 'uk-slideshow-scroll-backward-in' : 'uk-slideshow-scroll-forward-in');
+                current.removeClass(dir == -1 ? 'yb-slideshow-scroll-backward-out' : 'yb-slideshow-scroll-forward-out');
+                next.css('opacity', '').removeClass(dir == -1 ? 'yb-slideshow-scroll-backward-in' : 'yb-slideshow-scroll-forward-in');
                 d.resolve();
 
             }.bind(this));
 
-            current.addClass(dir == -1 ? 'uk-slideshow-scroll-backward-out' : 'uk-slideshow-scroll-forward-out');
-            next.addClass(dir == -1 ? 'uk-slideshow-scroll-backward-in' : 'uk-slideshow-scroll-forward-in');
+            current.addClass(dir == -1 ? 'yb-slideshow-scroll-backward-out' : 'yb-slideshow-scroll-forward-out');
+            next.addClass(dir == -1 ? 'yb-slideshow-scroll-backward-in' : 'yb-slideshow-scroll-forward-in');
             next.width(); // force redraw
 
             return d.promise();
@@ -465,14 +465,14 @@
 
             next.css('opacity', 1).one(UI.support.animation.end, function() {
 
-                current.removeClass(dir === -1 ? 'uk-slideshow-swipe-backward-out' : 'uk-slideshow-swipe-forward-out');
-                next.css('opacity', '').removeClass(dir === -1 ? 'uk-slideshow-swipe-backward-in' : 'uk-slideshow-swipe-forward-in');
+                current.removeClass(dir === -1 ? 'yb-slideshow-swipe-backward-out' : 'yb-slideshow-swipe-forward-out');
+                next.css('opacity', '').removeClass(dir === -1 ? 'yb-slideshow-swipe-backward-in' : 'yb-slideshow-swipe-forward-in');
                 d.resolve();
 
             }.bind(this));
 
-            current.addClass(dir == -1 ? 'uk-slideshow-swipe-backward-out' : 'uk-slideshow-swipe-forward-out');
-            next.addClass(dir == -1 ? 'uk-slideshow-swipe-backward-in' : 'uk-slideshow-swipe-forward-in');
+            current.addClass(dir == -1 ? 'yb-slideshow-swipe-backward-out' : 'yb-slideshow-swipe-forward-out');
+            next.addClass(dir == -1 ? 'yb-slideshow-swipe-backward-in' : 'yb-slideshow-swipe-forward-in');
             next.width(); // force redraw
 
             return d.promise();
@@ -489,13 +489,13 @@
 
             current.one(UI.support.animation.end, function() {
 
-                current.removeClass('uk-slideshow-scale-out');
+                current.removeClass('yb-slideshow-scale-out');
                 next.css('opacity', '');
                 d.resolve();
 
             }.bind(this));
 
-            current.addClass('uk-slideshow-scale-out');
+            current.addClass('yb-slideshow-scale-out');
             current.width(); // force redraw
 
             return d.promise();
@@ -514,19 +514,19 @@
             if (!(next.data('cover') || next.data('placeholder'))) {
 
                 next.css('opacity', 1).one(UI.support.animation.end, function() {
-                    next.removeClass('uk-slideshow-fade-in');
-                }).addClass('uk-slideshow-fade-in');
+                    next.removeClass('yb-slideshow-fade-in');
+                }).addClass('yb-slideshow-fade-in');
             }
 
             current.one(UI.support.animation.end, function() {
 
-                current.removeClass('uk-slideshow-fade-out');
+                current.removeClass('yb-slideshow-fade-out');
                 next.css('opacity', '');
                 d.resolve();
 
             }.bind(this));
 
-            current.addClass('uk-slideshow-fade-out');
+            current.addClass('yb-slideshow-fade-out');
             current.width(); // force redraw
 
             return d.promise();

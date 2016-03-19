@@ -1,9 +1,9 @@
 // Name:            Sticky
 // Description:     Make elements remain at the top of the viewport
 //
-// Component:       `data-uk-sticky`
+// Component:       `data-yb-sticky`
 //
-// States:          `uk-active`
+// States:          `yb-active`
 //
 // ========================================================================
 
@@ -25,7 +25,7 @@
  * 1. More robust if padding and border are used
  */
 
-[data-uk-sticky].uk-active {
+[data-yb-sticky].yb-active {
    z-index: @sticky-z-index;
    /* 1 */
    box-sizing: border-box;
@@ -35,7 +35,7 @@
  * 1. Resolve frame-rate issues on devices with lower frame-rates. Forces hardware acceleration
  */
 
-.uk-sticky-placeholder > * {
+.yb-sticky-placeholder > * {
     /* 1 */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -45,12 +45,12 @@
  * Faster animations
  */
 
-[data-uk-sticky][class*='uk-animation-'] {
+[data-yb-sticky][class*='yb-animation-'] {
     -webkit-animation-duration: @sticky-animation-duration;
     animation-duration: @sticky-animation-duration;
 }
 
-[data-uk-sticky].uk-animation-reverse {
+[data-yb-sticky].yb-animation-reverse {
     -webkit-animation-duration: @sticky-reverse-animation-duration;
     animation-duration: @sticky-reverse-animation-duration;
 }

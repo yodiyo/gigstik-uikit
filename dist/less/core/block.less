@@ -1,13 +1,13 @@
 // Name:            Block
 // Description:     Defines styles to create horizontal layout blocks
 //
-// Component:       `uk-block`
+// Component:       `yb-block`
 //
-// Modifiers:       `uk-block-large`
-//                  `uk-block-default`
-//                  `uk-block-muted`
-//                  `uk-block-primary`
-//                  `uk-block-secondary`
+// Modifiers:       `yb-block-large`
+//                  `yb-block-default`
+//                  `yb-block-muted`
+//                  `yb-block-primary`
+//                  `yb-block-secondary`
 //
 // ========================================================================
 
@@ -32,7 +32,7 @@
    Component: Block
  ========================================================================== */
 
-.uk-block {
+.yb-block {
     position: relative;
     box-sizing: border-box;
     padding-top: @block-padding-vertical;
@@ -43,7 +43,7 @@
 /* Phone landscape and bigger */
 @media (min-width: @breakpoint-medium) {
 
-    .uk-block {
+    .yb-block {
         padding-top: @block-padding-vertical-large;
         padding-bottom: @block-padding-vertical-large;
     }
@@ -54,19 +54,19 @@
  * Micro clearfix to make blocks more robust
  */
 
-.uk-block:before,
-.uk-block:after {
+.yb-block:before,
+.yb-block:after {
     content: "";
     display: table;
 }
 
-.uk-block:after { clear: both; }
+.yb-block:after { clear: both; }
 
 /*
  * Remove margin from the last-child
  */
 
-.uk-block > :last-child { margin-bottom: 0; }
+.yb-block > :last-child { margin-bottom: 0; }
 
 
 /* Padding Modifier
@@ -76,7 +76,7 @@
  * Large padding
  */
 
-.uk-block-large {
+.yb-block-large {
     padding-top: @block-large-padding-vertical;
     padding-bottom: @block-large-padding-vertical;
 }
@@ -84,7 +84,7 @@
 /* Tablets and bigger */
 @media (min-width: @breakpoint-medium) {
 
-    .uk-block-large {
+    .yb-block-large {
         padding-top: @block-large-padding-vertical-medium;
         padding-bottom: @block-large-padding-vertical-medium;
     }
@@ -94,7 +94,7 @@
 /* Desktop and bigger */
 @media (min-width: @breakpoint-large) {
 
-    .uk-block-large {
+    .yb-block-large {
         padding-top: @block-large-padding-vertical-large;
         padding-bottom: @block-large-padding-vertical-large;
     }
@@ -109,7 +109,7 @@
  * Default
  */
 
-.uk-block-default {
+.yb-block-default {
     background: @block-default-background;
     .hook-block-default;
 }
@@ -118,7 +118,7 @@
  * Muted
  */
 
-.uk-block-muted {
+.yb-block-muted {
     background: @block-muted-background;
     .hook-block-muted;
 }
@@ -127,7 +127,7 @@
  * Primary
  */
 
-.uk-block-primary {
+.yb-block-primary {
     background: @block-primary-background;
     .hook-block-primary;
 }
@@ -136,7 +136,7 @@
  * Secondary
  */
 
-.uk-block-secondary {
+.yb-block-secondary {
     background: @block-secondary-background;
     .hook-block-secondary;
 }

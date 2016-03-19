@@ -1,31 +1,31 @@
 // Name:            Navbar
 // Description:     Defines styles for the navigation bar
 //
-// Component:       `uk-navbar`
+// Component:       `yb-navbar`
 //
-// Sub-objects:     `uk-navbar-nav`
-//                  `uk-navbar-nav-subtitle`
-//                  `uk-navbar-content`
-//                  `uk-navbar-brand`
-//                  `uk-navbar-toggle`
-//                  `uk-navbar-toggle-alt`
-//                  `uk-navbar-center`
-//                  `uk-navbar-flip`
+// Sub-objects:     `yb-navbar-nav`
+//                  `yb-navbar-nav-subtitle`
+//                  `yb-navbar-content`
+//                  `yb-navbar-brand`
+//                  `yb-navbar-toggle`
+//                  `yb-navbar-toggle-alt`
+//                  `yb-navbar-center`
+//                  `yb-navbar-flip`
 //
-// Modifiers:       `uk-navbar-attached`
+// Modifiers:       `yb-navbar-attached`
 //
-// States:          `uk-active`
-//                  `uk-parent`
-//                  `uk-open`
+// States:          `yb-active`
+//                  `yb-parent`
+//                  `yb-open`
 //
 // Used by:         Dropdown
 //
 // Markup:
 //
-// <!-- uk-navbar -->
-// <nav class="uk-navbar">
-//     <ul class="uk-navbar-nav">
-//         <li class="uk-active"><a href=""></a></li>
+// <!-- yb-navbar -->
+// <nav class="yb-navbar">
+//     <ul class="yb-navbar-nav">
+//         <li class="yb-active"><a href=""></a></li>
 //         <li><a href=""></a></li>
 //     </ul>
 // </nav>
@@ -72,7 +72,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
    Component: Navbar
  ========================================================================== */
 
-.uk-navbar {
+.yb-navbar {
     background: $navbar-background;
     color: $navbar-color;
     @include hook-navbar();
@@ -82,19 +82,19 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * Micro clearfix
  */
 
-.uk-navbar:before,
-.uk-navbar:after {
+.yb-navbar:before,
+.yb-navbar:after {
     content: "";
     display: table;
 }
 
-.uk-navbar:after { clear: both; }
+.yb-navbar:after { clear: both; }
 
 
-/* Sub-object: `uk-navbar-nav`
+/* Sub-object: `yb-navbar-nav`
  ========================================================================== */
 
-.uk-navbar-nav {
+.yb-navbar-nav {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -105,7 +105,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * 1. Create position context for dropdowns
  */
 
-.uk-navbar-nav > li {
+.yb-navbar-nav > li {
     float: left;
     /* 1 */
     position: relative;
@@ -116,7 +116,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * 2. Style
  */
 
-.uk-navbar-nav > li > a {
+.yb-navbar-nav > li > a {
     display: block;
     box-sizing: border-box;
     text-decoration: none;
@@ -133,7 +133,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 }
 
 /* Appear not as link */
-.uk-navbar-nav > li > a[href='#'] { cursor: text; }
+.yb-navbar-nav > li > a[href='#'] { cursor: text; }
 
 /*
  * Hover
@@ -142,9 +142,9 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * 3. Remove default focus style
  */
 
-.uk-navbar-nav > li:hover > a,
-.uk-navbar-nav > li > a:focus, // 1
-.uk-navbar-nav > li.uk-open > a { // 2
+.yb-navbar-nav > li:hover > a,
+.yb-navbar-nav > li > a:focus, // 1
+.yb-navbar-nav > li.yb-open > a { // 2
     background-color: $navbar-nav-hover-background;
     color: $navbar-nav-hover-color;
     /* 3 */
@@ -153,42 +153,42 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 }
 
 /* OnClick */
-.uk-navbar-nav > li > a:active {
+.yb-navbar-nav > li > a:active {
     background-color: $navbar-nav-onclick-background;
     color: $navbar-nav-onclick-color;
     @include hook-navbar-nav-onclick();
 }
 
 /* Active */
-.uk-navbar-nav > li.uk-active > a {
+.yb-navbar-nav > li.yb-active > a {
     background-color: $navbar-nav-active-background;
     color: $navbar-nav-active-color;
     @include hook-navbar-nav-active();
 }
 
 
-/* Sub-objects: `uk-navbar-nav-subtitle`
+/* Sub-objects: `yb-navbar-nav-subtitle`
  ========================================================================== */
 
-.uk-navbar-nav .uk-navbar-nav-subtitle { line-height: $navbar-nav-line-height - $navbar-nav-subtitle-font-size - $navbar-nav-subtitle-offset; }
+.yb-navbar-nav .yb-navbar-nav-subtitle { line-height: $navbar-nav-line-height - $navbar-nav-subtitle-font-size - $navbar-nav-subtitle-offset; }
 
-.uk-navbar-nav-subtitle > div {
+.yb-navbar-nav-subtitle > div {
     margin-top: (($navbar-nav-line-height - $navbar-nav-subtitle-font-size - $navbar-nav-font-size) / -2) + $navbar-nav-subtitle-offset;
     font-size: $navbar-nav-subtitle-font-size;
     line-height: $navbar-nav-subtitle-font-size + $navbar-nav-subtitle-offset;
 }
 
 
-/* Sub-objects: `uk-navbar-content`, `uk-navbar-brand`, `uk-navbar-toggle`
+/* Sub-objects: `yb-navbar-content`, `yb-navbar-brand`, `yb-navbar-toggle`
  ========================================================================== */
 
 /*
  * Imitate navbar items
  */
 
-.uk-navbar-content,
-.uk-navbar-brand,
-.uk-navbar-toggle {
+.yb-navbar-content,
+.yb-navbar-brand,
+.yb-navbar-toggle {
     box-sizing: border-box;
     display: block;
     height: $navbar-nav-height;
@@ -201,9 +201,9 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * Helper to center all child elements vertically
  */
 
-.uk-navbar-content:before,
-.uk-navbar-brand:before,
-.uk-navbar-toggle:before {
+.yb-navbar-content:before,
+.yb-navbar-brand:before,
+.yb-navbar-toggle:before {
     content: '';
     display: inline-block;
     height: 100%;
@@ -211,27 +211,27 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 }
 
 
-/* Sub-objects: `uk-navbar-content`
+/* Sub-objects: `yb-navbar-content`
  ========================================================================== */
 
 /*
  * Better sibling spacing
  */
 
-.uk-navbar-content + .uk-navbar-content:not(.uk-navbar-center) { padding-left: 0; }
+.yb-navbar-content + .yb-navbar-content:not(.yb-navbar-center) { padding-left: 0; }
 
 /*
  * Link colors
  */
 
-.uk-navbar-content > a:not([class]) { color: $navbar-link-color; }
-.uk-navbar-content > a:not([class]):hover { color: $navbar-link-hover-color; }
+.yb-navbar-content > a:not([class]) { color: $navbar-link-color; }
+.yb-navbar-content > a:not([class]):hover { color: $navbar-link-hover-color; }
 
 
-/* Sub-objects: `uk-navbar-brand`
+/* Sub-objects: `yb-navbar-brand`
  ========================================================================== */
 
-.uk-navbar-brand {
+.yb-navbar-brand {
     font-size: $navbar-brand-font-size;
     color: $navbar-brand-color;
     text-decoration: none;
@@ -242,8 +242,8 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * 2. Remove default focus style
  */
 
-.uk-navbar-brand:hover,
-.uk-navbar-brand:focus { // 1
+.yb-navbar-brand:hover,
+.yb-navbar-brand:focus { // 1
     color: $navbar-brand-hover-color;
     text-decoration: none;
     /* 2 */
@@ -251,10 +251,10 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 }
 
 
-/* Sub-object: `uk-navbar-toggle`
+/* Sub-object: `yb-navbar-toggle`
  ========================================================================== */
 
-.uk-navbar-toggle {
+.yb-navbar-toggle {
     font-size: $navbar-toggle-font-size;
     color: $navbar-toggle-color;
     text-decoration: none;
@@ -265,8 +265,8 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * 2. Remove default focus style
  */
 
-.uk-navbar-toggle:hover,
-.uk-navbar-toggle:focus { // 1
+.yb-navbar-toggle:hover,
+.yb-navbar-toggle:focus { // 1
     color: $navbar-toggle-hover-color;
     text-decoration: none;
     /* 2 */
@@ -277,17 +277,17 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * 1. Center icon vertically
  */
 
-.uk-navbar-toggle:after {
+.yb-navbar-toggle:after {
     content: $navbar-toggle-icon;
     font-family: FontAwesome;
     /* 1 */
     vertical-align: middle;
 }
 
-.uk-navbar-toggle-alt:after { content: $navbar-toggle-icon-alt; }
+.yb-navbar-toggle-alt:after { content: $navbar-toggle-icon-alt; }
 
 
-/* Sub-object: `uk-navbar-center`
+/* Sub-object: `yb-navbar-center`
  ========================================================================== */
 
 /*
@@ -295,7 +295,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  * 1. This hack is needed because other float elements shift centered text
  */
 
-.uk-navbar-center {
+.yb-navbar-center {
     float: none;
     text-align: center;
     /* 1 */
@@ -305,10 +305,10 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 }
 
 
-/* Sub-object: `uk-navbar-flip`
+/* Sub-object: `yb-navbar-flip`
  ========================================================================== */
 
-.uk-navbar-flip { float: right; }
+.yb-navbar-flip { float: right; }
 
 
 // Hooks

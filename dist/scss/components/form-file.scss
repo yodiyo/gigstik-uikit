@@ -1,15 +1,15 @@
 // Name:            Form file
 // Description:     Extends form component
 //
-// Component:       `uk-form`
+// Component:       `yb-form`
 //
-// Sub-objects:     `uk-form-file`
+// Sub-objects:     `yb-form-file`
 //
 // Markup:
 //
-// <!-- uk-form-file -->
-// <div class="uk-form-file">
-//     <button class="uk-button"></button>
+// <!-- yb-form-file -->
+// <div class="yb-form-file">
+//     <button class="yb-button"></button>
 //     <input type="file">
 // </div>
 //
@@ -26,7 +26,7 @@
  * 3. Clip content
  */
 
-.uk-form-file {
+.yb-form-file {
     /* 1 */
     display: inline-block;
     vertical-align: middle;
@@ -41,7 +41,7 @@
  * 2. Expand height and required for the cursor
  */
 
-.uk-form-file input[type="file"] {
+.yb-form-file input[type="file"] {
     position: absolute;
     top: 0;
     z-index: 1;

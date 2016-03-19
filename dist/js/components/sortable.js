@@ -43,14 +43,14 @@
             animation        : 150,
             threshold        : 10,
 
-            childClass       : 'uk-sortable-item',
-            placeholderClass : 'uk-sortable-placeholder',
-            overClass        : 'uk-sortable-over',
-            draggingClass    : 'uk-sortable-dragged',
-            dragMovingClass  : 'uk-sortable-moving',
-            baseClass        : 'uk-sortable',
-            noDragClass      : 'uk-sortable-nodrag',
-            emptyClass       : 'uk-sortable-empty',
+            childClass       : 'yb-sortable-item',
+            placeholderClass : 'yb-sortable-placeholder',
+            overClass        : 'yb-sortable-over',
+            draggingClass    : 'yb-sortable-dragged',
+            dragMovingClass  : 'yb-sortable-moving',
+            baseClass        : 'yb-sortable',
+            noDragClass      : 'yb-sortable-nodrag',
+            emptyClass       : 'yb-sortable-empty',
             dragCustomClass  : '',
             handleClass      : false,
             group            : false,
@@ -65,12 +65,12 @@
             // auto init
             UI.ready(function(context) {
 
-                UI.$("[data-uk-sortable]", context).each(function(){
+                UI.$("[data-yb-sortable]", context).each(function(){
 
                     var ele = UI.$(this);
 
                     if(!ele.data("sortable")) {
-                        UI.sortable(ele, UI.Utils.options(ele.attr("data-uk-sortable")));
+                        UI.sortable(ele, UI.Utils.options(ele.attr("data-yb-sortable")));
                     }
                 });
             });

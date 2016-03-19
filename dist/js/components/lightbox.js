@@ -31,7 +31,7 @@
 
         boot: function() {
 
-            UI.$html.on('click', '[data-uk-lightbox]', function(e){
+            UI.$html.on('click', '[data-yb-lightbox]', function(e){
 
                 e.preventDefault();
 
@@ -39,7 +39,7 @@
 
                 if (!link.data("lightbox")) {
 
-                    UI.lightbox(link, UI.Utils.options(link.attr("data-uk-lightbox")));
+                    UI.lightbox(link, UI.Utils.options(link.attr("data-yb-lightbox")));
                 }
 
                 link.data("lightbox").show(link);
@@ -74,8 +74,8 @@
             if (this.element && this.element.length) {
 
                 var domSiblings  = this.options.group ? UI.$([
-                    '[data-uk-lightbox*="'+this.options.group+'"]',
-                    "[data-uk-lightbox*='"+this.options.group+"']"
+                    '[data-yb-lightbox*="'+this.options.group+'"]',
+                    "[data-yb-lightbox*='"+this.options.group+"']"
                 ].join(',')) : this.element;
 
                 domSiblings.each(function() {
@@ -156,7 +156,7 @@
                 this.modal.modal.show();
             }
 
-            this.modal.loader.removeClass('uk-hidden');
+            this.modal.loader.removeClass('yb-hidden');
 
             promise.promise().done(function() {
 
@@ -165,7 +165,7 @@
 
             }).fail(function(){
 
-                data.meta.content = '<div class="uk-position-cover uk-flex uk-flex-middle uk-flex-center"><strong>Loading resource failed!</strong></div>';
+                data.meta.content = '<div class="yb-position-cover yb-flex yb-flex-middle yb-flex-center"><strong>Loading resource failed!</strong></div>';
                 data.meta.width   = 400;
                 data.meta.height  = 300;
 
@@ -191,8 +191,8 @@
 
                 content = [
                     content,
-                    '<a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous uk-hidden-touch" data-lightbox-previous></a>',
-                    '<a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next uk-hidden-touch" data-lightbox-next></a>'
+                    '<a href="#" class="yb-slidenav yb-slidenav-contrast yb-slidenav-previous yb-hidden-touch" data-lightbox-previous></a>',
+                    '<a href="#" class="yb-slidenav yb-slidenav-contrast yb-slidenav-next yb-hidden-touch" data-lightbox-next></a>'
                 ].join('');
             }
 
@@ -215,11 +215,11 @@
 
             tmp.remove();
 
-            this.modal.dialog.find('.uk-modal-caption').remove();
+            this.modal.dialog.find('.yb-modal-caption').remove();
 
             if (data.title) {
-                this.modal.dialog.append('<div class="uk-modal-caption">'+data.title+'</div>');
-                maxheight -= this.modal.dialog.find('.uk-modal-caption').outerHeight();
+                this.modal.dialog.append('<div class="yb-modal-caption">'+data.title+'</div>');
+                maxheight -= this.modal.dialog.find('.yb-modal-caption').outerHeight();
             }
 
             if (maxwidth < data.meta.width) {
@@ -245,16 +245,16 @@
 
             if (t < 0) { t = 0; }
 
-            this.modal.closer.addClass('uk-hidden');
+            this.modal.closer.addClass('yb-hidden');
 
             if ($this.modal.data('mwidth') == w &&  $this.modal.data('mheight') == h) {
                 duration = 0;
             }
 
             this.modal.dialog.animate({width: w + pad, height: h + pad, top: t }, duration, 'swing', function() {
-                $this.modal.loader.addClass('uk-hidden');
+                $this.modal.loader.addClass('yb-hidden');
                 $this.modal.content.css({width:''}).animate({'opacity': 1}, function() {
-                    $this.modal.closer.removeClass('uk-hidden');
+                    $this.modal.closer.removeClass('yb-hidden');
                 });
 
                 $this.modal.data({'mwidth': w, 'mheight': h});
@@ -284,7 +284,7 @@
                     var resolve = function(source, width, height) {
 
                         data.meta = {
-                            "content" : '<img class="uk-responsive-width" width="'+width+'" height="'+height+'" src ="'+source+'">',
+                            "content" : '<img class="yb-responsive-width" width="'+width+'" height="'+height+'" src ="'+source+'">',
                             "width"   : width,
                             "height"  : height
                         };
@@ -447,7 +447,7 @@
                 var resolve = function(source, width, height) {
 
                     data.meta = {
-                        'content': '<video class="uk-responsive-width" src="'+source+'" width="'+width+'" height="'+height+'" controls></video>',
+                        'content': '<video class="yb-responsive-width" src="'+source+'" width="'+width+'" height="'+height+'" controls></video>',
                         'width': width,
                         'height': height
                     };
@@ -492,19 +492,19 @@
 
         // init lightbox container
         modal = UI.$([
-            '<div class="uk-modal">',
-                '<div class="uk-modal-dialog uk-modal-dialog-lightbox uk-slidenav-position" style="margin-left:auto;margin-right:auto;width:200px;height:200px;top:'+Math.abs(window.innerHeight/2 - 200)+'px;">',
-                    '<a href="#" class="uk-modal-close uk-close uk-close-alt"></a>',
-                    '<div class="uk-lightbox-content"></div>',
-                    '<div class="uk-modal-spinner uk-hidden"></div>',
+            '<div class="yb-modal">',
+                '<div class="yb-modal-dialog yb-modal-dialog-lightbox yb-slidenav-position" style="margin-left:auto;margin-right:auto;width:200px;height:200px;top:'+Math.abs(window.innerHeight/2 - 200)+'px;">',
+                    '<a href="#" class="yb-modal-close yb-close yb-close-alt"></a>',
+                    '<div class="yb-lightbox-content"></div>',
+                    '<div class="yb-modal-spinner yb-hidden"></div>',
                 '</div>',
             '</div>'
         ].join('')).appendTo('body');
 
-        modal.dialog  = modal.find('.uk-modal-dialog:first');
-        modal.content = modal.find('.uk-lightbox-content:first');
-        modal.loader  = modal.find('.uk-modal-spinner:first');
-        modal.closer  = modal.find('.uk-close.uk-close-alt');
+        modal.dialog  = modal.find('.yb-modal-dialog:first');
+        modal.content = modal.find('.yb-lightbox-content:first');
+        modal.loader  = modal.find('.yb-modal-spinner:first');
+        modal.closer  = modal.find('.yb-close.yb-close-alt');
         modal.modal   = UI.modal(modal, {modal:false});
 
         // next / previous

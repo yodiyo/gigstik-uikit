@@ -1,24 +1,24 @@
 // Name:            Tab
 // Description:     Defines styles for a tabbed navigation
 //
-// Component:       `uk-tab`
+// Component:       `yb-tab`
 //
-// Modifiers:       `uk-tab-flip`
-//                  `uk-tab-center`
-//                  `uk-tab-grid`
-//                  `uk-tab-bottom`
-//                  `uk-tab-left`
-//                  `uk-tab-right`
-//                  `uk-tab-responsive`
+// Modifiers:       `yb-tab-flip`
+//                  `yb-tab-center`
+//                  `yb-tab-grid`
+//                  `yb-tab-bottom`
+//                  `yb-tab-left`
+//                  `yb-tab-right`
+//                  `yb-tab-responsive`
 //
-// States:          `uk-active`
-//                  `uk-disabled`
+// States:          `yb-active`
+//                  `yb-disabled`
 //
 // Markup:
 //
-// <!-- uk-tab -->
-// <ul class="uk-tab" data-uk-tab>
-//     <li class="uk-active"><a href=""></a></li>
+// <!-- yb-tab -->
+// <ul class="yb-tab" data-yb-tab>
+//     <li class="yb-active"><a href=""></a></li>
 //     <li><a href=""></a></li>
 // </ul>
 //
@@ -50,7 +50,7 @@
    Component: Tab
  ========================================================================== */
 
-.uk-tab {
+.yb-tab {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -61,27 +61,27 @@
  * Micro clearfix on the deepest container
  */
 
-.uk-tab:before,
-.uk-tab:after {
+.yb-tab:before,
+.yb-tab:after {
     content: "";
     display: table;
 }
 
-.uk-tab:after { clear: both; }
+.yb-tab:after { clear: both; }
 
 /*
  * Items
  * 1. Create position context for dropdowns
  */
 
-.uk-tab > li {
+.yb-tab > li {
     margin-bottom: -@tab-border-width;
     float: left;
     /* 1 */
     position: relative;
 }
 
-.uk-tab > li > a {
+.yb-tab > li > a {
     display: block;
     padding: @tab-padding-top @tab-padding-horizontal @tab-padding-bottom @tab-padding-horizontal;
     border: @tab-border-width solid transparent;
@@ -91,7 +91,7 @@
     .hook-tab;
 }
 
-.uk-tab > li:nth-child(n+2) > a { margin-left: @tab-margin-horizontal; }
+.yb-tab > li:nth-child(n+2) > a { margin-left: @tab-margin-horizontal; }
 
 /*
  * Hover
@@ -100,9 +100,9 @@
  * 3. Remove default focus style
  */
 
-.uk-tab > li > a:hover,
-.uk-tab > li > a:focus, // 1
-.uk-tab > li.uk-open > a { // 2
+.yb-tab > li > a:hover,
+.yb-tab > li > a:focus, // 1
+.yb-tab > li.yb-open > a { // 2
     border-color: @tab-hover-border;
     background: @tab-hover-background;
     color: @tab-hover-color;
@@ -111,15 +111,15 @@
     .hook-tab-hover;
 }
 
-.uk-tab > li:not(.uk-active) > a:hover,
-.uk-tab > li:not(.uk-active) > a:focus,
-.uk-tab > li.uk-open:not(.uk-active) > a {
+.yb-tab > li:not(.yb-active) > a:hover,
+.yb-tab > li:not(.yb-active) > a:focus,
+.yb-tab > li.yb-open:not(.yb-active) > a {
     margin-bottom: @tab-border-width;
     padding-bottom: @tab-padding-bottom - @tab-border-width;
 }
 
 /* Active */
-.uk-tab > li.uk-active > a {
+.yb-tab > li.yb-active > a {
     border-color: @tab-active-border;
     border-bottom-color: transparent;
     background: @tab-active-background;
@@ -128,15 +128,15 @@
 }
 
 /* Disabled */
-.uk-tab > li.uk-disabled > a {
+.yb-tab > li.yb-disabled > a {
     color: @tab-disabled-color;
     cursor: text;
     .hook-tab-disabled;
 }
 
-.uk-tab > li.uk-disabled > a:hover,
-.uk-tab > li.uk-disabled > a:focus,
-.uk-tab > li.uk-disabled.uk-active > a {
+.yb-tab > li.yb-disabled > a:hover,
+.yb-tab > li.yb-disabled > a:focus,
+.yb-tab > li.yb-disabled.yb-active > a {
     background: none;
     border-color: transparent;
 }
@@ -145,9 +145,9 @@
 /* Modifier: 'tab-flip'
  ========================================================================== */
 
-.uk-tab-flip > li { float: right; }
+.yb-tab-flip > li { float: right; }
 
-.uk-tab-flip > li:nth-child(n+2) > a {
+.yb-tab-flip > li:nth-child(n+2) > a {
     margin-left: 0;
     margin-right: @tab-margin-horizontal;
 }
@@ -156,7 +156,7 @@
 /* Modifier: 'tab-responsive'
  ========================================================================== */
 
-.uk-tab > li.uk-tab-responsive > a {
+.yb-tab > li.yb-tab-responsive > a {
     margin-left: 0;
     margin-right: 0;
 }
@@ -165,7 +165,7 @@
  * Icon
  */
 
-.uk-tab-responsive > a:before {
+.yb-tab-responsive > a:before {
     content: "\f0c9\00a0";
     font-family: FontAwesome;
 }
@@ -174,71 +174,71 @@
 /* Modifier: 'tab-center'
  ========================================================================== */
 
-.uk-tab-center { border-bottom: @tab-border-width solid @tab-border; }
+.yb-tab-center { border-bottom: @tab-border-width solid @tab-border; }
 
-.uk-tab-center-bottom {
+.yb-tab-center-bottom {
     border-bottom: none;
     border-top: @tab-border-width solid @tab-border;
 }
 
-.uk-tab-center:before,
-.uk-tab-center:after {
+.yb-tab-center:before,
+.yb-tab-center:after {
     content: "";
     display: table;
 }
 
-.uk-tab-center:after { clear: both; }
+.yb-tab-center:after { clear: both; }
 
 
 /*
  * 1. Using `right` to prevent vertical scrollbar caused by centering if to many tabs
  */
 
-.uk-tab-center .uk-tab {
+.yb-tab-center .yb-tab {
     position: relative;
     right: 50%;
     border: none;
     float: right;
 }
 
-.uk-tab-center .uk-tab > li {
+.yb-tab-center .yb-tab > li {
     position: relative;
     right: -50%;
 }
 
-.uk-tab-center .uk-tab > li > a { text-align: center; }
+.yb-tab-center .yb-tab > li > a { text-align: center; }
 
 
 /* Modifier: 'tab-bottom'
  ========================================================================== */
 
-.uk-tab-bottom {
+.yb-tab-bottom {
     border-top: @tab-border-width solid @tab-border;
     border-bottom: none;
 }
 
-.uk-tab-bottom > li {
+.yb-tab-bottom > li {
     margin-top: -@tab-border-width;
     margin-bottom: 0;
 }
 
-.uk-tab-bottom > li > a {
+.yb-tab-bottom > li > a {
     padding-top: @tab-padding-bottom;
     padding-bottom: @tab-padding-top;
     border-bottom-width: @tab-border-width;
     border-top-width: 0;
 }
 
-.uk-tab-bottom > li:not(.uk-active) > a:hover,
-.uk-tab-bottom > li:not(.uk-active) > a:focus,
-.uk-tab-bottom > li.uk-open:not(.uk-active) > a {
+.yb-tab-bottom > li:not(.yb-active) > a:hover,
+.yb-tab-bottom > li:not(.yb-active) > a:focus,
+.yb-tab-bottom > li.yb-open:not(.yb-active) > a {
     margin-bottom: 0;
     margin-top: @tab-border-width;
     padding-bottom: @tab-padding-top;
     padding-top: @tab-padding-bottom - @tab-border-width;
 }
 
-.uk-tab-bottom > li.uk-active > a {
+.yb-tab-bottom > li.yb-active > a {
     border-top-color: transparent;
     border-bottom-color: @tab-active-border;
 }
@@ -251,7 +251,7 @@
  * 1. Create position context to prevent hidden border because of negative `z-index`
  */
 
-.uk-tab-grid {
+.yb-tab-grid {
     margin-left: -@tab-margin-horizontal;
     border-bottom: none;
     /* 1 */
@@ -259,7 +259,7 @@
     z-index: 0;
 }
 
-.uk-tab-grid:before {
+.yb-tab-grid:before {
     display: block;
     position: absolute;
     left: @tab-margin-horizontal;
@@ -270,16 +270,16 @@
     z-index: -1;
 }
 
-.uk-tab-grid > li:first-child > a { margin-left: @tab-margin-horizontal; }
+.yb-tab-grid > li:first-child > a { margin-left: @tab-margin-horizontal; }
 
-.uk-tab-grid > li > a { text-align: center; }
+.yb-tab-grid > li > a { text-align: center; }
 
 /*
- * If `uk-tab-bottom`
+ * If `yb-tab-bottom`
  */
 
-.uk-tab-grid.uk-tab-bottom { border-top: none; }
-.uk-tab-grid.uk-tab-bottom:before {
+.yb-tab-grid.yb-tab-bottom { border-top: none; }
+.yb-tab-grid.yb-tab-bottom:before {
     top: -@tab-border-width;
     bottom: auto;
 }
@@ -291,67 +291,67 @@
 /* Tablet and bigger */
 @media (min-width: @breakpoint-medium) {
 
-    .uk-tab-left,
-    .uk-tab-right { border-bottom: none; }
+    .yb-tab-left,
+    .yb-tab-right { border-bottom: none; }
 
-    .uk-tab-left > li,
-    .uk-tab-right > li {
+    .yb-tab-left > li,
+    .yb-tab-right > li {
         margin-bottom: 0;
         float: none;
     }
 
-    .uk-tab-left > li > a,
-    .uk-tab-right > li > a {
+    .yb-tab-left > li > a,
+    .yb-tab-right > li > a {
         padding-top: @tab-padding-vertical;
         padding-bottom: @tab-padding-vertical;
     }
 
-    .uk-tab-left > li:nth-child(n+2) > a,
-    .uk-tab-right > li:nth-child(n+2) > a {
+    .yb-tab-left > li:nth-child(n+2) > a,
+    .yb-tab-right > li:nth-child(n+2) > a {
         margin-left: 0;
         margin-top: @tab-margin-vertical;
     }
 
-    .uk-tab-left > li.uk-active > a,
-    .uk-tab-right > li.uk-active > a { border-color: @tab-active-border; }
+    .yb-tab-left > li.yb-active > a,
+    .yb-tab-right > li.yb-active > a { border-color: @tab-active-border; }
 
     /*
      * Modifier: 'tab-left'
      */
 
-    .uk-tab-left { border-right: @tab-border-width solid @tab-border; }
-    .uk-tab-left > li { margin-right: -@tab-border-width; }
-    .uk-tab-left > li > a {
+    .yb-tab-left { border-right: @tab-border-width solid @tab-border; }
+    .yb-tab-left > li { margin-right: -@tab-border-width; }
+    .yb-tab-left > li > a {
         border-bottom-width: @tab-border-width;
         border-right-width: 0;
     }
-    .uk-tab-left > li:not(.uk-active) > a:hover,
-    .uk-tab-left > li:not(.uk-active) > a:focus {
+    .yb-tab-left > li:not(.yb-active) > a:hover,
+    .yb-tab-left > li:not(.yb-active) > a:focus {
         margin-bottom: 0;
         margin-right: @tab-border-width;
         padding-bottom: @tab-padding-vertical;
         padding-right: @tab-padding-horizontal - @tab-border-width;
     }
-    .uk-tab-left > li.uk-active > a { border-right-color: transparent; }
+    .yb-tab-left > li.yb-active > a { border-right-color: transparent; }
 
     /*
      * Modifier: 'tab-right'
      */
 
-    .uk-tab-right { border-left: @tab-border-width solid @tab-border; }
-    .uk-tab-right > li { margin-left: -@tab-border-width; }
-    .uk-tab-right > li > a {
+    .yb-tab-right { border-left: @tab-border-width solid @tab-border; }
+    .yb-tab-right > li { margin-left: -@tab-border-width; }
+    .yb-tab-right > li > a {
         border-bottom-width: @tab-border-width;
         border-left-width: 0;
     }
-    .uk-tab-right > li:not(.uk-active) > a:hover,
-    .uk-tab-right > li:not(.uk-active) > a:focus {
+    .yb-tab-right > li:not(.yb-active) > a:hover,
+    .yb-tab-right > li:not(.yb-active) > a:focus {
         margin-bottom: 0;
         margin-left: @tab-border-width;
         padding-bottom: @tab-padding-vertical;
         padding-left: @tab-padding-horizontal - @tab-border-width;
     }
-    .uk-tab-right > li.uk-active > a { border-left-color: transparent; }
+    .yb-tab-right > li.yb-active > a { border-left-color: transparent; }
 
 }
 

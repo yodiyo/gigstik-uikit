@@ -79,12 +79,12 @@
             // init code
             UI.ready(function(context) {
 
-                UI.$('[data-uk-parallax]', context).each(function() {
+                UI.$('[data-yb-parallax]', context).each(function() {
 
                     var parallax = UI.$(this);
 
                     if (!parallax.data("parallax")) {
-                        UI.parallax(parallax, UI.Utils.options(parallax.attr("data-uk-parallax")));
+                        UI.parallax(parallax, UI.Utils.options(parallax.attr("data-yb-parallax")));
                     }
                 });
             });

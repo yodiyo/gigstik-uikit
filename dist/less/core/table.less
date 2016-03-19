@@ -1,14 +1,14 @@
 // Name:            Table
 // Description:     Defines styles for tables
 //
-// Component:       `uk-table`
+// Component:       `yb-table`
 //
-// Modifiers:       `uk-table-middle`
-//                  `uk-table-striped`
-//                  `uk-table-condensed`
-//                  `uk-table-hover`
+// Modifiers:       `yb-table-middle`
+//                  `yb-table-striped`
+//                  `yb-table-condensed`
+//                  `yb-table-hover`
 //
-// States:          `uk-active`
+// States:          `yb-active`
 //
 // ========================================================================
 
@@ -43,7 +43,7 @@
  * 3. Style
  */
 
-.uk-table {
+.yb-table {
     /* 1 */
     border-collapse: collapse;
     border-spacing: 0;
@@ -57,10 +57,10 @@
  * Add margin if adjacent element
  */
 
-* + .uk-table { margin-top: @table-margin-vertical; }
+* + .yb-table { margin-top: @table-margin-vertical; }
 
-.uk-table th,
-.uk-table td {
+.yb-table th,
+.yb-table td {
     padding: @table-padding-vertical @table-padding-horizontal;
     .hook-table;
 }
@@ -69,22 +69,22 @@
  * Set alignment
  */
 
-.uk-table th { text-align: left; }
-.uk-table td { vertical-align: top; }
+.yb-table th { text-align: left; }
+.yb-table td { vertical-align: top; }
 
-.uk-table thead th { vertical-align: bottom; }
+.yb-table thead th { vertical-align: bottom; }
 
 /*
  * Caption and footer
  */
 
-.uk-table caption,
-.uk-table tfoot {
+.yb-table caption,
+.yb-table tfoot {
     font-size: @table-caption-font-size;
     font-style: italic;
 }
 
-.uk-table caption {
+.yb-table caption {
     text-align: left;
     color: @table-caption-color;
 }
@@ -93,41 +93,41 @@
  * Active State
  */
 
-.uk-table tbody tr.uk-active {
+.yb-table tbody tr.yb-active {
     background: @table-active-background;
     .hook-table-active;
 }
 
 
-/* Sub-modifier: `uk-table-middle`
+/* Sub-modifier: `yb-table-middle`
  ========================================================================== */
 
-.uk-table-middle,
-.uk-table-middle td { vertical-align: middle !important; }
+.yb-table-middle,
+.yb-table-middle td { vertical-align: middle !important; }
 
 
-/* Modifier: `uk-table-striped`
+/* Modifier: `yb-table-striped`
  ========================================================================== */
 
-.uk-table-striped tbody tr:nth-of-type(odd) {
+.yb-table-striped tbody tr:nth-of-type(odd) {
     background: @table-striped-background;
     .hook-table-striped;
 }
 
 
-/* Modifier: `uk-table-condensed`
+/* Modifier: `yb-table-condensed`
  ========================================================================== */
 
-.uk-table-condensed td {
+.yb-table-condensed td {
     padding: @table-condensed-padding-vertical @table-condensed-padding-horizontal;
     .hook-table-condensed;
 }
 
 
-/* Modifier: `uk-table-hover`
+/* Modifier: `yb-table-hover`
  ========================================================================== */
 
-.uk-table-hover tbody tr:hover {
+.yb-table-hover tbody tr:hover {
     background: @table-hover-background;
     .hook-table-hover;
 }
