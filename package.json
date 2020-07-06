@@ -36,7 +36,7 @@
     "gulp-ignore": "^1.2.0",
     "gulp-less": "latest",
     "gulp-minify-css": "^1.1.1",
-    "gulp-rename": "^1.2.0",
+    "gulp-rename": "^2.0.0",
     "gulp-replace": "^0.4.0",
     "gulp-rimraf": "latest",
     "gulp-tap": "latest",
